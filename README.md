@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-💬 Hello, my name is Francisco Paiva Knebel. I am a computer engineer, graduated at the [Federal University of Rio Grande do Sul (UFRGS)](https://ufrgs.br) in 2020.
+💬 Hello, my name is Francisco Paiva Knebel. I am a computer engineer, graduated at the brazilian [Federal University of Rio Grande do Sul (UFRGS)](https://ufrgs.br) in 2020.
 
 🔭 I’m currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS, with the focus on Digital Twins and Computer Networks.
 
