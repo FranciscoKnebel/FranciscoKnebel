@@ -19,6 +19,10 @@ http://networks.inf.ufrgs.br
 IDE
 
 https://github.com/IDEjr
+
+## Stats:
+
+![Francisco's GitHub stats](https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true)
  
 ## 🔗 Links:
 
