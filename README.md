@@ -22,10 +22,7 @@ https://github.com/IDEjr
  
 ## 🔗 Links:
 
-<img width="150" height="50" align="left" src="static/website.png">
-Personal Website
-
-https://franciscoknebel.com
+| <img src="static/website.png"> | Personal Website | https://franciscoknebel.com
 
 <img width="150" height="50" align="left" src="static/linkedin.png">
 LinkedIn
