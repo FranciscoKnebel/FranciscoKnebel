@@ -22,15 +22,8 @@ https://github.com/IDEjr
  
 ## 🔗 Links:
 
-|<img src="static/website.png">|Personal Website|https://franciscoknebel.com|
-
-<img width="150" height="50" align="left" src="static/linkedin.png">
-LinkedIn
-
-https://www.linkedin.com/in/francisco-knebel-295493111/
-
-<img width="150" height="50" align="left" src="static/lattes.png">
-Lattes
-
-http://lattes.cnpq.br/5190590589102587
-
+| | |
+| --- | --- |
+| <img width="150" height="50" align="left" src="static/website.png"> | https://franciscoknebel.com |
+| <img width="150" height="50" align="left" src="static/linkedin.png"> | https://www.linkedin.com/in/francisco-knebel-295493111/ |
+| <img width="150" height="50" align="left" src="static/lattes.png"> | http://lattes.cnpq.br/5190590589102587 |
