@@ -4,7 +4,7 @@
 
 🔭 I’m currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS, with the focus on Digital Twins and Computer Networks.
 
-### ⚡ Wondering what I'm doing: [Personal Website](https://franciscoknebel.com)
+### ⚡ Know more about what I'm doing: [Personal Website](https://franciscoknebel.com)
 
 ### 📫 How to reach me: [e-mail address](francisco.knebel@inf.ufrgs.br)
 
@@ -20,8 +20,7 @@ IDE
 
 https://github.com/IDEjr
  
-## 🔗 Links
-
+## 🔗 Links:
 
 <img width="150" height="50" align="left" src="static/website.png">
 Personal Website
