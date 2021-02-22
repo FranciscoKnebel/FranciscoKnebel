@@ -20,3 +20,17 @@ IDE
 
 https://github.com/IDEjr
  
+## 🔗 Links
+
+[Personal Website](https://franciscoknebel.com)
+
+<img width="150" height="50" align="left" src="static/linkedin.png">
+LinkedIn
+
+https://www.linkedin.com/in/francisco-knebel-295493111/
+
+<img width="150" height="50" align="left" src="static/lattes.png">
+Lattes
+
+http://lattes.cnpq.br/5190590589102587
+
