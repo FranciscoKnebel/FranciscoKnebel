@@ -6,7 +6,7 @@
 
 ### ⚡ Know more about what I'm doing: [Personal Website](https://franciscoknebel.com)
 
-### 📫 How to reach me: [e-mail address](francisco.knebel@inf.ufrgs.br)
+### 📫 How to reach me: <a href="mailto:francisco.knebel@inf.ufrgs.br">my e-mail address</a>
 
 ## 👯 Groups I endorse and support:
 
