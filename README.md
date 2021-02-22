@@ -23,10 +23,10 @@ https://github.com/IDEjr
 ## Stats:
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&line_height=20" />
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=3)](https://github.com/anuraghazra/github-readme-stats" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=6&count_private=true)](https://github.com/anuraghazra/github-readme-stats" />
 </a>
 
 ## 🔗 Links:
