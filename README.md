@@ -8,7 +8,7 @@
 
 ### 📫 How to reach me: <a href="mailto:francisco.knebel@inf.ufrgs.br">my e-mail address</a>
 
-## 👯 Groups I endorse and support:
+## 👯 Groups I endorse and support
 
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/3741590?s=50&v=4">
 Computer Networks UFRGS
@@ -20,7 +20,7 @@ IDE
 
 https://github.com/IDEjr
 
-## 🧮 Stats:
+## 🧮 Stats
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=franciscoknebel.visitor-badge)
 
@@ -31,7 +31,7 @@ https://github.com/IDEjr
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL")](https://github.com/anuraghazra/github-readme-stats" />
 </a>
 
-## 🔗 Links:
+## 🔗 Links
 
 | Professional | |
 | --- | --- |
