@@ -10,6 +10,11 @@
 
 ## 👯 Groups I endorse and support
 
+<img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/64329177?s=50&v=4">
+Open Digital Twin
+
+https://github.com/Open-Digital-Twin
+
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/3741590?s=50&v=4">
 Computer Networks UFRGS
 
