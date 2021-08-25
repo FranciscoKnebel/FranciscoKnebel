@@ -40,11 +40,11 @@ https://github.com/IDEjr
 
 | Professional | |
 | --- | --- |
-| [![Website](static/website.png)](https://franciscoknebel.com) | Personal Website <br> [https://franciscoknebel.com](https://franciscoknebel.com) |
-| [![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/) | **LinkedIn <br> https://www.linkedin.com/in/francisco-knebel-295493111/** |
+| [![Website](static/website.png)](https://franciscoknebel.com) | **Personal Website** <br> [https://franciscoknebel.com](https://franciscoknebel.com) |
+| [![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/) | **LinkedIn** <br> [https://www.linkedin.com/in/francisco-knebel-295493111/](https://www.linkedin.com/in/francisco-knebel-295493111/) |
 
 | Academic | |
 | --- | --- |
-| [![Lattes](static/lattes.png)](http://lattes.cnpq.br/5190590589102587) | **Lattes <br> http://lattes.cnpq.br/5190590589102587** |
-| [![Google Scholar](static/scholar.png)](https://scholar.google.com/citations?user=_RHtqxIAAAAJ) | **Google Scholar <br> https://scholar.google.com/citations?user=_RHtqxIAAAAJ** |
-| [![ResearchGate](static/researchgate.png)](https://www.researchgate.net/profile/Francisco-Knebel) | **ResearchGate <br> https://www.researchgate.net/profile/Francisco-Knebel** |
+| [![Lattes](static/lattes.png)](http://lattes.cnpq.br/5190590589102587) | **Lattes** <br> [http://lattes.cnpq.br/5190590589102587](http://lattes.cnpq.br/5190590589102587) |
+| [![Google Scholar](static/scholar.png)](https://scholar.google.com/citations?user=_RHtqxIAAAAJ) | **Google Scholar** <br> [https://scholar.google.com/citations?user=_RHtqxIAAAAJ](https://scholar.google.com/citations?user=_RHtqxIAAAAJ) |
+| [![ResearchGate](static/researchgate.png)](https://www.researchgate.net/profile/Francisco-Knebel) | **ResearchGate** <br> [https://www.researchgate.net/profile/Francisco-Knebel](https://www.researchgate.net/profile/Francisco-Knebel) |
