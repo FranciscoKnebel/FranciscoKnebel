@@ -13,17 +13,17 @@
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/64329177?s=50&v=4">
 Open Digital Twin
 
-https://github.com/Open-Digital-Twin
+[https://github.com/Open-Digital-Twin](https://github.com/Open-Digital-Twin)
 
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/3741590?s=50&v=4">
 Computer Networks UFRGS
 
-http://networks.inf.ufrgs.br
+[http://networks.inf.ufrgs.br](http://networks.inf.ufrgs.br)
 
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/17241356?s=200&v=4">
 IDE
 
-https://github.com/IDEjr
+[https://github.com/IDEjr](https://github.com/IDEjr)
 
 ## 🧮 Stats
 
