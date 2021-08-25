@@ -40,7 +40,7 @@ https://github.com/IDEjr
 
 | Professional | |
 | --- | --- |
-| [![Website](static/website.png)](https://franciscoknebel.com) | Personal Website <br> https://franciscoknebel.com |
+| [![Website](static/website.png)](https://franciscoknebel.com) | Personal Website <br> [https://franciscoknebel.com](https://franciscoknebel.com) |
 | [![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/) | **LinkedIn <br> https://www.linkedin.com/in/francisco-knebel-295493111/** |
 
 | Academic | |
