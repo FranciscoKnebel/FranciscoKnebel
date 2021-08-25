@@ -5,3 +5,4 @@ show_downloads: false
 google_analytics: "G-80D0XB0GGG"
 github:
  is_project_page: false
+photo: true
