@@ -42,6 +42,7 @@ IDE
 | --- | --- |
 | [![Website](static/website.png)](https://franciscoknebel.com) | **Personal Website** <br> [https://franciscoknebel.com](https://franciscoknebel.com) |
 | [![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/) | **LinkedIn** <br> [https://www.linkedin.com/in/francisco-knebel-295493111/](https://www.linkedin.com/in/francisco-knebel-295493111/) |
+| [![GitHub](static/github.png)](https://github.com/FranciscoKnebel) | **GitHub** <br> [https://github.com/FranciscoKnebel](https://github.com/FranciscoKnebel) |
 
 | Academic | |
 | --- | --- |
