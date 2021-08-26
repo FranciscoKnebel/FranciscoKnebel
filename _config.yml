@@ -1,6 +1,6 @@
 # UNTIL https://github.com/pmarsceill/just-the-docs/pull/544 is merged
 # remote_theme: pmarsceill/just-the-docs
-remote_theme: pdmosses:combination@combination
+remote_theme: pdmosses/just-the-docs@combination
 
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
