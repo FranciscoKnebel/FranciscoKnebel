@@ -6,15 +6,17 @@
 // Fixes to match GitHub profile page styling.
 
 h1, h2 {
-  border-bottom: 1px solid var(#21262d);
+  border-bottom: 1px solid #21262d;
   padding-bottom: .3em;
 }
 
 p img[align=left] {
   padding-right: 20px;
+  margin-bottom: 0;
 }
 
 p img {
   box-sizing: content-box;
   max-width: 100%;
 }
+
