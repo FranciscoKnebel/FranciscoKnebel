@@ -1,4 +1,4 @@
-# UNTIL https://github.com/pmarsceill/just-the-docs/pull/544 is merged
+# UNTIL https://github.com/pmarsceill/just-the-docs/pull/578 is merged
 # remote_theme: pmarsceill/just-the-docs
 remote_theme: pdmosses/just-the-docs@combination
 
@@ -53,12 +53,17 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 color_scheme: dark
 
 collections:
-  docs:
+  posts:
+    permalink: "/:collection/:path/"
+    output: true
+  experiences:
     permalink: "/:collection/:path/"
     output: true
 
 just_the_docs:
   # Define which collections are used in just-the-docs
   collections:
-    docs:
-      name: Documentation
+    posts:
+      name: Posts
+    experiences:
+      name: Experiences
