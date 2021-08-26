@@ -3,15 +3,10 @@
 remote_theme: pdmosses/just-the-docs@combination
 
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-show_downloads: false
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-seo-tag
 
-
-github:
- is_project_page: false
-photo: true
 title: Francisco Knebel
-description: Description
 # logo: https://avatars.githubusercontent.com/u/10299622?v=4
 
 ###########
@@ -62,3 +57,6 @@ just_the_docs:
   collections:
     experiences:
       name: Experiences
+
+back_to_top: true
+back_to_top_text: "Back to top"
