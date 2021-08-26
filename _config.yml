@@ -1,6 +1,6 @@
 # UNTIL https://github.com/pmarsceill/just-the-docs/pull/544 is merged
 # remote_theme: pmarsceill/just-the-docs
-remote_theme: svrooij/just-the-docs@relative-everything
+remote_theme: pdmosses:combination@combination
 
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
@@ -53,9 +53,6 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 color_scheme: dark
 
 collections:
-  home:
-    permalink: "/:path/"
-    output: true
   docs:
     permalink: "/:collection/:path/"
     output: true
@@ -63,15 +60,5 @@ collections:
 just_the_docs:
   # Define which collections are used in just-the-docs
   collections:
-    # Reference the "docs" collection
-    home:
-      # Give the collection a name
-      name: Home
-      # Exclude the collection from the navigation
-      # Supports true or false (default)
-      nav_exclude: false
-      # Exclude the collection from the search
-      # Supports true or false (default)
-      search_exclude: false
     docs:
       name: Documentation
