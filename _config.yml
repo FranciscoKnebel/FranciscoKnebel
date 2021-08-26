@@ -48,6 +48,9 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 color_scheme: light
 
 collections:
+  projects:
+    permalink: "/:collection/:path/"
+    output: true
   experiences:
     permalink: "/:collection/:path/"
     output: true
@@ -55,6 +58,8 @@ collections:
 just_the_docs:
   # Define which collections are used in just-the-docs
   collections:
+    projects:
+      name: Projects
     experiences:
       name: Experiences
 
