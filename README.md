@@ -1,12 +1,16 @@
-### Hi there 👋
+## Hi there 👋
 
-💬 Hello, my name is Francisco Paiva Knebel. I am a computer engineer, graduated at the brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020.
+💬 Hello, my name is **Francisco Paiva Knebel**.
 
-🔭 I’m currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS, with the focus on Digital Twins and Computer Networks.
+I am a computer engineer, graduated at the brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020.
 
-### ⚡ Know more about what I'm doing: [Personal Website](https://franciscoknebel.com)
+I’m currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS, with the focus on Digital Twins and Computer Networks.
 
-### 📫 How to reach me: <a href="mailto:francisco.knebel@inf.ufrgs.br">my e-mail address</a>
+Concurrently, I also work as an IT Consultant for [Dawntech Inc.](https://dawntech.dev/).
+
+### ⚡ Want to know more about what I'm doing: [Personal Website](https://franciscoknebel.com)
+
+### 📫 How to reach me: <a href="mailto:franciscopaivaknebel@gmail.com">my e-mail address</a>
 
 ## 👯 Groups I endorse and support
 
@@ -36,7 +40,7 @@ IDE
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL" />
 </a>
 
-## 🔗 Links
+## 🖇 Links
 
 | Professional | |
 | --- | --- |
