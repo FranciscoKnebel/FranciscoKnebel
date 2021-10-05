@@ -10,4 +10,4 @@ Description to be expanded.
 
 [Consultant profile page at Dawntech](https://dawntech.dev/consultants/francisco).
 
-![Dawntech](static/dawntech.jpg)
+![Dawntech](/static/dawntech.png)
