@@ -6,7 +6,7 @@ I am a computer engineer, graduated at the brazilian [Federal University of Rio 
 
 I’m currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS, with the focus on Digital Twins and Computer Networks.
 
-Concurrently, I also work as an IT Consultant for [Dawntech Inc.](https://dawntech.dev/).
+Concurrently, I also work as an IT Consultant for [Dawntech Inc.](https://dawntech.dev/). My consultant page can be found [here](https://dawntech.dev/consultants/francisco).
 
 ### ⚡ Want to know more about what I'm doing: [Personal Website](https://franciscoknebel.com)
 
