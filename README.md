@@ -29,12 +29,17 @@ IDE
 
 [https://github.com/IDEjr](https://github.com/IDEjr)
 
+<img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/23394280?s=200&v=4">
+Dawntech
+
+[https://github.com/dawntech](https://github.com/dawntech)
+
 ## 🧮 Stats
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=franciscoknebel.visitor-badge)
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&count_private=true&line_height=20" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&count_private=true&hide_rank=true&line_height=22" />
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL" />
