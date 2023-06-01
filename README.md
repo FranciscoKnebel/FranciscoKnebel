@@ -36,13 +36,11 @@ Dawntech
 
 ## 🧮 Stats
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=franciscoknebel.visitor-badge)
-
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&count_private=true&hide_rank=true&line_height=22" />
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&count_private=true" />
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL" />
+  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL" />
 </a>
 
 ## 🖇 Links
