@@ -1,13 +1,13 @@
-# UNTIL https://github.com/pmarsceill/just-the-docs/pull/578 is merged
-remote_theme: pmarsceill/just-the-docs
-# remote_theme: pdmosses/just-the-docs@combination
+remote_theme: pmarsceill/just-the-docs@nav-fix
 
 plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-seo-tag
 
 title: Francisco Knebel
-# logo: https://avatars.githubusercontent.com/u/10299622?v=4
+logo: https://avatars.githubusercontent.com/u/10299622?v=4
+url: "https://franciscoknebel.com"
+permalink: pretty
 
 ###########
 # JUST THE DOCS CONFIGURATION
@@ -47,11 +47,22 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 
 color_scheme: light
 
+enable_copy_code_button: true
+heading_anchors: true
+
+
+aux_links:
+  "GitHub":
+    - "//github.com/FranciscoKnebel"
+
 collections:
   projects:
     permalink: "/:collection/:path/"
     output: true
   experiences:
+    permalink: "/:collection/:path/"
+    output: true
+  academic:
     permalink: "/:collection/:path/"
     output: true
 
@@ -62,6 +73,8 @@ just_the_docs:
       name: Projects
     experiences:
       name: Experiences
+    experiences:
+      name: Academic
 
 back_to_top: true
 back_to_top_text: "Back to top"
