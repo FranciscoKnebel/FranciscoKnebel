@@ -5,8 +5,10 @@ plugins:
   - jekyll-seo-tag
 
 title: Francisco Knebel
-logo: https://avatars.githubusercontent.com/u/10299622?v=4
+# logo: https://avatars.githubusercontent.com/u/10299622?v=4
 url: "https://franciscoknebel.com"
+description: A Jekyll theme for documentation
+
 permalink: pretty
 
 ###########
@@ -50,7 +52,6 @@ color_scheme: light
 enable_copy_code_button: true
 heading_anchors: true
 
-
 aux_links:
   "GitHub":
     - "//github.com/FranciscoKnebel"
@@ -66,15 +67,52 @@ collections:
     permalink: "/:collection/:path/"
     output: true
 
+# Define which collections are used in just-the-docs
 just_the_docs:
-  # Define which collections are used in just-the-docs
   collections:
     projects:
       name: Projects
     experiences:
       name: Experiences
-    experiences:
+    academic:
       name: Academic
 
 back_to_top: true
 back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2023 Francisco Knebel."
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+  # ignore:
+  #   envs: all
