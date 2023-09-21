@@ -1,7 +1,7 @@
 ## :robot: &nbsp;About Me
 
 &nbsp;&nbsp;&nbsp;:wave: &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
-&nbsp;&nbsp;&nbsp;:technologist: &nbsp; I am a computer engineer, graduated at the brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
+&nbsp;&nbsp;&nbsp;:technologist: &nbsp; I am a computer engineer, graduated at the :brazil: brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
 &nbsp;&nbsp;&nbsp;:scientist: &nbsp; Currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS. \
 &nbsp;&nbsp;&nbsp;:writing_hand: &nbsp; Concurrently, I also work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
 &nbsp;&nbsp;&nbsp;:sparkling_heart: &nbsp; Passionate with problem solving and automation.\
@@ -27,12 +27,12 @@ Computer Networks UFRGS
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/17241356?s=200&v=4">
 IDE
 
-[https://github.com/IDEjr](https://github.com/IDEjr)
+[https://www.idejr.com.br](https://www.idejr.com.br)
 
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/23394280?s=200&v=4">
 Dawntech
 
-[https://github.com/dawntech](https://github.com/dawntech)
+[https://dawntech.dev](https://dawntech.dev)
 
 ## :bouncing_ball_man: Stats
 
