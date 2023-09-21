@@ -2,7 +2,6 @@
 layout: default
 title: TO DO
 nav_order: 99
-lang: en
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
