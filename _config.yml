@@ -3,6 +3,7 @@ remote_theme: pdmosses/just-the-docs@nav-fix
 plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-seo-tag
+  - jekyll-polyglot
 
 title: Francisco Knebel
 # logo: https://avatars.githubusercontent.com/u/10299622?v=4
@@ -10,6 +11,13 @@ url: "https://franciscoknebel.com"
 description: A Jekyll theme for documentation
 
 permalink: pretty
+
+default_lang: "en"
+languages: ["en", "pt"]
+exclude_from_localization: ["scripts", "static", "_scss"]
+parallel_localization: false
+sass:
+  sourcemap: never
 
 ###########
 # JUST THE DOCS CONFIGURATION
