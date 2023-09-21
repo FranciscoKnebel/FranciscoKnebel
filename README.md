@@ -1,18 +1,18 @@
 ## :robot: &nbsp;About Me
 
-&nbsp;&nbsp;&nbsp;:wave: &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
-&nbsp;&nbsp;&nbsp;:technologist: &nbsp; I am a computer engineer, graduated at the :brazil: brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
-&nbsp;&nbsp;&nbsp;:scientist: &nbsp; Currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS. \
-&nbsp;&nbsp;&nbsp;:writing_hand: &nbsp; Concurrently, I also work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
-&nbsp;&nbsp;&nbsp;:sparkling_heart: &nbsp; Passionate with problem solving and automation.\
-&nbsp;&nbsp;&nbsp;:writing_hand: &nbsp; Currently researching Digital Twins and Computer Networks. \
-&nbsp;&nbsp;&nbsp;:hammer_and_wrench: &nbsp; Coding professionally since 2014 in enterprise-grade software development.
+&nbsp;&nbsp;&nbsp;👋 &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
+&nbsp;&nbsp;&nbsp;🧑‍💻 &nbsp; I am a computer engineer, graduated at the :brazil: brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
+&nbsp;&nbsp;&nbsp;🧑‍🔬 &nbsp; Currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS. \
+&nbsp;&nbsp;&nbsp;⚡ &nbsp; Concurrently, I also work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
+&nbsp;&nbsp;&nbsp;💖 &nbsp; Passionate with problem solving and automation.\
+&nbsp;&nbsp;&nbsp;✍️ &nbsp; Currently researching Digital Twins and Computer Networks. \
+&nbsp;&nbsp;&nbsp;🛠️ &nbsp; Coding professionally since 2014 in enterprise-grade software development.
 
-### :question: Want to know more? [Personal Website](https://franciscoknebel.com)
+### ❓ Want to know more? [Personal Website](https://franciscoknebel.com)
 
-### :mailbox: How to reach me: <a href="mailto:franciscopaivaknebel@gmail.com">my e-mail address</a>
+### 📫 How to reach me: <a href="mailto:franciscopaivaknebel@gmail.com">my e-mail address</a>
 
-## :stars: Groups I endorse and support
+## 🌠 Groups I endorse and support
 
 <img width="50" height="50" align="left" src="https://avatars.githubusercontent.com/u/64329177?s=50&v=4">
 Open Digital Twin
@@ -34,7 +34,7 @@ Dawntech
 
 [https://dawntech.dev](https://dawntech.dev)
 
-## :bouncing_ball_man: Stats
+## ⛹️‍♂️ Stats
 
 <img align="center" src="github-metrics.svg" />
 <img align="center" src="metrics.plugin.calendar.svg" />
