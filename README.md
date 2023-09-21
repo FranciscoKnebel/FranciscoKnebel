@@ -1,4 +1,4 @@
-## :robot: &nbsp;About Me
+## 🤖 &nbsp;About Me
 
 &nbsp;&nbsp;&nbsp;👋 &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
 &nbsp;&nbsp;&nbsp;🧑‍💻 &nbsp; I am a computer engineer, graduated at the :brazil: brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
