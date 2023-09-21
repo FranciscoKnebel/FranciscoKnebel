@@ -36,8 +36,8 @@ Dawntech
 
 ## ⛹️‍♂️ Stats
 
-<img align="center" src="github-metrics.svg" />
-<img align="center" src="metrics.plugin.calendar.svg" />
+<img align="center" src="github-metrics.svg" style="max-width: 100%;"/>
+<img align="center" src="metrics.plugin.calendar.svg" style="max-width: 100%;"/>
 
 ## 🖇 Links
 
