@@ -36,12 +36,8 @@ Dawntech
 
 ## 🧮 Stats
 
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api?username=franciscoknebel&show_icons=true&theme=dracula&count_private=true" />
-</a>
-<a href="https://github.com/anuraghazra/convoychat">
-  <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=franciscoknebel&theme=dracula&layout=compact&langs_count=8&count_private=true&hide=SystemVerilog,VHDL" />
-</a>
+<img align="center" src="github-metrics.svg" />
+<img align="center" src="metrics.plugin.calendar.svg" />
 
 ## 🖇 Links
 
