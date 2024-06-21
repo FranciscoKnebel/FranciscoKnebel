@@ -2,7 +2,7 @@
 
 &nbsp;&nbsp;&nbsp;👋 &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
 &nbsp;&nbsp;&nbsp;🧑‍💻 &nbsp; I am a computer engineer, graduated at the 🇧🇷 brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
-&nbsp;&nbsp;&nbsp;🧑‍🔬 &nbsp; Currently working on obtaining my Master of Science (M.Sc.) degree in Computer Science at UFRGS. \
+&nbsp;&nbsp;&nbsp;🧑‍🔬 &nbsp; I also obtained a Master of Science (M.Sc.) degree in Computer Science at UFRGS in 2024. \
 &nbsp;&nbsp;&nbsp;⚡ &nbsp; Concurrently, I also work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
 &nbsp;&nbsp;&nbsp;💖 &nbsp; Passionate with problem solving and automation.\
 &nbsp;&nbsp;&nbsp;✍️ &nbsp; Currently researching Digital Twins and Computer Networks. \
