@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Selector</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url('static/chroma2.jpg');
+      background-size: cover;
+    }
+    .video-background video, .video-background iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #video-container {
+      height: calc(100% - 75px);
+      z-index: 10;
+    }
+    .content {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="scripts/chroma.js"></script>
+
+  <script>
+    new Chroma(document.getElementById('.video-background img'), {
+      chroma: [181, 230, 29],
+    })
+  </script>
+</head>
+<body>
+  <div class="video-background">
+    <div id="video-container"></div>
+  </div>
+  <div class="content">
+    <div class="buttons">
+      <button onclick="changeVideo('896556312', 'vimeo')">El after del mundo</button>
+      <button onclick="changeVideo('YW4tNqwshIk', 'youtube')">KM 100 (trailer)</button>
+      <button disabled>Bolide (Juliette Gilot)</button>
+
+      <button onclick="changeVideo('548627617', 'vimeo')">Salt Water Town</button>
+      <button onclick="changeVideo('U9mu2TJ0scY', 'youtube')">Recife Frio</button>
+    </div>
+  </div>
+  <script>
+    function changeVideo(videoId, type) {
+      const container = document.getElementById('video-container');
+      container.innerHTML = '';
+
+      let embedSrc;
+      const iframe = document.createElement('iframe');
+      
+      if (type === 'youtube') {
+        embedSrc = `https://www.youtube-nocookie.com/embed/${videoId}`;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerpolicy = 'strict-origin-when-cross-origin';
+      } else if (type === 'vimeo') {
+        embedSrc = `https://player.vimeo.com/video/${videoId}`;
+      }
+      iframe.frameBorder = '0';
+      iframe.src = embedSrc;
+      
+      container.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
