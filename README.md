@@ -3,9 +3,8 @@
 &nbsp;&nbsp;&nbsp;👋 &nbsp; Hello, my name is **Francisco Paiva Knebel**. \
 &nbsp;&nbsp;&nbsp;🧑‍💻 &nbsp; I am a computer engineer, graduated at the 🇧🇷 brazilian [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS) in 2020. \
 &nbsp;&nbsp;&nbsp;🧑‍🔬 &nbsp; I also obtained a Master of Science (M.Sc.) degree in Computer Science at UFRGS in 2024. \
-&nbsp;&nbsp;&nbsp;⚡ &nbsp; Concurrently, I also work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
+&nbsp;&nbsp;&nbsp;⚡ &nbsp; Currently, I work as an [IT Consultant](https://dawntech.dev/consultants/francisco) for [Dawntech Inc.](https://dawntech.dev/). \
 &nbsp;&nbsp;&nbsp;💖 &nbsp; Passionate with problem solving and automation.\
-&nbsp;&nbsp;&nbsp;✍️ &nbsp; Currently researching Digital Twins and Computer Networks. \
 &nbsp;&nbsp;&nbsp;🛠️ &nbsp; Coding professionally since 2014 in enterprise-grade software development.
 
 ### ❓ Want to know more? [Personal Website](https://franciscoknebel.com)
@@ -37,6 +36,10 @@ Dawntech
 ## ⛹️‍♂️ Stats
 
 <img align="center" src="github-metrics.svg" style="max-width: 100%;"/>
+[![trophy](https://github-profile-trophy.vercel.app/?username=franciscoknebel)](https://github.com/ryo-ma/github-profile-trophy)
+
+## 🧮 COntributions
+
 <img align="center" src="metrics.plugin.calendar.svg" style="max-width: 100%;"/>
 
 ## 🖇 Links
