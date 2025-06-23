@@ -39,7 +39,7 @@ Dawntech
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=franciscoknebel)](https://github.com/ryo-ma/github-profile-trophy)
 
-## 🧮 COntributions
+## 🧮 Contributions
 
 <img align="center" src="metrics.plugin.calendar.svg" style="max-width: 100%;"/>
 
