@@ -1,0 +1,71 @@
+[
+  {
+    "role": {
+      "en": "Lead Software Engineer",
+      "pt": "Engenheiro de Software Líder"
+    },
+    "company": "Dawntech Inc.",
+    "companyUrl": "https://dawntech.dev",
+    "period": { "en": "2021 – Present", "pt": "2021 – Presente" },
+    "location": {
+      "en": "Porto Alegre, RS · Remote",
+      "pt": "Porto Alegre, RS · Remoto"
+    },
+    "description": {
+      "en": "Leading software development for enterprise clients. Responsible for architecture decisions, technical direction, and hands-on development of scalable distributed systems.",
+      "pt": "Liderando o desenvolvimento de software para clientes corporativos. Responsável por decisões de arquitetura, direção técnica e desenvolvimento de sistemas distribuídos escaláveis."
+    },
+    "tags": ["Node.js", "TypeScript", "Cloud", "Architecture"],
+    "current": true
+  },
+  {
+    "role": {
+      "en": "Chief Information Officer",
+      "pt": "Diretor de Tecnologia (CIO)"
+    },
+    "company": "Dawntech Inc.",
+    "companyUrl": "https://dawntech.dev",
+    "period": { "en": "— · —", "pt": "— · —" },
+    "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
+    "description": { "en": "", "pt": "" },
+    "tags": [],
+    "current": false,
+    "placeholder": true
+  },
+  {
+    "role": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
+    "company": "Catalyst Commerce",
+    "companyUrl": null,
+    "period": { "en": "— · —", "pt": "— · —" },
+    "location": { "en": "—", "pt": "—" },
+    "description": { "en": "", "pt": "" },
+    "tags": [],
+    "current": false,
+    "placeholder": true
+  },
+  {
+    "role": {
+      "en": "Researcher / Teaching Assistant",
+      "pt": "Pesquisador / Monitor"
+    },
+    "company": "UFRGS",
+    "companyUrl": "https://ufrgs.br",
+    "period": { "en": "— · —", "pt": "— · —" },
+    "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
+    "description": { "en": "", "pt": "" },
+    "tags": [],
+    "current": false,
+    "placeholder": true
+  },
+  {
+    "role": { "en": "Software Developer", "pt": "Desenvolvedor de Software" },
+    "company": "IDE Junior Enterprise",
+    "companyUrl": "https://www.idejr.com.br",
+    "period": { "en": "— · —", "pt": "— · —" },
+    "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
+    "description": { "en": "", "pt": "" },
+    "tags": [],
+    "current": false,
+    "placeholder": true
+  }
+]

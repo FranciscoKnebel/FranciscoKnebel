@@ -1,0 +1,71 @@
+---
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+import experiencesData from '../data/experiences.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<section id="experience" class="py-24 border-t border-slate-100 dark:border-slate-800/60">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="section-heading reveal">{t.sections.experience}</p>
+
+    <div class="reveal-stagger space-y-8">
+      {experiencesData.map(exp => (
+        <article
+          class={`card-hover relative pl-6 border-l-2 ${
+            exp.current
+              ? 'border-accent-500 dark:border-accent-400'
+              : exp.placeholder
+              ? 'border-slate-200 dark:border-slate-700 opacity-60'
+              : 'border-slate-200 dark:border-slate-700'
+          }`}
+        >
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-slate-100 text-base">
+                {exp.role[lang]}
+              </h3>
+              <div class="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                {exp.companyUrl ? (
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent-600 dark:text-accent-400 hover:underline underline-offset-2 transition-colors duration-150"
+                  >
+                    {exp.company}
+                  </a>
+                ) : (
+                  <span>{exp.company}</span>
+                )}
+                <span class="text-slate-300 dark:text-slate-600">·</span>
+                <span>{exp.location[lang]}</span>
+              </div>
+            </div>
+            <span class="text-xs font-mono text-slate-400 dark:text-slate-500 mt-0.5 sm:mt-1 whitespace-nowrap">
+              {exp.period[lang]}
+              {exp.current && (
+                <span class="ml-2 inline-block w-1.5 h-1.5 rounded-full bg-accent-500 dark:bg-accent-400 align-middle" />
+              )}
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            {exp.description[lang] || (exp.placeholder ? t.experience.placeholder : '')}
+          </p>
+
+          {exp.tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              {exp.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Designing and implementing digital twins with cloud and edge computing: challenges and opportunities",
+    "type": "M.Sc. Thesis",
+    "venue": "PPGC · Federal University of Rio Grande do Sul",
+    "year": 2024,
+    "authors": [
+      "Francisco Paiva Knebel"
+    ],
+    "citations": 0,
+    "url": "https://lume.ufrgs.br/handle/10183/276593",
+    "venueUrl": "https://www.ppgc.ufrgs.br/",
+    "advisor": "Juliano Araújo Wickboldt"
+  },
+  {
+    "title": "A study on cloud and edge computing for the implementation of digital twins in the oil & gas industries",
+    "type": "Journal Article",
+    "venue": "Computers & Industrial Engineering",
+    "year": 2023,
+    "authors": [
+      "Francisco Paiva Knebel",
+      "Rafael Trevisan",
+      "Givanildo Santana do Nascimento",
+      "Mara Abel",
+      "Juliano Araujo Wickboldt"
+    ],
+    "citations": 93,
+    "url": "https://www.researchgate.net/publication/371336015",
+    "venueUrl": "https://www.sciencedirect.com/journal/computers-and-industrial-engineering"
+  },
+  {
+    "title": "Aquisição de Dados Escalável e Ciente da Aplicação para Gêmeos Digitais",
+    "type": "Journal Article",
+    "venue": "",
+    "year": 2022,
+    "authors": [
+      "Rafael Trevisan",
+      "Francisco Paiva Knebel",
+      "Juliano Araújo Wickboldt",
+      "Mara Abel"
+    ],
+    "citations": 0,
+    "url": "https://sol.sbc.org.br/index.php/wgrs/article/view/21477"
+  },
+  {
+    "title": "A Cloud-Fog Computing Architecture for Real-Time Digital Twins",
+    "type": "Journal Article",
+    "venue": "arXiv preprint arXiv:2012.06118",
+    "year": 2020,
+    "authors": [
+      "Francisco Paiva Knebel",
+      "Juliano Araujo Wickboldt",
+      "Edison Pignaton de Freitas"
+    ],
+    "citations": 24,
+    "url": "https://arxiv.org/abs/2012.06118",
+    "venueUrl": "https://journalofinternetservicesandapplications.springeropen.com/"
+  },
+  {
+    "title": "An open Digital Twin framework based on microservices in the cloud",
+    "type": "B.Sc. Thesis",
+    "venue": "INF · Federal University of Rio Grande do Sul",
+    "year": 2020,
+    "authors": [
+      "Francisco Paiva Knebel"
+    ],
+    "citations": 2,
+    "url": "https://lume.ufrgs.br/handle/10183/219160",
+    "venueUrl": "https://www.inf.ufrgs.br/",
+    "advisor": "Juliano Araújo Wickboldt"
+  },
+  {
+    "title": "Uma Avaliação do uso de MQTT para a Implementação de Digital Twins",
+    "type": "Journal Article",
+    "venue": "",
+    "year": 2020,
+    "authors": [
+      "Rafael Trevisan",
+      "Francisco Paiva Knebel",
+      "Juliano Araújo Wickboldt"
+    ],
+    "citations": 1,
+    "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187"
+  }
+]

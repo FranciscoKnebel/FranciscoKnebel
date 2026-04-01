@@ -1,0 +1,32 @@
+[
+  {
+    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
+    "description": {
+      "en": "Placeholder — add your projects here.",
+      "pt": "Placeholder — adicione seus projetos aqui."
+    },
+    "tags": ["TypeScript"],
+    "url": null,
+    "repo": null
+  },
+  {
+    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
+    "description": {
+      "en": "Placeholder — add your projects here.",
+      "pt": "Placeholder — adicione seus projetos aqui."
+    },
+    "tags": ["Node.js"],
+    "url": null,
+    "repo": null
+  },
+  {
+    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
+    "description": {
+      "en": "Placeholder — add your projects here.",
+      "pt": "Placeholder — adicione seus projetos aqui."
+    },
+    "tags": ["Cloud"],
+    "url": null,
+    "repo": null
+  }
+]

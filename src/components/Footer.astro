@@ -1,0 +1,36 @@
+---
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-100 dark:border-slate-800/60 py-10">
+  <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 dark:text-slate-500">
+    <span>© {year} Francisco Knebel</span>
+    <span class="flex items-center gap-1.5">
+      {t.footer.builtWith}
+      <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-2 hover:text-accent-500 dark:hover:text-accent-400 transition-colors duration-150"
+      >
+        Astro
+      </a>
+      ·
+      <a
+        href="https://github.com/FranciscoKnebel/FranciscoKnebel"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-2 hover:text-accent-500 dark:hover:text-accent-400 transition-colors duration-150"
+      >
+        {t.footer.source}
+      </a>
+    </span>
+  </div>
+</footer>

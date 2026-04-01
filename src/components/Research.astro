@@ -1,0 +1,124 @@
+---
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+import publicationsData from '../data/publications.json';
+import interestsData from '../data/interests.json';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const typeColors: Record<string, string> = {
+  'M.Sc. Thesis':   'bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',
+  'B.Sc. Thesis':   'bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400',
+  'Journal Article':'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400',
+  'Conference':     'bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400',
+};
+---
+
+<section id="research" class="py-24 border-t border-slate-100 dark:border-slate-800/60">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="section-heading reveal">{t.sections.research}</p>
+
+    <!-- Interests -->
+    <div class="mb-14 reveal">
+      <h2 class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">{t.sections.interests}</h2>
+      <div class="flex flex-wrap gap-2">
+        {interestsData.map(interest => (
+          <span class="px-3 py-1.5 rounded-full text-sm font-medium
+                       bg-slate-100 dark:bg-slate-800
+                       text-slate-600 dark:text-slate-300
+                       border border-slate-200 dark:border-slate-700">
+            {interest[lang]}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Publications -->
+    <div>
+      <h2 class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-6 reveal">{t.sections.publications}</h2>
+      <div class="reveal-stagger space-y-4">
+        {publicationsData.map(pub => (
+          <article class="card-hover group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${typeColors[pub.type] ?? 'bg-slate-100 text-slate-600'}`}>
+                    {t.publications.types[pub.type as keyof typeof t.publications.types] ?? pub.type}
+                  </span>
+                  <span class="text-xs font-mono text-slate-400 dark:text-slate-500">{pub.year}</span>
+                  {'citations' in pub && (pub as {citations?: number}).citations ? (
+                    <span class="text-xs text-slate-400 dark:text-slate-500">
+                      {(pub as {citations: number}).citations} {t.publications.citations}
+                    </span>
+                  ) : null}
+                </div>
+
+                {pub.url ? (
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-medium text-slate-900 dark:text-slate-100 text-sm leading-snug
+                           group-hover:text-accent-600 dark:group-hover:text-accent-400
+                           transition-colors duration-150 underline-offset-2 hover:underline"
+                  >
+                    {pub.title}
+                  </a>
+                ) : (
+                  <p class="font-medium text-slate-900 dark:text-slate-100 text-sm leading-snug">
+                    {pub.title}
+                  </p>
+                )}
+
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1.5">
+                  {pub.authors.join(', ')}
+                </p>
+
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                  {'venueUrl' in pub && pub.venueUrl ? (
+                    <a
+                      href={pub.venueUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:text-accent-500 dark:hover:text-accent-400 hover:decoration-accent-400 transition-colors duration-150"
+                    >
+                      {pub.venue}
+                    </a>
+                  ) : pub.venue}
+                  {'advisor' in pub && pub.advisor && (
+                    <span class="text-slate-300 dark:text-slate-600"> · {t.publications.advisor}: {pub.advisor}</span>
+                  )}
+                </p>
+              </div>
+
+              {pub.url && (
+                <a
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${pub.title}`}
+                  class="flex-shrink-0 text-slate-300 dark:text-slate-600
+                         group-hover:text-accent-500 dark:group-hover:text-accent-400
+                         transition-colors duration-150 mt-1"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-6 text-xs text-slate-400 dark:text-slate-500 reveal">
+        {t.sections.fullPublicationsList}
+        <a href="https://scholar.google.com/citations?user=_RHtqxIAAAAJ" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent-500 transition-colors duration-150">Google Scholar</a>
+        {lang === 'en' ? ' and ' : ' e '}
+        <a href="https://www.researchgate.net/profile/Francisco-Knebel" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-accent-500 transition-colors duration-150">ResearchGate</a>.
+      </p>
+    </div>
+  </div>
+</section>
