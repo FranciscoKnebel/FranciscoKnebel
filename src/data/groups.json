@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Open Digital Twin",
+    "url": "https://github.com/Open-Digital-Twin",
+    "avatar": "https://avatars.githubusercontent.com/u/64329177?s=80&v=4",
+    "description": {
+      "en": "Open-source initiative for Digital Twin research and tooling.",
+      "pt": "Iniciativa open-source de pesquisa e ferramentas para Gêmeos Digitais."
+    }
+  },
+  {
+    "name": "Computer Networks UFRGS",
+    "url": "http://networks.inf.ufrgs.br",
+    "avatar": "https://avatars.githubusercontent.com/u/3741590?s=80&v=4",
+    "description": {
+      "en": "Research group on computer networks and distributed systems at UFRGS.",
+      "pt": "Grupo de pesquisa em redes de computadores e sistemas distribuídos da UFRGS."
+    }
+  },
+  {
+    "name": "IDE Junior Enterprise",
+    "url": "https://www.idejr.com.br",
+    "avatar": "https://avatars.githubusercontent.com/u/17241356?s=80&v=4",
+    "description": {
+      "en": "Junior enterprise in computer science at UFRGS.",
+      "pt": "Empresa júnior de ciência da computação da UFRGS."
+    }
+  },
+  {
+    "name": "Dawntech",
+    "url": "https://dawntech.dev",
+    "avatar": "https://avatars.githubusercontent.com/u/23394280?s=80&v=4",
+    "description": {
+      "en": "Technology consultancy focused on scalable distributed systems.",
+      "pt": "Consultoria de tecnologia focada em sistemas distribuídos escaláveis."
+    }
+  }
+]

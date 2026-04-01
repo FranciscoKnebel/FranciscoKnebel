@@ -8,9 +8,7 @@
       "Francisco Paiva Knebel"
     ],
     "citations": 0,
-    "url": "https://lume.ufrgs.br/handle/10183/276593",
-    "venueUrl": "https://www.ppgc.ufrgs.br/",
-    "advisor": "Juliano Araújo Wickboldt"
+    "url": "https://lume.ufrgs.br/handle/10183/276593"
   },
   {
     "title": "A study on cloud and edge computing for the implementation of digital twins in the oil & gas industries",
@@ -25,13 +23,12 @@
       "Juliano Araujo Wickboldt"
     ],
     "citations": 93,
-    "url": "https://www.researchgate.net/publication/371336015",
-    "venueUrl": "https://www.sciencedirect.com/journal/computers-and-industrial-engineering"
+    "url": "https://www.researchgate.net/publication/371336015"
   },
   {
     "title": "Aquisição de Dados Escalável e Ciente da Aplicação para Gêmeos Digitais",
-    "type": "Journal Article",
-    "venue": "",
+    "type": "Conference",
+    "venue": "WGRS · Workshop em Gerência e Aplicações de Redes sem Fio",
     "year": 2022,
     "authors": [
       "Rafael Trevisan",
@@ -45,7 +42,7 @@
   {
     "title": "A Cloud-Fog Computing Architecture for Real-Time Digital Twins",
     "type": "Journal Article",
-    "venue": "arXiv preprint arXiv:2012.06118",
+    "venue": "Journal of Internet Services and Applications",
     "year": 2020,
     "authors": [
       "Francisco Paiva Knebel",
@@ -53,8 +50,7 @@
       "Edison Pignaton de Freitas"
     ],
     "citations": 24,
-    "url": "https://arxiv.org/abs/2012.06118",
-    "venueUrl": "https://journalofinternetservicesandapplications.springeropen.com/"
+    "url": "https://arxiv.org/abs/2012.06118"
   },
   {
     "title": "An open Digital Twin framework based on microservices in the cloud",
@@ -65,14 +61,12 @@
       "Francisco Paiva Knebel"
     ],
     "citations": 2,
-    "url": "https://lume.ufrgs.br/handle/10183/219160",
-    "venueUrl": "https://www.inf.ufrgs.br/",
-    "advisor": "Juliano Araújo Wickboldt"
+    "url": "https://lume.ufrgs.br/handle/10183/219160"
   },
   {
     "title": "Uma Avaliação do uso de MQTT para a Implementação de Digital Twins",
-    "type": "Journal Article",
-    "venue": "",
+    "type": "Conference",
+    "venue": "ERRC · Escola Regional de Redes de Computadores",
     "year": 2020,
     "authors": [
       "Rafael Trevisan",

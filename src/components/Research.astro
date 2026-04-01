@@ -1,12 +1,20 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
-import publicationsData from '../data/publications.json';
+import rawPublications from '../data/publications.json';
+import publicationsMeta from '../data/publications-meta.json';
 import interestsData from '../data/interests.json';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
+
+const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, ' ');
+const meta = publicationsMeta as Record<string, Record<string, unknown>>;
+const publicationsData = rawPublications.map(pub => ({
+  ...pub,
+  ...(meta[normalize(pub.title)] ?? {}),
+}));
 
 const typeColors: Record<string, string> = {
   'M.Sc. Thesis':   'bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',
@@ -88,7 +96,11 @@ const typeColors: Record<string, string> = {
                     </a>
                   ) : pub.venue}
                   {'advisor' in pub && pub.advisor && (
-                    <span class="text-slate-300 dark:text-slate-600"> · {t.publications.advisor}: {pub.advisor}</span>
+                    <span class="text-slate-300 dark:text-slate-600"> · {t.publications.advisor}: {
+                      'advisorUrl' in pub && pub.advisorUrl
+                        ? <a href={pub.advisorUrl as string} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:text-accent-500 dark:hover:text-accent-400 hover:decoration-accent-400 transition-colors duration-150">{pub.advisor as string}</a>
+                        : pub.advisor as string
+                    }</span>
                   )}
                 </p>
               </div>

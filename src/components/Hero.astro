@@ -1,10 +1,27 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
+import publications from '../data/publications.json';
+import projects from '../data/projects.json';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
+
+// Computed stats from data files
+const CODING_START_YEAR = 2014;
+const currentYear = new Date().getFullYear();
+const yearsOfCoding = currentYear - CODING_START_YEAR;
+const pubCount = publications.length;
+const totalCitations = publications.reduce((sum, p) => sum + ((p as { citations?: number }).citations ?? 0), 0);
+const projectCount = projects.length;
+
+const stats = [
+  { value: `${yearsOfCoding}+`, label: t.hero.stats[0].label },
+  { value: `${pubCount}`,        label: t.hero.stats[1].label },
+  { value: `${totalCitations}+`, label: t.hero.stats[2].label },
+  { value: `${projectCount}`,    label: t.hero.stats[3].label },
+];
 
 const socials = [
   {
@@ -80,7 +97,7 @@ const socials = [
 
     <div class="mt-20 pt-8 border-t border-slate-100 dark:border-slate-800 reveal">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {t.hero.stats.map(({ value, label }) => (
+        {stats.map(({ value, label }) => (
           <div class="text-center sm:text-left">
             <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{value}</div>
             <div class="text-sm text-slate-400 dark:text-slate-500 mt-0.5">{label}</div>

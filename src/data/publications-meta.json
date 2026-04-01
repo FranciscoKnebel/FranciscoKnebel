@@ -1,0 +1,31 @@
+{
+  "designing and implementing digital twins with cloud and edge computing: challenges and opportunities": {
+    "type": "M.Sc. Thesis",
+    "venueUrl": "https://www.ppgc.ufrgs.br/",
+    "advisor": "Juliano Araújo Wickboldt",
+    "advisorUrl": "https://www.inf.ufrgs.br/~jwickboldt/"
+  },
+
+  "a study on cloud and edge computing for the implementation of digital twins in the oil & gas industries": {
+    "venueUrl": "https://www.sciencedirect.com/journal/computers-and-industrial-engineering"
+  },
+
+  "aquisição de dados escalável e ciente da aplicação para gêmeos digitais": {
+    "type": "Conference",
+    "venue": "WGRS · Workshop em Gerência e Aplicações de Redes sem Fio",
+    "venueUrl": "https://sol.sbc.org.br/index.php/wgrs"
+  },
+
+  "an open digital twin framework based on microservices in the cloud": {
+    "type": "B.Sc. Thesis",
+    "venueUrl": "https://www.inf.ufrgs.br/",
+    "advisor": "Juliano Araújo Wickboldt",
+    "advisorUrl": "https://www.inf.ufrgs.br/~jwickboldt/"
+  },
+
+  "uma avaliação do uso de mqtt para a implementação de digital twins": {
+    "type": "Conference",
+    "venue": "ERRC · Escola Regional de Redes de Computadores",
+    "venueUrl": "https://sol.sbc.org.br/index.php/errc"
+  }
+}

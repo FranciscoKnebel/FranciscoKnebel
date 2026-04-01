@@ -32,8 +32,7 @@ except ImportError:
 AUTHOR_ID   = "_RHtqxIAAAAJ"
 OUTPUT_PATH = Path(__file__).parent.parent / "src" / "data" / "publications.json"
 
-# Fields set manually in the JSON that should never be overwritten by the scraper
-PRESERVE_FIELDS = ("venueUrl", "advisor", "type")
+# Manual overrides live in publications-meta.json — scraper writes raw data only.
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -158,11 +157,6 @@ def main() -> None:
             # Prefer existing external URL (arxiv/researchgate) over Scholar URL
             "url":       prev.get("url") or pub.get("pub_url") or None,
         }
-
-        # Preserve manual-only fields unconditionally
-        for field in PRESERVE_FIELDS:
-            if field in prev:
-                entry[field] = prev[field]
 
         # Drop null values for clean JSON
         entry = {k: v for k, v in entry.items() if v is not None}
