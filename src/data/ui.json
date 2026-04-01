@@ -1,6 +1,12 @@
 {
   "en": {
-    "nav": { "experience": "Experience", "research": "Research", "projects": "Projects", "community": "Community", "stats": "Stats" },
+    "nav": {
+      "experience": "Experience",
+      "research": "Research",
+      "projects": "Projects",
+      "community": "Community",
+      "stats": "Stats"
+    },
     "hero": {
       "greeting": "Hello, I'm",
       "role": "Lead Software Engineer",
@@ -44,7 +50,13 @@
     }
   },
   "pt": {
-    "nav": { "experience": "Experiência", "research": "Pesquisa", "projects": "Projetos", "community": "Comunidade", "stats": "Estatísticas" },
+    "nav": {
+      "experience": "Experiência",
+      "research": "Pesquisa",
+      "projects": "Projetos",
+      "community": "Comunidade",
+      "stats": "Estatísticas"
+    },
     "hero": {
       "greeting": "Olá, eu sou",
       "role": "Engenheiro de Software Líder",

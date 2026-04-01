@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         accent: {
-          50:  '#eef2ff',
+          50: '#eef2ff',
           100: '#e0e7ff',
           400: '#818cf8',
           500: '#6366f1',
@@ -15,12 +15,24 @@ export default {
       },
       fontFamily: {
         sans: [
-          'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont',
-          'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
         ],
         mono: [
-          'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco',
-          'Cascadia Code', 'Consolas', 'monospace',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Cascadia Code',
+          'Consolas',
+          'monospace',
         ],
       },
     },

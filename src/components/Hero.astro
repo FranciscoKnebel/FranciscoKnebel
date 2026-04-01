@@ -4,7 +4,9 @@ import ui from '../data/ui.json';
 import publications from '../data/publications.json';
 import projects from '../data/projects.json';
 
-interface Props { lang: Lang; }
+interface Props {
+  lang: Lang;
+}
 const { lang } = Astro.props;
 const t = ui[lang];
 
@@ -13,14 +15,17 @@ const CODING_START_YEAR = 2014;
 const currentYear = new Date().getFullYear();
 const yearsOfCoding = currentYear - CODING_START_YEAR;
 const pubCount = publications.length;
-const totalCitations = publications.reduce((sum, p) => sum + ((p as { citations?: number }).citations ?? 0), 0);
+const totalCitations = publications.reduce(
+  (sum, p) => sum + ((p as { citations?: number }).citations ?? 0),
+  0,
+);
 const projectCount = projects.length;
 
 const stats = [
   { value: `${yearsOfCoding}+`, label: t.hero.stats[0].label },
-  { value: `${pubCount}`,        label: t.hero.stats[1].label },
+  { value: `${pubCount}`, label: t.hero.stats[1].label },
   { value: `${totalCitations}+`, label: t.hero.stats[2].label },
-  { value: `${projectCount}`,    label: t.hero.stats[3].label },
+  { value: `${projectCount}`, label: t.hero.stats[3].label },
 ];
 
 const socials = [
@@ -52,57 +57,55 @@ const socials = [
 ];
 ---
 
-<section
-  id="about"
-  class="min-h-screen flex items-center pt-14"
-  aria-label="Introduction"
->
-  <div class="max-w-4xl mx-auto px-6 py-20 w-full">
+<section id="about" class="flex min-h-screen items-center pt-14" aria-label="Introduction">
+  <div class="mx-auto w-full max-w-4xl px-6 py-20">
     <div class="reveal">
-      <p class="text-sm font-mono text-accent-500 dark:text-accent-400 mb-4 tracking-wide">
+      <p class="mb-4 font-mono text-sm tracking-wide text-accent-500 dark:text-accent-400">
         {t.hero.greeting}
       </p>
-      <h1 class="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-slate-50 tracking-tight leading-tight mb-4">
+      <h1
+        class="mb-4 text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl dark:text-slate-50"
+      >
         Francisco Knebel
       </h1>
-      <p class="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-light mb-6">
+      <p class="mb-6 text-xl font-light text-slate-500 sm:text-2xl dark:text-slate-400">
         {t.hero.role}
-        <span class="text-slate-300 dark:text-slate-600 mx-2">/</span>
+        <span class="mx-2 text-slate-300 dark:text-slate-600">/</span>
         {t.hero.degree}
       </p>
-      <p class="text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed mb-10" set:html={t.hero.bio} />
+      <p
+        class="mb-10 max-w-xl text-base leading-relaxed text-slate-500 dark:text-slate-400"
+        set:html={t.hero.bio}
+      />
 
       <div class="flex flex-wrap items-center gap-3">
-        {socials.map(({ label, href, icon }) => (
-          <a
-            href={href}
-            target={href.startsWith('http') ? '_blank' : undefined}
-            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            aria-label={label}
-            class="btn flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium
-                   text-slate-600 dark:text-slate-300
-                   bg-slate-100 dark:bg-slate-800
-                   border border-transparent
-                   hover:border-slate-300 dark:hover:border-slate-600
-                   hover:text-accent-600 dark:hover:text-accent-400
-                   transition-colors duration-150
-                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
-          >
-            <span class="w-4 h-4 flex-shrink-0" set:html={icon} />
-            <span class="hidden sm:inline">{label}</span>
-          </a>
-        ))}
+        {
+          socials.map(({ label, href, icon }) => (
+            <a
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              aria-label={label}
+              class="btn flex items-center gap-2 rounded-lg border border-transparent bg-slate-100 px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-150 hover:border-slate-300 hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-600 dark:hover:text-accent-400"
+            >
+              <span class="h-4 w-4 flex-shrink-0" set:html={icon} />
+              <span class="hidden sm:inline">{label}</span>
+            </a>
+          ))
+        }
       </div>
     </div>
 
-    <div class="mt-20 pt-8 border-t border-slate-100 dark:border-slate-800 reveal">
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {stats.map(({ value, label }) => (
-          <div class="text-center sm:text-left">
-            <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{value}</div>
-            <div class="text-sm text-slate-400 dark:text-slate-500 mt-0.5">{label}</div>
-          </div>
-        ))}
+    <div class="reveal mt-20 border-t border-slate-100 pt-8 dark:border-slate-800">
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {
+          stats.map(({ value, label }) => (
+            <div class="text-center sm:text-left">
+              <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{value}</div>
+              <div class="mt-0.5 text-sm text-slate-400 dark:text-slate-500">{label}</div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>

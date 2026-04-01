@@ -34,12 +34,36 @@ html {
     transform 0.4s var(--ease-out);
 }
 
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms;   opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 60ms;  opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 180ms; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(5) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
-.reveal-stagger.visible > *:nth-child(n+6) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(1) {
+  transition-delay: 0ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(2) {
+  transition-delay: 60ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(3) {
+  transition-delay: 120ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(4) {
+  transition-delay: 180ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(5) {
+  transition-delay: 240ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > *:nth-child(n + 6) {
+  transition-delay: 300ms;
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Nav link hover — only real pointer devices */
 @media (hover: hover) and (pointer: fine) {
@@ -61,7 +85,9 @@ html {
 /* Card hover */
 @media (hover: hover) and (pointer: fine) {
   .card-hover {
-    transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out);
+    transition:
+      transform 150ms var(--ease-out),
+      box-shadow 150ms var(--ease-out);
   }
 
   .card-hover:hover {
@@ -78,7 +104,9 @@ html {
 
 /* Pressable button */
 .btn {
-  transition: transform 120ms var(--ease-out), opacity 120ms ease;
+  transition:
+    transform 120ms var(--ease-out),
+    opacity 120ms ease;
 }
 
 .btn:active {
@@ -87,14 +115,12 @@ html {
 
 /* Tag pill */
 .tag {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-         bg-accent-50 text-accent-600
-         dark:bg-slate-800 dark:text-accent-400;
+  @apply inline-flex items-center rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-600 dark:bg-slate-800 dark:text-accent-400;
 }
 
 /* Section heading */
 .section-heading {
-  @apply text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-8;
+  @apply mb-8 text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500;
 }
 
 /* Reduce motion */

@@ -30,7 +30,7 @@ const metricsPlugin = {
       'metrics.plugin.isocalendar.fullyear.svg',
       'metrics.plugin.languages.indepth.svg',
     ];
-    svgs.forEach(f => {
+    svgs.forEach((f) => {
       if (existsSync(f)) copyFileSync(f, `dist/${f}`);
     });
   },

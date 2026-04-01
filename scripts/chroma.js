@@ -28,43 +28,41 @@
     chroma.chromaKey(imgElement2) // image 2 ...
 
 */
-function Chroma(elem, options){
-  var inst = this
+function Chroma(elem, options) {
+  var inst = this;
 
   inst.image = null;
-  if(elem && elem instanceof HTMLImageElement){
+  if (elem && elem instanceof HTMLImageElement) {
     inst.image = elem;
-  }else if(elem && elem instanceof Object){
+  } else if (elem && elem instanceof Object) {
     options = elem;
   }
   // default options
   inst.options = {
-    chroma:[0.99, 0.99, 0.99],
-    tolerance:0.05
-  }
+    chroma: [0.99, 0.99, 0.99],
+    tolerance: 0.05,
+  };
   // merge options
-  if(options){
-    for(var i in options){
-      inst.options[i] = options[i]
+  if (options) {
+    for (var i in options) {
+      inst.options[i] = options[i];
     }
   }
 
-  inst.init = function(){
+  inst.init = function () {
     // create a hidden canvas
     inst.canvas = document.createElement('canvas');
-    inst.canvas.setAttribute('crossOrigin','anonymous');
+    inst.canvas.setAttribute('crossOrigin', 'anonymous');
     inst.canvas.style.display = 'none';
     document.getElementsByTagName('body')[0].appendChild(inst.canvas);
     // init program
     inst.initProgram();
-  }
+  };
 
-
-  inst.chromaKey = function(image){
+  inst.chromaKey = function (image) {
     inst.image = image;
     var gl = inst.gl;
-    inst.whenImgLoaded(function(){
-
+    inst.whenImgLoaded(function () {
       // canvas of the same size as image
       inst.canvas.width = inst.image.width;
       inst.canvas.height = inst.image.height;
@@ -80,35 +78,38 @@ function Chroma(elem, options){
       inst.setFramebuffer(null, inst.canvas.width, inst.canvas.height);
 
       // and rectangle
-      inst.setRectangle( gl, 0, 0, inst.image.width, inst.image.height);
+      inst.setRectangle(gl, 0, 0, inst.image.width, inst.image.height);
 
       // draw it
       inst.draw();
 
       // replace image with the result
       inst.image.src = inst.canvas.toDataURL();
-    })
-  }
+    });
+  };
 
-  inst.whenImgLoaded = function(cb){
-    if(inst.image.complete || inst.image.naturalHeight !== 0){
-      cb()
-    }else{
+  inst.whenImgLoaded = function (cb) {
+    if (inst.image.complete || inst.image.naturalHeight !== 0) {
+      cb();
+    } else {
       //inst.image.onload = cb
-      inst.image.addEventListener('load', cb, {once:true, capture:true})
+      inst.image.addEventListener('load', cb, { once: true, capture: true });
     }
-  }
+  };
 
-  inst.initProgram = function(){
+  inst.initProgram = function () {
     var inst = this;
     // Get A WebGL context
     var canvas = inst.canvas;
     var gl = inst.getWebGLContext(canvas);
     inst.gl = gl;
-    if (!gl) {return;}
+    if (!gl) {
+      return;
+    }
 
     // Shaders
-    var vshader = "attribute vec2 a_position; \n\
+    var vshader =
+      'attribute vec2 a_position; \n\
     attribute vec2 a_texCoord; \n\
     uniform vec2 u_resolution; \n\
     uniform float u_flipY; \n\
@@ -119,9 +120,10 @@ function Chroma(elem, options){
        vec2 clipSpace = zeroToTwo - 1.0; \n\
        gl_Position = vec4(clipSpace * vec2(1, u_flipY), 0, 1); \n\
        v_texCoord = a_texCoord; \n\
-    }";
+    }';
 
-    var fshader = "precision mediump float; \n\
+    var fshader =
+      'precision mediump float; \n\
     uniform sampler2D u_image; \n\
     uniform vec2 u_textureSize; \n\
     varying vec2 v_texCoord; \n\
@@ -135,36 +137,34 @@ function Chroma(elem, options){
       }else{ \n\
         discard; \n\
       } \n\
-    }";
+    }';
 
-    var program = inst.createProgram(gl, vshader, fshader)
+    var program = inst.createProgram(gl, vshader, fshader);
     inst.program = program;
     gl.useProgram(program);
 
     // look up where the vertex data needs to go.
-    var positionLocation = gl.getAttribLocation(program, "a_position");
-    var texCoordLocation = gl.getAttribLocation(program, "a_texCoord");
+    var positionLocation = gl.getAttribLocation(program, 'a_position');
+    var texCoordLocation = gl.getAttribLocation(program, 'a_texCoord');
 
     // provide texture coordinates for the rectangle.
     var texCoordBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-        0.0,  0.0,
-        1.0,  0.0,
-        0.0,  1.0,
-        0.0,  1.0,
-        1.0,  0.0,
-        1.0,  1.0]), gl.STATIC_DRAW);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]),
+      gl.STATIC_DRAW,
+    );
     gl.enableVertexAttribArray(texCoordLocation);
     gl.vertexAttribPointer(texCoordLocation, 2, gl.FLOAT, false, 0, 0);
 
     // lookup uniforms
-    var resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+    var resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
     inst.resolutionLocation = resolutionLocation;
-    var textureSizeLocation = gl.getUniformLocation(program, "u_textureSize");
+    var textureSizeLocation = gl.getUniformLocation(program, 'u_textureSize');
     inst.textureSizeLocation = textureSizeLocation;
 
-    var flipYLocation = gl.getUniformLocation(program, "u_flipY");
+    var flipYLocation = gl.getUniformLocation(program, 'u_flipY');
     inst.flipYLocation = flipYLocation;
 
     // Create a buffer for the position of the rectangle corners.
@@ -175,10 +175,9 @@ function Chroma(elem, options){
 
     // flip is -1 for canvas 1 for framebuffer
     gl.uniform1f(inst.flipYLocation, -1);
+  };
 
-  }
-
-  inst.createAndSetupTexture = function(gl) {
+  inst.createAndSetupTexture = function (gl) {
     var texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
     // Set up texture so we can render any size image and so we are
@@ -188,23 +187,21 @@ function Chroma(elem, options){
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
     return texture;
-  }
+  };
 
-  inst.setRectangle = function(gl, x, y, width, height) {
+  inst.setRectangle = function (gl, x, y, width, height) {
     var x1 = x;
     var x2 = x + width;
     var y1 = y;
     var y2 = y + height;
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-       x1, y1,
-       x2, y1,
-       x1, y2,
-       x1, y2,
-       x2, y1,
-       x2, y2]), gl.STATIC_DRAW);
-  }
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]),
+      gl.STATIC_DRAW,
+    );
+  };
 
-  inst.setFramebuffer = function(fbo, width, height) {
+  inst.setFramebuffer = function (fbo, width, height) {
     var gl = inst.gl;
     // make this the framebuffer we are rendering to.
     gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
@@ -214,20 +211,28 @@ function Chroma(elem, options){
 
     // Tell webgl the viewport setting needed for framebuffer.
     gl.viewport(0, 0, width, height);
-  }
+  };
 
-  inst.draw = function(){
+  inst.draw = function () {
     var gl = inst.gl;
 
-    gl.uniform1f(gl.getUniformLocation(inst.program, "tolerance"), parseFloat(inst.options.tolerance));
-    gl.uniform3f(gl.getUniformLocation(inst.program, "chroma"), inst.options.chroma[0], inst.options.chroma[1], inst.options.chroma[2]);
+    gl.uniform1f(
+      gl.getUniformLocation(inst.program, 'tolerance'),
+      parseFloat(inst.options.tolerance),
+    );
+    gl.uniform3f(
+      gl.getUniformLocation(inst.program, 'chroma'),
+      inst.options.chroma[0],
+      inst.options.chroma[1],
+      inst.options.chroma[2],
+    );
 
     //gl.bindTexture(gl.TEXTURE_2D, inst.originalImageTexture);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
-  }
+  };
 
-  inst.loadShader = function(gl, shaderSource, shaderType) {    
+  inst.loadShader = function (gl, shaderSource, shaderType) {
     // Create the shader object
     var shader = gl.createShader(shaderType);
 
@@ -248,68 +253,69 @@ function Chroma(elem, options){
     }
 
     return shader;
-  }
+  };
 
-  inst.createProgram = function(gl, vertexShader, fragmentShader){
+  inst.createProgram = function (gl, vertexShader, fragmentShader) {
     var program = gl.createProgram();
-    
+
     gl.attachShader(program, inst.loadShader(gl, vertexShader, gl.VERTEX_SHADER));
     gl.attachShader(program, inst.loadShader(gl, fragmentShader, gl.FRAGMENT_SHADER));
-    
+
     gl.linkProgram(program);
 
     // Check the link status
     var linked = gl.getProgramParameter(program, gl.LINK_STATUS);
     if (!linked) {
-        // something went wrong with the link
-        var lastError = gl.getProgramInfoLog(program);
-        console.log("Error in program linking:" + lastError);
+      // something went wrong with the link
+      var lastError = gl.getProgramInfoLog(program);
+      console.log('Error in program linking:' + lastError);
 
-        gl.deleteProgram(program);
-        return null;
+      gl.deleteProgram(program);
+      return null;
     }
     return program;
-  }
+  };
 
-  inst.getWebGLContext = function(canvas, opt_attribs){
-    var names = ["experimental-webgl2", "webgl", "experimental-webgl"];
+  inst.getWebGLContext = function (canvas, opt_attribs) {
+    var names = ['experimental-webgl2', 'webgl', 'experimental-webgl'];
     var context = null;
     for (var ii = 0; ii < names.length; ++ii) {
       try {
-        if(opt_attribs){
+        if (opt_attribs) {
           opt_attribs.preserveDrawingBuffer = true;
-        }else{
-          opt_attribs = {preserveDrawingBuffer:true};
+        } else {
+          opt_attribs = { preserveDrawingBuffer: true };
         }
         context = canvas.getContext(names[ii], opt_attribs);
-      } catch(e) {}  // eslint-disable-line
+      } catch (e) {}  
       if (context) {
         break;
       }
     }
     return context;
-  }
+  };
 
-  inst.setTexture = function(textureId, unitId, samplerName){
+  inst.setTexture = function (textureId, unitId, samplerName) {
     var gl = inst.gl;
     // lookup the sampler locations.
-    if(!inst.uniLocMap){inst.uniLocMap = {}}
-    var locId = textureId+unitId+samplerName;
+    if (!inst.uniLocMap) {
+      inst.uniLocMap = {};
+    }
+    var locId = textureId + unitId + samplerName;
     inst.uniLocMap[locId] = gl.getUniformLocation(inst.program, samplerName);
-    
+
     // set which texture units to render with.
-    gl.uniform1i(inst.uniLocMap[locId], unitId);  // texture unit
+    gl.uniform1i(inst.uniLocMap[locId], unitId); // texture unit
 
     // Set each texture unit to use a particular texture.
     gl.activeTexture(gl.TEXTURE0 + unitId);
     gl.bindTexture(gl.TEXTURE_2D, inst.textures[textureId]);
     gl.activeTexture(gl.TEXTURE0);
-  }
+  };
 
   // start up
   inst.init();
-  if(inst.image){
-    inst.chromaKey(inst.image)
+  if (inst.image) {
+    inst.chromaKey(inst.image);
   }
-  
 }

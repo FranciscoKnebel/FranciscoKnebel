@@ -1,0 +1,18 @@
+# Legacy Jekyll files
+_academic/
+_experiences/
+_projects/
+_sass/
+_config.yml
+mostracinemissoes2024dia2.html
+
+# GitHub metrics SVGs
+*.svg
+
+# Claude settings
+.claude/
+
+# Build output
+dist/
+node_modules/
+.astro/

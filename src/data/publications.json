@@ -4,9 +4,7 @@
     "type": "M.Sc. Thesis",
     "venue": "PPGC · Federal University of Rio Grande do Sul",
     "year": 2024,
-    "authors": [
-      "Francisco Paiva Knebel"
-    ],
+    "authors": ["Francisco Paiva Knebel"],
     "citations": 0,
     "url": "https://lume.ufrgs.br/handle/10183/276593"
   },
@@ -44,11 +42,7 @@
     "type": "Journal Article",
     "venue": "Journal of Internet Services and Applications",
     "year": 2020,
-    "authors": [
-      "Francisco Paiva Knebel",
-      "Juliano Araujo Wickboldt",
-      "Edison Pignaton de Freitas"
-    ],
+    "authors": ["Francisco Paiva Knebel", "Juliano Araujo Wickboldt", "Edison Pignaton de Freitas"],
     "citations": 24,
     "url": "https://arxiv.org/abs/2012.06118"
   },
@@ -57,9 +51,7 @@
     "type": "B.Sc. Thesis",
     "venue": "INF · Federal University of Rio Grande do Sul",
     "year": 2020,
-    "authors": [
-      "Francisco Paiva Knebel"
-    ],
+    "authors": ["Francisco Paiva Knebel"],
     "citations": 2,
     "url": "https://lume.ufrgs.br/handle/10183/219160"
   },
@@ -68,11 +60,7 @@
     "type": "Conference",
     "venue": "ERRC · Escola Regional de Redes de Computadores",
     "year": 2020,
-    "authors": [
-      "Rafael Trevisan",
-      "Francisco Paiva Knebel",
-      "Juliano Araújo Wickboldt"
-    ],
+    "authors": ["Rafael Trevisan", "Francisco Paiva Knebel", "Juliano Araújo Wickboldt"],
     "citations": 1,
     "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187"
   }
