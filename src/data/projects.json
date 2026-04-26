@@ -12,8 +12,8 @@
   {
     "name": { "en": "UFRGS Scholarship Board", "pt": "Mural de Bolsas UFRGS" },
     "description": {
-      "en": "Web platform connecting UFRGS students with scholarship opportunities across all areas of study. Developed at IDE Junior Enterprise, the platform is now the official UFRGS scholarship hub used university-wide.",
-      "pt": "Plataforma web que conecta estudantes da UFRGS a oportunidades de bolsas em todas as áreas. Desenvolvida na IDE Empresa Júnior, hoje é o hub oficial de bolsas da universidade."
+      "en": "Web platform connecting UFRGS students with scholarship opportunities across all areas of study. Developed at IDE Junior Enterprise, the platform became the official UFRGS scholarship hub used university-wide.",
+      "pt": "Plataforma web que conecta estudantes da UFRGS a oportunidades de bolsas em todas as áreas. Desenvolvida na IDE Empresa Júnior, se tornou o hub oficial de bolsas da universidade."
     },
     "tags": ["Web", "UFRGS", "Node.js"],
     "url": "https://www.ufrgs.br/bolsas/",

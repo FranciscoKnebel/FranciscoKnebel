@@ -8,8 +8,8 @@
     "companyUrl": "https://dawntech.dev",
     "period": { "en": "2021 – Present", "pt": "2021 – Presente" },
     "location": {
-      "en": "Porto Alegre, RS · Remote",
-      "pt": "Porto Alegre, RS · Remoto"
+      "en": "Porto Alegre, RS | Remote",
+      "pt": "Porto Alegre, RS | Remoto"
     },
     "description": {
       "en": "Leading software development for enterprise clients. Responsible for architecture decisions, technical direction, and hands-on development of scalable distributed systems.",
@@ -21,44 +21,44 @@
   {
     "role": {
       "en": "Chief Information Officer",
-      "pt": "Diretor de Tecnologia (CIO)"
+      "pt": "Diretor de Tecnologia da Informação (CIO)"
     },
     "company": "Dawntech Inc.",
     "companyUrl": "https://dawntech.dev",
-    "period": { "en": "— · —", "pt": "— · —" },
-    "location": { "en": "Porto Alegre, RS · Remote", "pt": "Porto Alegre, RS · Remoto" },
+    "period": { "en": "2024 | —", "pt": "2024 | —" },
+    "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
       "en": "Served as Chief Information Officer at Dawntech, overseeing technology strategy, infrastructure, and information systems for enterprise clients.",
-      "pt": "Atuou como Diretor de Tecnologia (CIO) na Dawntech, supervisionando estratégia tecnológica, infraestrutura e sistemas de informação para clientes corporativos."
+      "pt": "Atuou como Diretor de Tecnologia da Informação (CIO) na Dawntech, supervisionando estratégia tecnológica, infraestrutura e sistemas de informação para clientes corporativos."
     },
     "tags": ["Node.js", "TypeScript", "Cloud", "Architecture", "Leadership"],
-    "current": false
+    "current": true
   },
   {
     "role": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
     "company": "Catalyst Commerce",
     "companyUrl": null,
-    "period": { "en": "— · —", "pt": "— · —" },
-    "location": { "en": "Porto Alegre, RS · Remote", "pt": "Porto Alegre, RS · Remoto" },
+    "period": { "en": "2024 | —", "pt": "2024 | —" },
+    "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
       "en": "Developed and maintained enterprise e-commerce and ERP solutions. Worked across backend systems using .NET, Java, and JavaScript with SQL and NoSQL databases in retail and ETL contexts.",
       "pt": "Desenvolveu e manteve soluções empresariais de e-commerce e ERP. Trabalhou em sistemas backend com .NET, Java e JavaScript, usando bancos de dados SQL e NoSQL em contextos de varejo e ETL."
     },
     "tags": [".NET", "JavaScript", "E-commerce", "ERP", "SQL"],
-    "current": false
+    "current": true
   },
   {
     "role": {
-      "en": "Researcher / Teaching Assistant",
-      "pt": "Pesquisador / Monitor"
+      "en": "Researcher / M.Sc. Student",
+      "pt": "Pesquisador / Aluno de Mestrado"
     },
     "company": "UFRGS",
     "companyUrl": "https://ufrgs.br",
-    "period": { "en": "— · —", "pt": "— · —" },
+    "period": { "en": "2021 | 2024", "pt": "2021 | 2024" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
-      "en": "Conducted research on Digital Twins, Cloud and Edge Computing, and Computer Networks at UFRGS. Served as Teaching Assistant supporting undergraduate courses while pursuing M.Sc. in Computer Science (concluded 2024).",
-      "pt": "Realizou pesquisa sobre Gêmeos Digitais, Computação em Nuvem e Borda e Redes de Computadores na UFRGS. Atuou como Monitor de cursos de graduação durante o Mestrado em Ciência da Computação (concluído em 2024)."
+      "en": "Conducted research on Digital Twins, Cloud and Edge Computing, and Computer Networks at UFRGS.",
+      "pt": "Realizou pesquisa sobre Gêmeos Digitais, Computação em Nuvem e Borda e Redes de Computadores na UFRGS."
     },
     "tags": ["Digital Twins", "Cloud Computing", "Computer Networks", "Research"],
     "current": false
@@ -67,7 +67,7 @@
     "role": { "en": "Software Developer", "pt": "Desenvolvedor de Software" },
     "company": "IDE Junior Enterprise",
     "companyUrl": "https://www.idejr.com.br",
-    "period": { "en": "— · —", "pt": "— · —" },
+    "period": { "en": "— | —", "pt": "— | —" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
       "en": "Contributed as programmer, project manager, and quality manager at the university's junior enterprise. Delivered web applications and custom systems for clients, including the Mural de Bolsas — the official UFRGS scholarship platform.",
