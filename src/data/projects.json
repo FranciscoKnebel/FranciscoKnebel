@@ -1,32 +1,32 @@
 [
   {
-    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
+    "name": { "en": "nginx-reverseproxy", "pt": "nginx-reverseproxy" },
     "description": {
-      "en": "Placeholder — add your projects here.",
-      "pt": "Placeholder — adicione seus projetos aqui."
+      "en": "Multidomain nginx reverse proxy setup using Node.js apps. Supports independent domain routing, app isolation, and HTTPS via Let's Encrypt.",
+      "pt": "Configuração de reverse proxy nginx multi-domínio com apps Node.js. Suporta roteamento por domínio independente, isolamento de aplicações e HTTPS via Let's Encrypt."
     },
-    "tags": ["TypeScript"],
+    "tags": ["Node.js", "Nginx", "DevOps", "JavaScript"],
     "url": null,
+    "repo": "https://github.com/FranciscoKnebel/nginx-reverseproxy"
+  },
+  {
+    "name": { "en": "UFRGS Scholarship Board", "pt": "Mural de Bolsas UFRGS" },
+    "description": {
+      "en": "Web platform connecting UFRGS students with scholarship opportunities across all areas of study. Developed at IDE Junior Enterprise, the platform is now the official UFRGS scholarship hub used university-wide.",
+      "pt": "Plataforma web que conecta estudantes da UFRGS a oportunidades de bolsas em todas as áreas. Desenvolvida na IDE Empresa Júnior, hoje é o hub oficial de bolsas da universidade."
+    },
+    "tags": ["Web", "UFRGS", "Node.js"],
+    "url": "https://www.ufrgs.br/bolsas/",
     "repo": null
   },
   {
-    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
+    "name": { "en": "ngx-translate-check", "pt": "ngx-translate-check" },
     "description": {
-      "en": "Placeholder — add your projects here.",
-      "pt": "Placeholder — adicione seus projetos aqui."
+      "en": "CLI tool to test Angular projects using ngx-translate, detecting missing and unused i18n strings across translation files.",
+      "pt": "Ferramenta CLI para testar projetos Angular com ngx-translate, detectando strings i18n faltando e não utilizadas nos arquivos de tradução."
     },
-    "tags": ["Node.js"],
+    "tags": ["TypeScript", "Angular", "i18n", "CLI", "Node.js"],
     "url": null,
-    "repo": null
-  },
-  {
-    "name": { "en": "Project Placeholder", "pt": "Projeto Placeholder" },
-    "description": {
-      "en": "Placeholder — add your projects here.",
-      "pt": "Placeholder — adicione seus projetos aqui."
-    },
-    "tags": ["Cloud"],
-    "url": null,
-    "repo": null
+    "repo": "https://github.com/FranciscoKnebel/ngx-translate-check"
   }
 ]
