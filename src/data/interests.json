@@ -1,8 +1,14 @@
 [
   { "en": "Digital Twins", "pt": "Gêmeos Digitais" },
   { "en": "Computer Networks", "pt": "Redes de Computadores" },
-  { "en": "Cloud & Edge Computing", "pt": "Computação em Nuvem e Edge" },
+  { "en": "Cloud & Edge Computing", "pt": "Computação em Nuvem e Borda" },
   { "en": "Artificial Intelligence", "pt": "Inteligência Artificial" },
   { "en": "Big Data", "pt": "Big Data" },
-  { "en": "Distributed Systems", "pt": "Sistemas Distribuídos" }
+  { "en": "Distributed Systems", "pt": "Sistemas Distribuídos" },
+  { "en": "Software Engineering", "pt": "Engenharia de Software" },
+  { "en": "Internet of Things", "pt": "Internet das Coisas" },
+  { "en": "Cyber-Physical Systems", "pt": "Sistemas Ciber-Físicos" },
+  { "en": "Real-Time Systems", "pt": "Sistemas de Tempo Real" },
+  { "en": "Security", "pt": "Segurança" },
+  { "en": "Privacy", "pt": "Privacidade" }
 ]

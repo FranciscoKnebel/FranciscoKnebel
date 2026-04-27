@@ -14,6 +14,7 @@ Proxy (if CAPTCHA blocks the run):
     https://www.scraperapi.com). If unset, runs without proxy.
 """
 
+from datetime import datetime
 import json
 import os
 import re
@@ -156,6 +157,7 @@ def main() -> None:
             "citations": pub.get("num_citations", 0),
             # Prefer existing external URL (arxiv/researchgate) over Scholar URL
             "url":       prev.get("url") or pub.get("pub_url") or None,
+            "last_sync": datetime.now().isoformat(),
         }
 
         # Drop null values for clean JSON

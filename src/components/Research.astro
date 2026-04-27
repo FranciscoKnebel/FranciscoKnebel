@@ -53,22 +53,30 @@ const typeColors: Record<string, string> = {
       </h2>
       <div class="reveal-stagger space-y-4">
         {
+          publicationsData.length > 0 && 'last_sync' in publicationsData[0] && (
+            <div class="mt-0.5 text-sm text-slate-400 dark:text-slate-500">
+              Last sync on {publicationsData[0].last_sync}
+            </div>
+          )
+        }
+
+        {
           publicationsData.map((pub) => (
             <article class="card-hover group rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50">
               <div class="flex items-start justify-between gap-4">
                 <div class="min-w-0 flex-1">
                   <div class="mb-2 flex flex-wrap items-center gap-2">
                     <span
-                      class={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ${typeColors[pub.type] ?? 'bg-slate-100 text-slate-600'}`}
+                      class={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold ${typeColors[pub.type] ?? 'bg-slate-100 text-slate-600'}`}
                     >
                       {t.publications.types[pub.type as keyof typeof t.publications.types] ??
                         pub.type}
                     </span>
-                    <span class="font-mono text-xs text-slate-400 dark:text-slate-500">
+                    <span class="inline-flex items-center rounded-md bg-slate-300 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-500">
                       {pub.year}
                     </span>
                     {'citations' in pub && (pub as { citations?: number }).citations ? (
-                      <span class="text-xs text-slate-400 dark:text-slate-500">
+                      <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-500">
                         {(pub as { citations: number }).citations} {t.publications.citations}
                       </span>
                     ) : null}
@@ -107,7 +115,7 @@ const typeColors: Record<string, string> = {
                       pub.venue
                     )}
                     {'advisor' in pub && pub.advisor && (
-                      <span class="text-slate-300 dark:text-slate-600">
+                      <span class="text-slate-500 dark:text-slate-600">
                         {' '}
                         · {t.publications.advisor}:{' '}
                         {'advisorUrl' in pub && pub.advisorUrl ? (
@@ -115,7 +123,7 @@ const typeColors: Record<string, string> = {
                             href={pub.advisorUrl as string}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="underline decoration-slate-300 underline-offset-2 transition-colors duration-150 hover:text-accent-500 hover:decoration-accent-400 dark:decoration-slate-600 dark:hover:text-accent-400"
+                            class="underline decoration-slate-300 underline-offset-2 transition-colors duration-150 hover:text-accent-400 hover:decoration-accent-400 dark:decoration-slate-600 dark:hover:text-accent-400"
                           >
                             {pub.advisor as string}
                           </a>

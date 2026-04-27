@@ -14,7 +14,7 @@ const t = ui[lang];
   <div class="mx-auto max-w-4xl px-6">
     <p class="section-heading reveal">{t.sections.projects}</p>
 
-    <div class="reveal-stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
         projectsData.map((project) => (
           <article class="card-hover flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50">
@@ -84,7 +84,9 @@ const t = ui[lang];
             {project.tags.length > 0 && (
               <div class="mt-4 flex flex-wrap gap-1.5 border-t border-slate-200 pt-4 dark:border-slate-800">
                 {project.tags.map((tag) => (
-                  <span class="tag">{tag}</span>
+                  <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-500">
+                    {tag}
+                  </span>
                 ))}
               </div>
             )}

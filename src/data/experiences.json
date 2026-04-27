@@ -1,19 +1,13 @@
 [
   {
-    "role": {
-      "en": "Lead Software Engineer",
-      "pt": "Engenheiro de Software Líder"
-    },
+    "role": { "en": "Lead Software Engineer", "pt": "Engenheiro de Software Líder" },
     "company": "Dawntech Inc.",
     "companyUrl": "https://dawntech.dev",
-    "period": { "en": "2021 – Present", "pt": "2021 – Presente" },
-    "location": {
-      "en": "Porto Alegre, RS | Remote",
-      "pt": "Porto Alegre, RS | Remoto"
-    },
+    "period": { "en": "2021 | Present", "pt": "2021 - Presente" },
+    "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
-      "en": "Leading software development for enterprise clients. Responsible for architecture decisions, technical direction, and hands-on development of scalable distributed systems.",
-      "pt": "Liderando o desenvolvimento de software para clientes corporativos. Responsável por decisões de arquitetura, direção técnica e desenvolvimento de sistemas distribuídos escaláveis."
+      "en": "Lead engineer on enterprise client projects. I make the architecture calls, set the technical direction, and still write a lot of the code for the distributed systems we ship.",
+      "pt": "Engenheiro líder em projetos de clientes corporativos. Tomo as decisões de arquitetura, defino a direção técnica e ainda boto a mão na massa no código dos sistemas distribuídos que entregamos."
     },
     "tags": ["Node.js", "TypeScript", "Cloud", "Architecture"],
     "current": true
@@ -25,40 +19,37 @@
     },
     "company": "Dawntech Inc.",
     "companyUrl": "https://dawntech.dev",
-    "period": { "en": "2024 | —", "pt": "2024 | —" },
+    "period": { "en": "2024 - Present", "pt": "2024 - Presente" },
     "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
-      "en": "Served as Chief Information Officer at Dawntech, overseeing technology strategy, infrastructure, and information systems for enterprise clients.",
-      "pt": "Atuou como Diretor de Tecnologia da Informação (CIO) na Dawntech, supervisionando estratégia tecnológica, infraestrutura e sistemas de informação para clientes corporativos."
+      "en": "CIO at Dawntech. Responsible for the company's technology strategy and infrastructure, plus the systems we run for enterprise clients.",
+      "pt": "CIO da Dawntech. Responsável pela estratégia tecnológica e pela infraestrutura da empresa, além dos sistemas que rodamos para clientes corporativos."
     },
-    "tags": ["Node.js", "TypeScript", "Cloud", "Architecture", "Leadership"],
+    "tags": ["Node.js", "TypeScript", "Python", "DevOps", "Cloud", "Architecture", "Leadership"],
     "current": true
   },
   {
     "role": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
     "company": "Catalyst Commerce",
     "companyUrl": null,
-    "period": { "en": "2024 | —", "pt": "2024 | —" },
+    "period": { "en": "2024 - Present", "pt": "2024 - Presente" },
     "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
-      "en": "Developed and maintained enterprise e-commerce and ERP solutions. Worked across backend systems using .NET, Java, and JavaScript with SQL and NoSQL databases in retail and ETL contexts.",
-      "pt": "Desenvolveu e manteve soluções empresariais de e-commerce e ERP. Trabalhou em sistemas backend com .NET, Java e JavaScript, usando bancos de dados SQL e NoSQL em contextos de varejo e ETL."
+      "en": "Backend work on enterprise e-commerce and ERP systems for retail clients. Stack is Python and JavaScript on top of SQL and NoSQL databases.",
+      "pt": "Backend em sistemas corporativos de e-commerce e ERP para clientes do varejo. A stack é Python e JavaScript em cima de bancos SQL e NoSQL."
     },
-    "tags": [".NET", "JavaScript", "E-commerce", "ERP", "SQL"],
+    "tags": ["Python", "JavaScript", "E-commerce", "ERP", "SQL", "NoSQL"],
     "current": true
   },
   {
-    "role": {
-      "en": "Researcher / M.Sc. Student",
-      "pt": "Pesquisador / Aluno de Mestrado"
-    },
+    "role": { "en": "Researcher & M.Sc. Student", "pt": "Pesquisador & Aluno de Mestrado" },
     "company": "UFRGS",
     "companyUrl": "https://ufrgs.br",
-    "period": { "en": "2021 | 2024", "pt": "2021 | 2024" },
+    "period": { "en": "2017 | 2021", "pt": "2017 | 2021" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
-      "en": "Conducted research on Digital Twins, Cloud and Edge Computing, and Computer Networks at UFRGS.",
-      "pt": "Realizou pesquisa sobre Gêmeos Digitais, Computação em Nuvem e Borda e Redes de Computadores na UFRGS."
+      "en": "Research on Digital Twins, Cloud and Edge Computing, and Computer Networks. Most of my engineering time went into JEMS3, the platform UFRGS uses to run submissions, peer reviews, and notifications for academic conferences. The work was part of the project 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'.",
+      "pt": "Pesquisa em Gêmeos Digitais, Computação em Nuvem e Borda, e Redes de Computadores. A maior parte do tempo de engenharia foi no JEMS 3, plataforma que a UFRGS usa para gerenciar submissões, revisões por pares e notificações de conferências acadêmicas. O trabalho fez parte do projeto 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'."
     },
     "tags": ["Digital Twins", "Cloud Computing", "Computer Networks", "Research"],
     "current": false
@@ -67,11 +58,11 @@
     "role": { "en": "Software Developer", "pt": "Desenvolvedor de Software" },
     "company": "IDE Junior Enterprise",
     "companyUrl": "https://www.idejr.com.br",
-    "period": { "en": "— | —", "pt": "— | —" },
+    "period": { "en": "2015 | 2018", "pt": "2015 | 2018" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
-      "en": "Contributed as programmer, project manager, and quality manager at the university's junior enterprise. Delivered web applications and custom systems for clients, including the Mural de Bolsas — the official UFRGS scholarship platform.",
-      "pt": "Atuou como programador, gerente de projetos e gerente de qualidade na empresa júnior da universidade. Entregou aplicações web e sistemas sob medida, incluindo o Mural de Bolsas — plataforma oficial de bolsas da UFRGS."
+      "en": "Wore three hats at the university's junior enterprise: programmer, project manager, and quality manager. Built web apps and custom systems for clients, including Mural de Bolsas, which UFRGS later adopted as its official scholarship platform.",
+      "pt": "Usei três chapéus na empresa júnior da universidade: programador, gerente de projetos e gerente de qualidade. Entreguei aplicações web e sistemas sob medida para clientes, incluindo o Mural de Bolsas, que a UFRGS depois adotou como plataforma oficial de bolsas."
     },
     "tags": ["JavaScript", "Node.js", "Angular", "Web Development", "PHP"],
     "current": false
