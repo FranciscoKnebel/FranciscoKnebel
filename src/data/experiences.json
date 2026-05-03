@@ -1,13 +1,13 @@
 [
   {
-    "role": { "en": "Lead Software Engineer", "pt": "Engenheiro de Software Líder" },
+    "role": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
     "company": "Dawntech Inc.",
     "companyUrl": "https://dawntech.dev",
-    "period": { "en": "2021 | Present", "pt": "2021 - Presente" },
+    "period": { "en": "2021 - Present", "pt": "2021 - Presente" },
     "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
-      "en": "Lead engineer on enterprise client projects. I make the architecture calls, set the technical direction, and still write a lot of the code for the distributed systems we ship.",
-      "pt": "Engenheiro líder em projetos de clientes corporativos. Tomo as decisões de arquitetura, defino a direção técnica e ainda boto a mão na massa no código dos sistemas distribuídos que entregamos."
+      "en": "Lead engineer on enterprise client projects. I make architecture calls, set the technical direction, and still write a lot of the code for the distributed systems we ship.",
+      "pt": "Engenheiro líder em projetos de clientes corporativos. Tomo decisões de arquitetura, defino a direção técnica e ainda boto a mão na massa no código dos sistemas distribuídos que entregamos."
     },
     "tags": ["Node.js", "TypeScript", "Cloud", "Architecture"],
     "current": true
@@ -22,8 +22,8 @@
     "period": { "en": "2024 - Present", "pt": "2024 - Presente" },
     "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
-      "en": "CIO at Dawntech. Responsible for the company's technology strategy and infrastructure, plus the systems we run for enterprise clients.",
-      "pt": "CIO da Dawntech. Responsável pela estratégia tecnológica e pela infraestrutura da empresa, além dos sistemas que rodamos para clientes corporativos."
+      "en": "CIO at Dawntech. Responsible for leading the engineering team and the company's technology strategy, plus the systems we run for enterprise clients.",
+      "pt": "CIO da Dawntech. Responsável por liderar a equipe de engenharia e a estratégia tecnológica da empresa, além dos sistemas que rodamos para clientes corporativos."
     },
     "tags": ["Node.js", "TypeScript", "Python", "DevOps", "Cloud", "Architecture", "Leadership"],
     "current": true
@@ -31,7 +31,7 @@
   {
     "role": { "en": "Software Engineer", "pt": "Engenheiro de Software" },
     "company": "Catalyst Commerce",
-    "companyUrl": null,
+    "companyUrl": "https://appcatalyst.com.br",
     "period": { "en": "2024 - Present", "pt": "2024 - Presente" },
     "location": { "en": "Porto Alegre, RS | Remote", "pt": "Porto Alegre, RS | Remoto" },
     "description": {
@@ -48,8 +48,8 @@
     "period": { "en": "2017 | 2021", "pt": "2017 | 2021" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
-      "en": "Research on Digital Twins, Cloud and Edge Computing, and Computer Networks. Most of my engineering time went into JEMS3, the platform UFRGS uses to run submissions, peer reviews, and notifications for academic conferences. The work was part of the project 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'.",
-      "pt": "Pesquisa em Gêmeos Digitais, Computação em Nuvem e Borda, e Redes de Computadores. A maior parte do tempo de engenharia foi no JEMS 3, plataforma que a UFRGS usa para gerenciar submissões, revisões por pares e notificações de conferências acadêmicas. O trabalho fez parte do projeto 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'."
+      "en": "Research on Digital Twins, Cloud and Edge Computing, and Computer Networks. Most of my engineering time went into <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">JEMS 3 (Journal and Event Management System)</a>, a platform used to manage submissions, peer reviews, and notifications for academic conferences. The work was part of the project 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'.",
+      "pt": "Pesquisa em Gêmeos Digitais, Computação em Nuvem e Borda, e Redes de Computadores. A maior parte do tempo de engenharia foi no <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">JEMS 3 (Journal and Event Management System)</a>, plataforma para gerenciar submissões, revisões por pares e notificações de conferências acadêmicas. O trabalho fez parte do projeto 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'."
     },
     "tags": ["Digital Twins", "Cloud Computing", "Computer Networks", "Research"],
     "current": false
@@ -61,8 +61,8 @@
     "period": { "en": "2015 | 2018", "pt": "2015 | 2018" },
     "location": { "en": "Porto Alegre, RS", "pt": "Porto Alegre, RS" },
     "description": {
-      "en": "Wore three hats at the university's junior enterprise: programmer, project manager, and quality manager. Built web apps and custom systems for clients, including Mural de Bolsas, which UFRGS later adopted as its official scholarship platform.",
-      "pt": "Usei três chapéus na empresa júnior da universidade: programador, gerente de projetos e gerente de qualidade. Entreguei aplicações web e sistemas sob medida para clientes, incluindo o Mural de Bolsas, que a UFRGS depois adotou como plataforma oficial de bolsas."
+      "en": "Wore three hats at the university's junior enterprise: programmer, project manager, and quality manager. Built web apps and custom systems for clients, including <a href=\"https://ufrgs.br/bolsas\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">Mural de Bolsas</a>, which UFRGS later adopted as its official scholarship platform.",
+      "pt": "Usei três chapéus na empresa júnior da universidade: programador, gerente de projetos e gerente de qualidade. Entreguei aplicações web e sistemas sob medida para clientes, incluindo o <a href=\"https://ufrgs.br/bolsas\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">Mural de Bolsas</a>, que a UFRGS depois adotou como plataforma oficial de bolsas."
     },
     "tags": ["JavaScript", "Node.js", "Angular", "Web Development", "PHP"],
     "current": false

@@ -44,7 +44,7 @@ const t = ui[lang];
                   ) : (
                     <span>{exp.company}</span>
                   )}
-                  <span class="text-slate-300 dark:text-slate-600">·</span>
+                  <span class="text-slate-300 dark:text-slate-600">-</span>
                   <span>{exp.location[lang]}</span>
                 </div>
               </div>
@@ -56,9 +56,10 @@ const t = ui[lang];
               </span>
             </div>
 
-            <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              {exp.description[lang] || (exp.placeholder ? t.experience.placeholder : '')}
-            </p>
+            <p
+              class="text-sm leading-relaxed text-slate-500 dark:text-slate-400"
+              set:html={exp.description[lang] || (exp.placeholder ? t.experience.placeholder : '')}
+            />
 
             {exp.tags.length > 0 && (
               <div class="mt-3 flex flex-wrap gap-1.5">

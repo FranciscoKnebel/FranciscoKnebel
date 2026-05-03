@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
+import socials from '../data/social.json';
 
 interface Props {
   lang: Lang;
@@ -11,22 +12,57 @@ const t = ui[lang];
 const year = new Date().getFullYear();
 ---
 
+<section
+  id="contact"
+  class="border-rule bg-paper-panel grid gap-[40px] border-b px-[32px] py-[36px]"
+  style="grid-template-columns: 1fr 1fr;"
+>
+  <div>
+    <div class="text-[10px] tracking-[0.1em]" style="color: var(--accent);">
+      {t.contact.label}
+    </div>
+    <h3
+      class="font-display m-0 mb-[8px] mt-[12px] font-normal leading-none tracking-[-0.02em]"
+      style="font-size: 44px;"
+    >
+      <a href="mailto:contato@franciscoknebel.com" class="wavy text-ink"
+        >contato@franciscoknebel.com</a
+      >
+    </h3>
+    <p
+      class="font-display text-ink-soft m-0 mb-[16px] max-w-[380px] text-[16px] italic leading-[1.4]"
+    >
+      {t.contact.blurb}
+    </p>
+  </div>
+  <div>
+    <div class="text-ink-soft mb-[8px] text-[10px] uppercase tracking-[0.1em]">
+      {t.contact.elsewhere}
+    </div>
+    {
+      socials.map((s) => (
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener"
+          class="row-hi border-rule grid items-baseline gap-[8px] border-b py-[8px]"
+          style="grid-template-columns: 110px 1fr 14px; text-decoration: none; color: var(--ink);"
+        >
+          <span class="text-ink-soft text-[10px] uppercase tracking-[0.06em]">{s.label}</span>
+          <span class="font-mono text-[12px]">{s.value}</span>
+          <span class="text-ink-faint text-[11px]">↗</span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
 <footer class="border-t border-slate-100 py-10 dark:border-slate-800/60">
   <div
     class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 px-6 text-xs text-slate-400 sm:flex-row dark:text-slate-500"
   >
     <span>© {year} Francisco Knebel</span>
     <span class="flex items-center gap-1.5">
-      {t.footer.builtWith}
-      <a
-        href="https://astro.build"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2 transition-colors duration-150 hover:text-accent-500 dark:hover:text-accent-400"
-      >
-        Astro
-      </a>
-      ·
       <a
         href="https://github.com/FranciscoKnebel/FranciscoKnebel"
         target="_blank"
