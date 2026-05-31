@@ -1,5 +1,9 @@
 {
   "en": {
+    "meta": {
+      "title": "Francisco Knebel",
+      "description": "Lead Software Engineer & M.Sc. Computer Science. Building enterprise software at Dawntech. Researching Digital Twins and Computer Networks at UFRGS."
+    },
     "nav": {
       "experience": "Experience",
       "research": "Research",
@@ -50,11 +54,14 @@
       "citations": "citations"
     },
     "footer": {
-      "builtWith": "Built with",
       "source": "Source"
     }
   },
   "pt": {
+    "meta": {
+      "title": "Francisco Knebel",
+      "description": "Engenheiro de Software Líder & M.Sc. em Ciência da Computação. Desenvolvendo software na Dawntech. Pesquisando Gêmeos Digitais e Redes de Computadores na UFRGS."
+    },
     "nav": {
       "experience": "Experiência",
       "research": "Pesquisa",
@@ -105,7 +112,6 @@
       "citations": "citações"
     },
     "footer": {
-      "builtWith": "Desenvolvido com",
       "source": "Código-fonte"
     }
   }

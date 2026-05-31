@@ -1,15 +1,20 @@
 ---
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+
 interface Props {
-  title?: string;
-  description?: string;
-  lang?: string;
+  lang: Lang;
 }
 
-const {
-  title = 'Francisco Knebel',
-  description = 'Lead Software Engineer & M.Sc. Computer Science. Building enterprise software at Dawntech. Researching Digital Twins and Computer Networks at UFRGS.',
-  lang = 'en',
-} = Astro.props;
+const { lang } = Astro.props;
+const { title, description } = ui[lang].meta;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const alternates = [
+  { hreflang: 'en', href: new URL('/', Astro.site).href },
+  { hreflang: 'pt', href: new URL('/pt/', Astro.site).href },
+  { hreflang: 'x-default', href: new URL('/', Astro.site).href },
+];
 ---
 
 <!doctype html>
@@ -22,9 +27,11 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://franciscoknebel.com" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'pt' ? 'pt_BR' : 'en_US'} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://franciscoknebel.com" />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
     <title>{title}</title>
 
     <!-- Google Analytics -->

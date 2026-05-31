@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '../types';
+import type { Lang, Publication } from '../types';
 import ui from '../data/ui.json';
 import rawPublications from '../data/publications.json';
 import publicationsMeta from '../data/publications-meta.json';
@@ -12,8 +12,8 @@ const { lang } = Astro.props;
 const t = ui[lang];
 
 const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, ' ');
-const meta = publicationsMeta as Record<string, Record<string, unknown>>;
-const publicationsData = rawPublications.map((pub) => ({
+const meta: Record<string, Partial<Publication>> = publicationsMeta;
+const publicationsData: Publication[] = rawPublications.map((pub) => ({
   ...pub,
   ...(meta[normalize(pub.title)] ?? {}),
 }));
@@ -53,14 +53,6 @@ const typeColors: Record<string, string> = {
       </h2>
       <div class="reveal-stagger space-y-4">
         {
-          publicationsData.length > 0 && 'last_sync' in publicationsData[0] && (
-            <div class="mt-0.5 text-sm text-slate-400 dark:text-slate-500">
-              Last sync on {publicationsData[0].last_sync}
-            </div>
-          )
-        }
-
-        {
           publicationsData.map((pub) => (
             <article class="card-hover group rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50">
               <div class="flex items-start justify-between gap-4">
@@ -75,9 +67,9 @@ const typeColors: Record<string, string> = {
                     <span class="inline-flex items-center rounded-md bg-slate-300 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-500">
                       {pub.year}
                     </span>
-                    {'citations' in pub && (pub as { citations?: number }).citations ? (
+                    {pub.citations ? (
                       <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-500">
-                        {(pub as { citations: number }).citations} {t.publications.citations}
+                        {pub.citations} {t.publications.citations}
                       </span>
                     ) : null}
                   </div>
@@ -102,7 +94,7 @@ const typeColors: Record<string, string> = {
                   </p>
 
                   <p class="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
-                    {'venueUrl' in pub && pub.venueUrl ? (
+                    {pub.venueUrl ? (
                       <a
                         href={pub.venueUrl}
                         target="_blank"
@@ -114,21 +106,21 @@ const typeColors: Record<string, string> = {
                     ) : (
                       pub.venue
                     )}
-                    {'advisor' in pub && pub.advisor && (
+                    {pub.advisor && (
                       <span class="text-slate-500 dark:text-slate-600">
                         {' '}
                         · {t.publications.advisor}:{' '}
-                        {'advisorUrl' in pub && pub.advisorUrl ? (
+                        {pub.advisorUrl ? (
                           <a
-                            href={pub.advisorUrl as string}
+                            href={pub.advisorUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             class="underline decoration-slate-300 underline-offset-2 transition-colors duration-150 hover:text-accent-400 hover:decoration-accent-400 dark:decoration-slate-600 dark:hover:text-accent-400"
                           >
-                            {pub.advisor as string}
+                            {pub.advisor}
                           </a>
                         ) : (
-                          (pub.advisor as string)
+                          pub.advisor
                         )}
                       </span>
                     )}
