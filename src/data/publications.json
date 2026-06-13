@@ -8,7 +8,8 @@
       "Francisco Paiva Knebel"
     ],
     "citations": 0,
-    "url": "https://lume.ufrgs.br/handle/10183/276593"
+    "url": "https://lume.ufrgs.br/handle/10183/276593",
+    "last_sync": "2026-06-13T09:58:11.131139"
   },
   {
     "title": "A study on cloud and edge computing for the implementation of digital twins in the oil & gas industries",
@@ -22,8 +23,9 @@
       "Mara Abel",
       "Juliano Araujo Wickboldt"
     ],
-    "citations": 94,
-    "url": "https://www.researchgate.net/publication/371336015"
+    "citations": 104,
+    "url": "https://www.researchgate.net/publication/371336015",
+    "last_sync": "2026-06-13T09:57:59.094039"
   },
   {
     "title": "Aquisição de Dados Escalável e Ciente da Aplicação para Gêmeos Digitais",
@@ -37,7 +39,8 @@
       "Mara Abel"
     ],
     "citations": 0,
-    "url": "https://sol.sbc.org.br/index.php/wgrs/article/view/21477"
+    "url": "https://sol.sbc.org.br/index.php/wgrs/article/view/21477",
+    "last_sync": "2026-06-13T09:58:14.134048"
   },
   {
     "title": "A Cloud-Fog Computing Architecture for Real-Time Digital Twins",
@@ -49,8 +52,9 @@
       "Juliano Araujo Wickboldt",
       "Edison Pignaton de Freitas"
     ],
-    "citations": 24,
-    "url": "https://arxiv.org/abs/2012.06118"
+    "citations": 27,
+    "url": "https://arxiv.org/abs/2012.06118",
+    "last_sync": "2026-06-13T09:58:01.710558"
   },
   {
     "title": "An open Digital Twin framework based on microservices in the cloud",
@@ -61,7 +65,8 @@
       "Francisco Paiva Knebel"
     ],
     "citations": 2,
-    "url": "https://lume.ufrgs.br/handle/10183/219160"
+    "url": "https://lume.ufrgs.br/handle/10183/219160",
+    "last_sync": "2026-06-13T09:58:04.462380"
   },
   {
     "title": "Uma Avaliação do uso de MQTT para a Implementação de Digital Twins",
@@ -74,6 +79,7 @@
       "Juliano Araújo Wickboldt"
     ],
     "citations": 1,
-    "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187"
+    "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187",
+    "last_sync": "2026-06-13T09:58:07.779708"
   }
 ]
