@@ -13,8 +13,10 @@ const t = ui[lang];
   <div class="mx-auto max-w-6xl px-6">
     <p class="section-heading reveal">{t.sections.stats}</p>
 
-    <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-      <div class="col-span-3 overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900/50">
+    <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 md:grid-cols-5">
+      <div
+        class="col-span-5 overflow-hidden rounded-xl bg-slate-50 md:col-span-5 dark:bg-slate-900/50"
+      >
         <img
           src="/github-metrics.svg"
           alt="GitHub metrics overview"
@@ -23,7 +25,9 @@ const t = ui[lang];
           decoding="async"
         />
       </div>
-      <div class="col-span-1 overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900/50">
+      <div
+        class="col-span-5 overflow-hidden rounded-xl bg-slate-50 md:col-span-2 dark:bg-slate-900/50"
+      >
         <img
           src="/metrics.plugin.languages.indepth.svg"
           alt="Most used languages"
@@ -32,7 +36,9 @@ const t = ui[lang];
           decoding="async"
         />
       </div>
-      <div class="overflow-hidden rounded-xl bg-slate-50 md:col-span-2 dark:bg-slate-900/50">
+      <div
+        class="col-span-5 overflow-hidden rounded-xl bg-slate-50 md:col-span-3 dark:bg-slate-900/50"
+      >
         <img
           src="https://raw.githubusercontent.com/FranciscoKnebel/FranciscoKnebel/main/profile-3d-contrib/profile-gitblock.svg"
           alt="3D GitHub contribution calendar"
@@ -41,7 +47,9 @@ const t = ui[lang];
           decoding="async"
         />
       </div>
-      <div class="overflow-hidden rounded-xl bg-slate-50 md:col-span-2 dark:bg-slate-900/50">
+      <div
+        class="col-span-3 col-start-2 overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900/50"
+      >
         <img
           src="/metrics.plugin.calendar.svg"
           alt="GitHub contribution calendar"

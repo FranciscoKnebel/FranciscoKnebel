@@ -18,11 +18,22 @@ concurrency:
 jobs:
   metrics:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
+    name: generate-metrics
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Base Summary
+        uses: lowlighter/metrics@latest
+        with:
+          filename: github-metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base_indepth: yes
+          repositories: 400
+          repositories_affiliations: owner, collaborator, organization_member
 
       - name: Calendar
         uses: lowlighter/metrics@latest
@@ -33,13 +44,31 @@ jobs:
           plugin_calendar: yes
           plugin_calendar_limit: 0
 
+      - name: Indepth analysis
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.languages.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ''
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, bytes-size
+          plugin_languages_limit: 4
+          plugin_languages_analysis_timeout: 15
+
   metrics-3d:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
+    name: generate-metrics-3d
+    needs: metrics
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - uses: yoshi389111/github-profile-3d-contrib@latest
         env:
@@ -57,8 +86,11 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: [metrics, metrics-3d]
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - uses: actions/setup-node@v6
         with:
