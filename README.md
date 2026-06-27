@@ -5,7 +5,8 @@ Coding professionally since 2014 in enterprise-grade software development.
 
 Currently working at [Dawntech Inc.](https://dawntech.dev/).
 
-📫 [franciscopaivaknebel@gmail.com](mailto:franciscopaivaknebel@gmail.com) - 🌐 [franciscoknebel.com](https://franciscoknebel.com)
+For personal contact, see 🌐 [franciscoknebel.com](https://franciscoknebel.com).
+For business, see 💼 [knebel.inf.br](https://knebel.inf.br)
 
 ---
 
@@ -59,6 +60,7 @@ Currently working at [Dawntech Inc.](https://dawntech.dev/).
 ## Links
 
 [![Website](static/website.png)](https://franciscoknebel.com)
+[![Company Website](static/website.png)](https://knebel.inf.br)
 [![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/)
 [![GitHub](static/github.png)](https://github.com/FranciscoKnebel)
 [![Lattes](static/lattes.png)](http://lattes.cnpq.br/5190590589102587)
