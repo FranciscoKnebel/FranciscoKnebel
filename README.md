@@ -47,19 +47,17 @@ For business, see 💼 [knebel.inf.br](https://knebel.inf.br)
 
 <img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=FranciscoKnebel&theme=github" style="max-width:100%" alt="GitHub profile summary"/>
 
-<img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=FranciscoKnebel&theme=github" style="max-width:100%" alt="GitHub stats summary"/>
-
 <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=FranciscoKnebel&layout=compact&langs_count=8&hide=html,css,tex,less,dockerfile,makefile,qmake,lex,cmake,shell,gnuplot&theme=transparent" style="max-width:100%" alt="Most used languages"/>
 
 <img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=FranciscoKnebel&theme=github&exclude=html,css,tex,less,dockerfile,makefile,qmake,lex,cmake,shell,gnuplot" style="max-width:100%" alt="Repositories per language"/>
-
-<img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=FranciscoKnebel&theme=github&exclude=html,css,tex,less,dockerfile,makefile,qmake,lex,cmake,shell,gnuplot" style="max-width:100%" alt="Most committed languages"/>
 
 ## Contributions
 
 <img align="center" src="https://streak-stats.demolab.com/?user=FranciscoKnebel&theme=default&disable_animations=true" style="max-width:100%" alt="GitHub contribution streak"/>
 
 <img align="center" src="./profile-3d-contrib/profile-gitblock.svg" style="max-width:100%" alt="GitHub contribution calendar"/>
+
+<img align="center" src="metrics.plugin.calendar.svg" style="max-width:100%"/>
 
 ---
 
