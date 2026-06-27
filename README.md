@@ -59,7 +59,7 @@ For business, see 💼 [knebel.inf.br](https://knebel.inf.br)
 
 <img align="center" src="https://streak-stats.demolab.com/?user=FranciscoKnebel&theme=default&disable_animations=true" style="max-width:100%" alt="GitHub contribution streak"/>
 
-<img align="center" src="./profile-gitblock.svg" style="max-width:100%" alt="GitHub contribution calendar"/>
+<img align="center" src="./profile-3d-contrib/profile-gitblock.svg" style="max-width:100%" alt="GitHub contribution calendar"/>
 
 ---
 
