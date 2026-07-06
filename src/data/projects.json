@@ -28,5 +28,15 @@
     "tags": ["TypeScript", "Angular", "i18n", "CLI", "Node.js"],
     "url": null,
     "repo": "https://github.com/FranciscoKnebel/ngx-translate-check"
+  },
+  {
+    "name": { "en": "gnome-provider-limits", "pt": "gnome-provider-limits" },
+    "description": {
+      "en": "GNOME Shell extension that displays session and weekly rate limits for AI coding CLIs (Codex, Claude, OpenCode) in the top bar. Reads local status files directly, with no need to run CLI commands or open browser dashboards.",
+      "pt": "Extensão do GNOME Shell que exibe limites de sessão e semanais para CLIs de IA (Codex, Claude, OpenCode) na barra superior. Lê arquivos locais de status diretamente, sem precisar rodar comandos CLI ou abrir dashboards no navegador."
+    },
+    "tags": ["TypeScript", "GNOME", "AI", "Extension"],
+    "url": "https://gnome-provider-limits.franciscoknebel.com/",
+    "repo": "https://github.com/FranciscoKnebel/gnome-provider-limits"
   }
 ]
