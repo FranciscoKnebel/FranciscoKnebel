@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 import { copyFileSync, existsSync, readFileSync } from 'fs';
 
 // Root-level metric SVGs served in dev and copied to dist in build
@@ -33,8 +33,8 @@ const metricsPlugin = {
 
 export default defineConfig({
   site: 'https://franciscoknebel.com',
-  integrations: [tailwind(), sitemap()],
-  vite: { plugins: [metricsPlugin] },
+  integrations: [sitemap()],
+  vite: { plugins: [tailwindcss(), metricsPlugin] },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'pt'],
