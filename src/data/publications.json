@@ -9,7 +9,7 @@
     ],
     "citations": 0,
     "url": "https://lume.ufrgs.br/handle/10183/276593",
-    "last_sync": "2026-07-11T10:07:22.350350"
+    "last_sync": "2026-07-18T10:05:33.904034"
   },
   {
     "title": "A study on cloud and edge computing for the implementation of digital twins in the oil & gas industries",
@@ -23,9 +23,9 @@
       "Mara Abel",
       "Juliano Araujo Wickboldt"
     ],
-    "citations": 107,
+    "citations": 109,
     "url": "https://www.researchgate.net/publication/371336015",
-    "last_sync": "2026-07-11T10:07:09.847518"
+    "last_sync": "2026-07-18T10:05:21.511294"
   },
   {
     "title": "Aquisição de Dados Escalável e Ciente da Aplicação para Gêmeos Digitais",
@@ -40,7 +40,7 @@
     ],
     "citations": 0,
     "url": "https://sol.sbc.org.br/index.php/wgrs/article/view/21477",
-    "last_sync": "2026-07-11T10:07:25.640861"
+    "last_sync": "2026-07-18T10:05:37.002789"
   },
   {
     "title": "A Cloud-Fog Computing Architecture for Real-Time Digital Twins",
@@ -54,7 +54,7 @@
     ],
     "citations": 28,
     "url": "https://arxiv.org/abs/2012.06118",
-    "last_sync": "2026-07-11T10:07:13.325028"
+    "last_sync": "2026-07-18T10:05:24.359203"
   },
   {
     "title": "An open Digital Twin framework based on microservices in the cloud",
@@ -66,7 +66,7 @@
     ],
     "citations": 2,
     "url": "https://lume.ufrgs.br/handle/10183/219160",
-    "last_sync": "2026-07-11T10:07:16.745086"
+    "last_sync": "2026-07-18T10:05:27.468237"
   },
   {
     "title": "Uma Avaliação do uso de MQTT para a Implementação de Digital Twins",
@@ -80,6 +80,6 @@
     ],
     "citations": 1,
     "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187",
-    "last_sync": "2026-07-11T10:07:19.515924"
+    "last_sync": "2026-07-18T10:05:30.869867"
   }
 ]
