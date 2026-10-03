@@ -168,14 +168,17 @@ const links = [
     toggle?.setAttribute('aria-expanded', 'true');
     iconOpen?.classList.add('hidden');
     iconClose?.classList.remove('hidden');
+    const firstLink = menu?.querySelector('a');
+    if (firstLink instanceof HTMLElement) firstLink.focus();
   }
 
-  function closeMenu() {
+  function closeMenu(refocus = false) {
     menu?.classList.add('hidden');
     menu?.setAttribute('aria-hidden', 'true');
     toggle?.setAttribute('aria-expanded', 'false');
     iconOpen?.classList.remove('hidden');
     iconClose?.classList.add('hidden');
+    if (refocus) toggle?.focus();
   }
 
   toggle?.addEventListener('click', () => {
@@ -184,12 +187,34 @@ const links = [
 
   // Close when a link is tapped
   document.querySelectorAll('.mobile-menu-link').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', () => closeMenu());
   });
 
   // Close on outside tap
   document.addEventListener('click', (e) => {
     const header = document.querySelector('header');
     if (header && !header.contains(e.target as Node)) closeMenu();
+  });
+
+  // Close on Escape and keep focus inside the menu while it is open
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu && !menu.classList.contains('hidden')) {
+      closeMenu(true);
+    }
+  });
+
+  menu?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || menu.classList.contains('hidden')) return;
+    const links = Array.from(menu.querySelectorAll('a')) as HTMLElement[];
+    if (links.length === 0) return;
+    const first = links[0];
+    const last = links[links.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
 </script>
