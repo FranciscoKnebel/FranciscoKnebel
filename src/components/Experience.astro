@@ -10,9 +10,13 @@ const { lang } = Astro.props;
 const t = ui[lang];
 ---
 
-<section id="experience" class="border-t border-slate-100 py-24 dark:border-slate-800/60">
+<section
+  id="experience"
+  class="border-t border-slate-100 py-24 dark:border-slate-800/60"
+  aria-labelledby="experience-heading"
+>
   <div class="mx-auto max-w-6xl px-6">
-    <p class="section-heading reveal">{t.sections.experience}</p>
+    <h2 id="experience-heading" class="section-heading reveal">{t.sections.experience}</h2>
 
     <div class="reveal-stagger mt-8 space-y-8">
       {
@@ -48,7 +52,7 @@ const t = ui[lang];
                   <span>{exp.location[lang]}</span>
                 </div>
               </div>
-              <span class="mt-0.5 font-mono text-xs whitespace-nowrap text-slate-400 sm:mt-1 dark:text-slate-500">
+              <span class="mt-0.5 font-mono text-xs whitespace-nowrap text-slate-500 sm:mt-1 dark:text-slate-400">
                 {exp.period[lang]}
                 {exp.current && (
                   <span class="bg-accent-500 dark:bg-accent-400 ml-2 inline-block h-1.5 w-1.5 rounded-full align-middle" />
@@ -64,7 +68,7 @@ const t = ui[lang];
             {exp.tags.length > 0 && (
               <div class="mt-3 flex flex-wrap gap-1.5">
                 {exp.tags.map((tag) => (
-                  <span class="tag inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs font-medium dark:bg-slate-800">
+                  <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                     {tag}
                   </span>
                 ))}

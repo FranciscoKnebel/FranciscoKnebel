@@ -112,18 +112,17 @@ html {
   transform: scale(0.97);
 }
 
-/* Tag pill */
-.tag {
-  @apply bg-accent-50 text-accent-600 dark:text-accent-400 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium dark:bg-slate-800;
-}
-
 /* Section heading */
 .section-heading {
-  @apply mb-8 text-xs font-semibold tracking-widest text-slate-400 uppercase dark:text-slate-500;
+  @apply mb-8 text-xs font-semibold tracking-widest text-slate-500 uppercase dark:text-slate-400;
 }
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal,
   .reveal-stagger > * {
     opacity: 1;
