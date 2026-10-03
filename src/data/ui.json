@@ -61,6 +61,7 @@
       "allPublications": "See all publications",
       "projects": "Projects",
       "moreProjects": "More on",
+      "caseStudies": "Case studies",
       "community": "Community",
       "stats": "GitHub Stats"
     },
@@ -95,6 +96,12 @@
       "back": "Back to projects",
       "repo": "Repository",
       "live": "Live site"
+    },
+    "caseStudiesPage": {
+      "title": "Case studies",
+      "description": "Longer write-ups on the engineering decisions behind projects and research.",
+      "comingSoon": "Coming soon",
+      "back": "Back to case studies"
     },
     "footer": {
       "source": "Source"
@@ -162,6 +169,7 @@
       "allPublications": "Ver todas as publicações",
       "projects": "Projetos",
       "moreProjects": "Mais em",
+      "caseStudies": "Estudos de caso",
       "community": "Comunidade",
       "stats": "Estatísticas GitHub"
     },
@@ -196,6 +204,12 @@
       "back": "Voltar para projetos",
       "repo": "Repositório",
       "live": "Site"
+    },
+    "caseStudiesPage": {
+      "title": "Estudos de caso",
+      "description": "Textos mais longos sobre as decisões de engenharia por trás dos projetos e da pesquisa.",
+      "comingSoon": "Em breve",
+      "back": "Voltar para os estudos de caso"
     },
     "footer": {
       "source": "Código-fonte"

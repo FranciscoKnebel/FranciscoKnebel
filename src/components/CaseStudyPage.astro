@@ -1,0 +1,64 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  entry: CollectionEntry<'caseStudies'>;
+  lang: Lang;
+}
+const { entry, lang } = Astro.props;
+const t = ui[lang];
+const { Content } = await render(entry);
+
+const backUrl = lang === 'pt' ? '/pt/case-studies/' : '/case-studies/';
+---
+
+<Nav lang={lang} />
+<main class="pt-14">
+  <article class="border-t border-slate-100 py-20 dark:border-slate-800/60">
+    <div class="mx-auto max-w-3xl px-6">
+      <a
+        href={backUrl}
+        class="text-accent-600 hover:text-accent-500 dark:text-accent-400 inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150"
+      >
+        <span aria-hidden="true">←</span>
+        {t.caseStudiesPage.back}
+      </a>
+
+      {
+        entry.data.status === 'planned' && (
+          <p class="mt-6 inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+            {t.caseStudiesPage.comingSoon}
+          </p>
+        )
+      }
+
+      <h1
+        class="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50"
+      >
+        {entry.data.title}
+      </h1>
+      <p class="mt-3 text-base leading-relaxed text-slate-500 dark:text-slate-400">
+        {entry.data.description}
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-1.5">
+        {
+          entry.data.topics.map((topic) => (
+            <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              {topic}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="prose prose-slate dark:prose-invert mt-10 max-w-none">
+        <Content />
+      </div>
+    </div>
+  </article>
+</main>
+<Footer lang={lang} />
