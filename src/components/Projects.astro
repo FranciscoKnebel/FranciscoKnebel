@@ -1,13 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
-import projectsData from '../data/projects.json';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = ui[lang];
+
+const entries = (await getCollection('projects', ({ data }) => data.lang === lang)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const projects = entries.map((entry) => ({
+  slug: entry.id.split('/')[1],
+  ...entry.data,
+}));
+const projectHref = (slug: string) => `${lang === 'pt' ? '/pt' : ''}/projects/${slug}/`;
 ---
 
 <section
@@ -20,7 +29,7 @@ const t = ui[lang];
 
     <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
-        projectsData.map((project) => (
+        projects.map((project) => (
           <article class="card-hover flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50">
             <div class="mb-3 flex items-start justify-between">
               <svg
@@ -43,7 +52,7 @@ const t = ui[lang];
                     href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Repository"
+                    aria-label={t.projectsPage.repo}
                     class="focus-visible:ring-accent-500 rounded text-slate-300 transition-colors duration-150 hover:text-slate-600 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-600 dark:hover:text-slate-300"
                   >
                     <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -56,7 +65,7 @@ const t = ui[lang];
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Live site"
+                    aria-label={t.projectsPage.live}
                     class="focus-visible:ring-accent-500 rounded text-slate-300 transition-colors duration-150 hover:text-slate-600 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-600 dark:hover:text-slate-300"
                   >
                     <svg
@@ -79,10 +88,15 @@ const t = ui[lang];
             </div>
 
             <h3 class="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
-              {project.name[lang]}
+              <a
+                href={projectHref(project.slug)}
+                class="hover:text-accent-600 focus-visible:ring-accent-500 dark:hover:text-accent-400 rounded underline-offset-2 transition-colors duration-150 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+              >
+                {project.title}
+              </a>
             </h3>
             <p class="flex-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              {project.description[lang]}
+              {project.description}
             </p>
 
             {project.tags.length > 0 && (
