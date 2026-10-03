@@ -9,12 +9,19 @@
       "research": "Research",
       "projects": "Projects",
       "community": "Community",
-      "stats": "Stats"
+      "stats": "Stats",
+      "contact": "Contact"
+    },
+    "a11y": {
+      "skipToContent": "Skip to content",
+      "mainNavigation": "Main navigation",
+      "menuToggle": "Toggle menu"
     },
     "hero": {
       "greeting": "Hello, I'm",
       "role": "Software Engineer",
       "degree": "M.Sc. Computer Science",
+      "cta": "Get in touch",
       "bio": "Computer Engineer at <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">UFRGS</a> and software professional since 2014. Currently working at <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">Dawntech</a>. Researcher in Digital Twins and Computer Networks in Brazil.",
       "stats": [
         {
@@ -75,12 +82,19 @@
       "research": "Pesquisa",
       "projects": "Projetos",
       "community": "Comunidade",
-      "stats": "Estatísticas"
+      "stats": "Estatísticas",
+      "contact": "Contato"
+    },
+    "a11y": {
+      "skipToContent": "Pular para o conteúdo",
+      "mainNavigation": "Navegação principal",
+      "menuToggle": "Abrir e fechar o menu"
     },
     "hero": {
       "greeting": "Olá, eu sou",
       "role": "Engenheiro de Software",
       "degree": "M.Sc. em Ciência da Computação",
+      "cta": "Fale comigo",
       "bio": "Engenheiro de Computação pela <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">UFRGS</a> e profissional de software desde 2014. Atualmente trabalhando na <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"text-slate-700 dark:text-slate-300 underline underline-offset-2 decoration-slate-300 dark:decoration-slate-600 hover:decoration-accent-400 transition-colors duration-150\">Dawntech</a>. Pesquisador em Gêmeos Digitais e Redes de Computadores no Brasil.",
       "stats": [
         {
