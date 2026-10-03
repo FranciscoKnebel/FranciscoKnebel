@@ -37,7 +37,14 @@ const metricsPlugin = {
 
 export default defineConfig({
   site: 'https://franciscoknebel.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: { en: 'en', pt: 'pt' },
+      },
+    }),
+  ],
   vite: { plugins: [tailwindcss(), metricsPlugin] },
   i18n: {
     defaultLocale: 'en',
