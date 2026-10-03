@@ -1,0 +1,86 @@
+---
+import type { Lang } from '../types';
+import ui from '../data/ui.json';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<div
+  id="analytics-consent"
+  role="region"
+  aria-label={t.consent.title}
+  class="fixed inset-x-0 bottom-0 z-50 hidden px-4 pb-4"
+>
+  <div
+    class="mx-auto flex max-w-2xl flex-col gap-3 rounded-xl border border-slate-200 bg-white/95 p-4 shadow-lg backdrop-blur-md sm:flex-row sm:items-center dark:border-slate-800 dark:bg-slate-900/95"
+  >
+    <p class="flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+      {t.consent.message}
+    </p>
+    <div class="flex flex-shrink-0 items-center gap-2">
+      <button
+        id="analytics-decline"
+        type="button"
+        class="btn focus-visible:ring-accent-500 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-150 hover:border-slate-300 hover:text-slate-800 focus-visible:ring-2 focus-visible:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-600 dark:hover:text-slate-100"
+      >
+        {t.consent.decline}
+      </button>
+      <button
+        id="analytics-accept"
+        type="button"
+        class="btn bg-accent-600 hover:bg-accent-500 focus-visible:ring-accent-500 px-3 py-2 text-sm font-medium text-white transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none"
+      >
+        {t.consent.accept}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const GA_ID = 'G-80D0XB0GGG';
+  const STORAGE_KEY = 'analytics-consent';
+  const banner = document.getElementById('analytics-consent');
+
+  function loadAnalytics() {
+    if (document.getElementById('ga-script')) return;
+    const script = document.createElement('script');
+    script.id = 'ga-script';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function (...args: unknown[]) {
+      window.dataLayer.push(args);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+  function setChoice(choice: 'granted' | 'denied') {
+    localStorage.setItem(STORAGE_KEY, choice);
+    banner?.classList.add('hidden');
+    if (choice === 'granted') loadAnalytics();
+  }
+
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === 'granted') {
+    loadAnalytics();
+  } else if (stored !== 'denied') {
+    banner?.classList.remove('hidden');
+  }
+
+  document
+    .getElementById('analytics-accept')
+    ?.addEventListener('click', () => setChoice('granted'));
+  document
+    .getElementById('analytics-decline')
+    ?.addEventListener('click', () => setChoice('denied'));
+  document.getElementById('analytics-settings')?.addEventListener('click', () => {
+    localStorage.removeItem(STORAGE_KEY);
+    banner?.classList.remove('hidden');
+  });
+</script>
