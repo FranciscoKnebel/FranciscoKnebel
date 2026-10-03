@@ -37,7 +37,7 @@ const t = ui[lang];
                       href={exp.companyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-accent-600 underline-offset-2 transition-colors duration-150 hover:underline dark:text-accent-400"
+                      class="text-accent-600 dark:text-accent-400 underline-offset-2 transition-colors duration-150 hover:underline"
                     >
                       {exp.company}
                     </a>
@@ -48,10 +48,10 @@ const t = ui[lang];
                   <span>{exp.location[lang]}</span>
                 </div>
               </div>
-              <span class="mt-0.5 whitespace-nowrap font-mono text-xs text-slate-400 sm:mt-1 dark:text-slate-500">
+              <span class="mt-0.5 font-mono text-xs whitespace-nowrap text-slate-400 sm:mt-1 dark:text-slate-500">
                 {exp.period[lang]}
                 {exp.current && (
-                  <span class="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-accent-500 align-middle dark:bg-accent-400" />
+                  <span class="bg-accent-500 dark:bg-accent-400 ml-2 inline-block h-1.5 w-1.5 rounded-full align-middle" />
                 )}
               </span>
             </div>
