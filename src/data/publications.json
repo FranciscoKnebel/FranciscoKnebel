@@ -4,9 +4,7 @@
     "type": "M.Sc. Thesis",
     "venue": "UFRGS, 2024",
     "year": 2024,
-    "authors": [
-      "Francisco Paiva Knebel"
-    ],
+    "authors": ["Francisco Paiva Knebel"],
     "citations": 0,
     "url": "https://lume.ufrgs.br/handle/10183/276593",
     "last_sync": "2026-07-18T10:05:33.904034"
@@ -47,11 +45,7 @@
     "type": "Journal Article",
     "venue": "arXiv preprint arXiv:2012.06118",
     "year": 2020,
-    "authors": [
-      "Francisco Paiva Knebel",
-      "Juliano Araujo Wickboldt",
-      "Edison Pignaton de Freitas"
-    ],
+    "authors": ["Francisco Paiva Knebel", "Juliano Araujo Wickboldt", "Edison Pignaton de Freitas"],
     "citations": 28,
     "url": "https://arxiv.org/abs/2012.06118",
     "last_sync": "2026-07-18T10:05:24.359203"
@@ -61,9 +55,7 @@
     "type": "B.Sc. Thesis",
     "venue": "INF · Federal University of Rio Grande do Sul",
     "year": 2020,
-    "authors": [
-      "Francisco Paiva Knebel"
-    ],
+    "authors": ["Francisco Paiva Knebel"],
     "citations": 2,
     "url": "https://lume.ufrgs.br/handle/10183/219160",
     "last_sync": "2026-07-18T10:05:27.468237"
@@ -73,11 +65,7 @@
     "type": "Conference",
     "venue": "ERRC · Escola Regional de Redes de Computadores",
     "year": 2020,
-    "authors": [
-      "Rafael Trevisan",
-      "Francisco Paiva Knebel",
-      "Juliano Araújo Wickboldt"
-    ],
+    "authors": ["Rafael Trevisan", "Francisco Paiva Knebel", "Juliano Araújo Wickboldt"],
     "citations": 1,
     "url": "https://sol.sbc.org.br/index.php/errc/article/view/15187",
     "last_sync": "2026-07-18T10:05:30.869867"
