@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
+import { localePaths } from '../lib/i18n';
 
 interface Props {
   lang: Lang;
@@ -11,6 +12,7 @@ const t = ui[lang];
 const home = lang === 'pt' ? '/pt/' : '/';
 const isHome = Astro.url.pathname === home;
 const anchor = (hash: string) => (isHome ? hash : `${home}${hash}`);
+const { en: enHref, pt: ptHref } = localePaths(Astro.url.pathname, lang);
 
 const links = [
   { label: t.nav.experience, href: anchor('#experience') },
@@ -51,7 +53,7 @@ const links = [
       <span class="text-slate-200 select-none dark:text-slate-700">|</span>
       <div class="flex items-center gap-1 font-mono text-xs">
         <a
-          href="/"
+          href={enHref}
           hreflang="en"
           class:list={[
             'rounded px-1.5 py-0.5 transition-colors duration-150',
@@ -63,7 +65,7 @@ const links = [
         >
         <span class="text-slate-300 dark:text-slate-700">/</span>
         <a
-          href="/pt/"
+          href={ptHref}
           hreflang="pt"
           class:list={[
             'rounded px-1.5 py-0.5 transition-colors duration-150',
@@ -80,7 +82,7 @@ const links = [
     <div class="flex items-center gap-3 sm:hidden">
       <div class="flex items-center gap-1 font-mono text-xs text-slate-400 dark:text-slate-500">
         <a
-          href="/"
+          href={enHref}
           hreflang="en"
           class:list={[
             'rounded px-1 py-0.5 transition-colors duration-150',
@@ -91,7 +93,7 @@ const links = [
         >
         <span class="text-slate-300 dark:text-slate-700">/</span>
         <a
-          href="/pt/"
+          href={ptHref}
           hreflang="pt"
           class:list={[
             'rounded px-1 py-0.5 transition-colors duration-150',
