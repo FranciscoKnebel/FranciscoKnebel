@@ -5,8 +5,8 @@ const normalize = (value: string) => value.trim().toLowerCase().replace(/\s+/g, 
 export const publicationTypeColors: Record<string, string> = {
   'M.Sc. Thesis': 'bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',
   'B.Sc. Thesis': 'bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400',
-  'Journal Article': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400',
-  Conference: 'bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400',
+  'Journal Article': 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400',
+  Conference: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400',
 };
 
 export function mergePublications(
