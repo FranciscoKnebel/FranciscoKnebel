@@ -6,9 +6,10 @@ import '../styles/global.css';
 
 interface Props {
   lang: Lang;
+  noindex?: boolean;
 }
 
-const { lang } = Astro.props;
+const { lang, noindex = false } = Astro.props;
 const { title, description } = ui[lang].meta;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -59,8 +60,15 @@ const person = {
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020617" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonical} />
-    {alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {
+      !noindex &&
+        alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)
+    }
     <title>{title}</title>
 
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
