@@ -8,17 +8,30 @@ import '../styles/global.css';
 interface Props {
   lang: Lang;
   noindex?: boolean;
+  title?: string;
+  description?: string;
 }
 
-const { lang, noindex = false } = Astro.props;
-const { title, description } = ui[lang].meta;
+const {
+  lang,
+  noindex = false,
+  title: titleOverride,
+  description: descriptionOverride,
+} = Astro.props;
+const meta = ui[lang].meta;
+const title = titleOverride ?? meta.title;
+const description = descriptionOverride ?? meta.description;
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const pathname = Astro.url.pathname;
+const canonical = new URL(pathname, Astro.site).href;
 const ogImage = new URL(lang === 'pt' ? '/og-image.pt.png' : '/og-image.png', Astro.site).href;
+
+const enPath = lang === 'pt' ? pathname.replace(/^\/pt(?=\/|$)/, '') || '/' : pathname;
+const ptPath = enPath === '/' ? '/pt/' : `/pt${enPath}`;
 const alternates = [
-  { hreflang: 'en', href: new URL('/', Astro.site).href },
-  { hreflang: 'pt', href: new URL('/pt/', Astro.site).href },
-  { hreflang: 'x-default', href: new URL('/', Astro.site).href },
+  { hreflang: 'en', href: new URL(enPath, Astro.site).href },
+  { hreflang: 'pt', href: new URL(ptPath, Astro.site).href },
+  { hreflang: 'x-default', href: new URL(enPath, Astro.site).href },
 ];
 
 const person = {

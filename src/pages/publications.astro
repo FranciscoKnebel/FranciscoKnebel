@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicationsPage from '../components/PublicationsPage.astro';
+import ui from '../data/ui.json';
+
+const page = ui.en.publicationsPage;
+---
+
+<Layout lang="en" title={`${page.title} | Francisco Knebel`} description={page.description}>
+  <PublicationsPage lang="en" />
+</Layout>

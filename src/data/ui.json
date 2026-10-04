@@ -7,6 +7,7 @@
     "nav": {
       "experience": "Experience",
       "research": "Research",
+      "publications": "Publications",
       "projects": "Projects",
       "community": "Community",
       "stats": "Stats",
@@ -57,6 +58,7 @@
       "interests": "Interests",
       "publications": "Publications",
       "fullPublicationsList": "Full list on",
+      "allPublications": "See all publications",
       "projects": "Projects",
       "moreProjects": "More on",
       "community": "Community",
@@ -76,6 +78,19 @@
       "advisor": "Advisor",
       "citations": "citations"
     },
+    "publicationsPage": {
+      "title": "Publications",
+      "description": "Peer-reviewed articles, conference papers and theses on digital twins, cloud and edge computing, and computer networks.",
+      "search": "Search by title, author or venue",
+      "type": "Type",
+      "year": "Year",
+      "allTypes": "All types",
+      "allYears": "All years",
+      "results": "publications",
+      "empty": "No publications match the current filters.",
+      "bibtex": "BibTeX",
+      "download": "Download .bib"
+    },
     "footer": {
       "source": "Source"
     }
@@ -88,6 +103,7 @@
     "nav": {
       "experience": "Experiência",
       "research": "Pesquisa",
+      "publications": "Publicações",
       "projects": "Projetos",
       "community": "Comunidade",
       "stats": "Estatísticas",
@@ -138,6 +154,7 @@
       "interests": "Interesses",
       "publications": "Publicações",
       "fullPublicationsList": "Lista completa em",
+      "allPublications": "Ver todas as publicações",
       "projects": "Projetos",
       "moreProjects": "Mais em",
       "community": "Comunidade",
@@ -156,6 +173,19 @@
       },
       "advisor": "Orientador",
       "citations": "citações"
+    },
+    "publicationsPage": {
+      "title": "Publicações",
+      "description": "Artigos, trabalhos em conferências e dissertações sobre gêmeos digitais, computação em nuvem e borda, e redes de computadores.",
+      "search": "Buscar por título, autor ou veículo",
+      "type": "Tipo",
+      "year": "Ano",
+      "allTypes": "Todos os tipos",
+      "allYears": "Todos os anos",
+      "results": "publicações",
+      "empty": "Nenhuma publicação corresponde aos filtros atuais.",
+      "bibtex": "BibTeX",
+      "download": "Baixar .bib"
     },
     "footer": {
       "source": "Código-fonte"

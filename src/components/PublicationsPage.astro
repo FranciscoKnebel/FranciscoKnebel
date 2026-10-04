@@ -1,0 +1,252 @@
+---
+import type { Lang, Publication } from '../types';
+import ui from '../data/ui.json';
+import rawPublications from '../data/publications.json';
+import publicationsMeta from '../data/publications-meta.json';
+import { buildBibliography, mergePublications, publicationTypeColors } from '../lib/publications';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const meta: Record<string, Partial<Publication>> = publicationsMeta;
+const publications = mergePublications(rawPublications, meta);
+const bibliography = buildBibliography(publications);
+const types = [...new Set(publications.map((publication) => publication.type))];
+const years = [...new Set(publications.map((publication) => publication.year))].sort(
+  (a, b) => b - a,
+);
+
+const inputClass =
+  'rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:placeholder:text-slate-500';
+---
+
+<Nav lang={lang} />
+<main class="pt-14">
+  <section class="border-t border-slate-100 py-20 dark:border-slate-800/60">
+    <div class="mx-auto max-w-6xl px-6">
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-50">
+        {t.publicationsPage.title}
+      </h1>
+      <p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-500 dark:text-slate-400">
+        {t.publicationsPage.description}
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <label class="sr-only" for="pub-search">{t.publicationsPage.search}</label>
+        <input
+          id="pub-search"
+          type="search"
+          placeholder={t.publicationsPage.search}
+          class:list={[inputClass, 'w-full sm:max-w-sm']}
+        />
+
+        <label class="sr-only" for="pub-type">{t.publicationsPage.type}</label>
+        <select id="pub-type" class:list={[inputClass, 'sm:w-auto']}>
+          <option value="">{t.publicationsPage.allTypes}</option>
+          {
+            types.map((type) => (
+              <option value={type}>
+                {t.publications.types[type as keyof typeof t.publications.types] ?? type}
+              </option>
+            ))
+          }
+        </select>
+
+        <label class="sr-only" for="pub-year">{t.publicationsPage.year}</label>
+        <select id="pub-year" class:list={[inputClass, 'sm:w-auto']}>
+          <option value="">{t.publicationsPage.allYears}</option>
+          {years.map((year) => <option value={String(year)}>{year}</option>)}
+        </select>
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <p
+          id="pub-count"
+          data-label={t.publicationsPage.results}
+          class="text-xs text-slate-500 dark:text-slate-400"
+        >
+          {publications.length}
+          {t.publicationsPage.results}
+        </p>
+        <a
+          href="/publications.bib"
+          download
+          class="text-accent-600 hover:text-accent-500 dark:text-accent-400 text-xs font-medium underline underline-offset-2 transition-colors duration-150"
+        >
+          {t.publicationsPage.download}
+        </a>
+      </div>
+
+      <div class="mt-6 space-y-4">
+        {
+          publications.map((publication, index) => (
+            <article
+              data-publication
+              data-search={`${publication.title} ${publication.authors.join(' ')} ${publication.venue}`.toLowerCase()}
+              data-type={publication.type}
+              data-year={String(publication.year)}
+              class="card-hover group rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div class="min-w-0 flex-1">
+                  <div class="mb-2 flex flex-wrap items-center gap-2">
+                    <span
+                      class={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold ${
+                        publicationTypeColors[publication.type] ?? 'bg-slate-100 text-slate-600'
+                      }`}
+                    >
+                      {t.publications.types[
+                        publication.type as keyof typeof t.publications.types
+                      ] ?? publication.type}
+                    </span>
+                    <span class="inline-flex items-center rounded-md bg-slate-300 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                      {publication.year}
+                    </span>
+                    {publication.citations ? (
+                      <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                        {publication.citations} {t.publications.citations}
+                      </span>
+                    ) : null}
+                  </div>
+
+                  {publication.url ? (
+                    <a
+                      href={publication.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-accent-600 dark:hover:text-accent-400 text-sm leading-snug font-medium text-slate-900 underline-offset-2 transition-colors duration-150 hover:underline dark:text-slate-100"
+                    >
+                      {publication.title}
+                    </a>
+                  ) : (
+                    <p class="text-sm leading-snug font-medium text-slate-900 dark:text-slate-100">
+                      {publication.title}
+                    </p>
+                  )}
+
+                  <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                    {publication.authors.join(', ')}
+                  </p>
+
+                  <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                    {publication.venueUrl ? (
+                      <a
+                        href={publication.venueUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-accent-500 hover:decoration-accent-400 dark:hover:text-accent-400 underline decoration-slate-300 underline-offset-2 transition-colors duration-150 dark:decoration-slate-600"
+                      >
+                        {publication.venue}
+                      </a>
+                    ) : (
+                      publication.venue
+                    )}
+                    {publication.advisor && (
+                      <span class="text-slate-500 dark:text-slate-400">
+                        {' '}
+                        · {t.publications.advisor}:{' '}
+                        {publication.advisorUrl ? (
+                          <a
+                            href={publication.advisorUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-accent-400 hover:decoration-accent-400 dark:hover:text-accent-400 underline decoration-slate-300 underline-offset-2 transition-colors duration-150 dark:decoration-slate-600"
+                          >
+                            {publication.advisor}
+                          </a>
+                        ) : (
+                          publication.advisor
+                        )}
+                      </span>
+                    )}
+                  </p>
+
+                  <details class="mt-3">
+                    <summary class="hover:text-accent-600 dark:hover:text-accent-400 w-fit cursor-pointer text-xs font-medium text-slate-500 transition-colors duration-150 dark:text-slate-400">
+                      {t.publicationsPage.bibtex}
+                    </summary>
+                    <pre class="mt-2 overflow-x-auto rounded-lg bg-slate-100 p-3 text-xs leading-relaxed text-slate-700 dark:bg-slate-950/60 dark:text-slate-300">
+                      {bibliography[index].entry}
+                    </pre>
+                  </details>
+                </div>
+
+                {publication.url && (
+                  <a
+                    href={publication.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${publication.title}`}
+                    class="group-hover:text-accent-500 focus-visible:ring-accent-500 dark:group-hover:text-accent-400 mt-1 flex-shrink-0 rounded text-slate-300 transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-600"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <p id="pub-empty" class="mt-6 hidden text-sm text-slate-500 dark:text-slate-400">
+        {t.publicationsPage.empty}
+      </p>
+    </div>
+  </section>
+</main>
+<Footer lang={lang} />
+
+<script>
+  const searchInput = document.getElementById('pub-search');
+  const typeSelect = document.getElementById('pub-type');
+  const yearSelect = document.getElementById('pub-year');
+  const items = Array.from(document.querySelectorAll('[data-publication]'));
+  const count = document.getElementById('pub-count');
+  const empty = document.getElementById('pub-empty');
+
+  function applyFilters() {
+    const query = (searchInput instanceof HTMLInputElement ? searchInput.value : '')
+      .trim()
+      .toLowerCase();
+    const type = typeSelect instanceof HTMLSelectElement ? typeSelect.value : '';
+    const year = yearSelect instanceof HTMLSelectElement ? yearSelect.value : '';
+    let visible = 0;
+
+    items.forEach((item) => {
+      const haystack = item.getAttribute('data-search') ?? '';
+      const matches =
+        (!query || haystack.includes(query)) &&
+        (!type || item.getAttribute('data-type') === type) &&
+        (!year || item.getAttribute('data-year') === year);
+      item.classList.toggle('hidden', !matches);
+      if (matches) visible += 1;
+    });
+
+    if (count) count.textContent = `${visible} ${count.dataset.label ?? ''}`;
+    empty?.classList.toggle('hidden', visible > 0);
+  }
+
+  [searchInput, typeSelect, yearSelect].forEach((element) => {
+    element?.addEventListener('input', applyFilters);
+  });
+
+  applyFilters();
+</script>
