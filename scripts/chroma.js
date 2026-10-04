@@ -287,7 +287,7 @@ function Chroma(elem, options) {
           opt_attribs = { preserveDrawingBuffer: true };
         }
         context = canvas.getContext(names[ii], opt_attribs);
-      } catch (e) {}  
+      } catch (e) {}
       if (context) {
         break;
       }

@@ -18,7 +18,7 @@ const year = new Date().getFullYear();
       <p class="section-heading">{t.contact.label}</p>
       <a
         href="mailto:contato@franciscoknebel.com"
-        class="text-2xl font-bold tracking-tight text-slate-900 underline-offset-4 transition-colors duration-150 hover:text-accent-600 hover:underline sm:text-3xl dark:text-slate-100 dark:hover:text-accent-400"
+        class="hover:text-accent-600 dark:hover:text-accent-400 text-2xl font-bold tracking-tight text-slate-900 underline-offset-4 transition-colors duration-150 hover:underline sm:text-3xl dark:text-slate-100"
       >
         contato@franciscoknebel.com
       </a>
@@ -38,13 +38,13 @@ const year = new Date().getFullYear();
               rel="noopener noreferrer"
               class="group flex items-baseline justify-between gap-4 border-b border-slate-100 py-2.5 transition-colors duration-150 dark:border-slate-800/60"
             >
-              <span class="text-xs uppercase tracking-wide text-slate-400 dark:text-slate-500">
+              <span class="text-xs tracking-wide text-slate-400 uppercase dark:text-slate-500">
                 {s.label}
               </span>
-              <span class="flex-1 truncate font-mono text-sm text-slate-600 transition-colors duration-150 group-hover:text-accent-600 dark:text-slate-300 dark:group-hover:text-accent-400">
+              <span class="group-hover:text-accent-600 dark:group-hover:text-accent-400 flex-1 truncate font-mono text-sm text-slate-600 transition-colors duration-150 dark:text-slate-300">
                 {s.value}
               </span>
-              <span class="text-slate-300 transition-colors duration-150 group-hover:text-accent-500 dark:text-slate-600 dark:group-hover:text-accent-400">
+              <span class="group-hover:text-accent-500 dark:group-hover:text-accent-400 text-slate-300 transition-colors duration-150 dark:text-slate-600">
                 ↗
               </span>
             </a>
@@ -65,7 +65,7 @@ const year = new Date().getFullYear();
         href="https://github.com/FranciscoKnebel/FranciscoKnebel"
         target="_blank"
         rel="noopener noreferrer"
-        class="underline underline-offset-2 transition-colors duration-150 hover:text-accent-500 dark:hover:text-accent-400"
+        class="hover:text-accent-500 dark:hover:text-accent-400 underline underline-offset-2 transition-colors duration-150"
       >
         {t.footer.source}
       </a>
