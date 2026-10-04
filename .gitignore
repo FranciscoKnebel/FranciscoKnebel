@@ -1,6 +1,4 @@
 .env
-scripts/data/*
-!scripts/data/.gitkeep
 
 # Astro / Node
 node_modules/
