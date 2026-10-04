@@ -1,0 +1,3 @@
+# Astro generates minimal redirect pages without <html>/<head> wrappers.
+dist/projects/index.html
+dist/pt/projects/index.html
