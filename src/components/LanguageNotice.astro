@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
+import { localePaths } from '../lib/i18n';
 
 interface Props {
   lang: Lang;
@@ -8,14 +9,10 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 
-const pathname = Astro.url.pathname;
+const currentPath = Astro.url.pathname.startsWith('/404') ? '/' : Astro.url.pathname;
 const otherLang: Lang = lang === 'en' ? 'pt' : 'en';
-const otherPath =
-  lang === 'en'
-    ? pathname === '/'
-      ? '/pt/'
-      : `/pt${pathname}`
-    : pathname.replace(/^\/pt(?=\/|$)/, '') || '/';
+const paths = localePaths(currentPath, lang);
+const otherPath = lang === 'en' ? paths.pt : paths.en;
 ---
 
 <div id="language-notice" class="fixed inset-x-0 top-14 z-40 hidden px-4 pt-3">
