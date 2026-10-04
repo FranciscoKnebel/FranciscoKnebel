@@ -39,6 +39,7 @@ export default defineConfig({
   site: 'https://franciscoknebel.com',
   integrations: [
     sitemap({
+      filter: (page) => !page.endsWith('/projects/'),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', pt: 'pt' },
