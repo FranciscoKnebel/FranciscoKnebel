@@ -2,7 +2,7 @@
 lang: pt
 title: Mural de Bolsas UFRGS
 description: Construindo a plataforma que se tornou o hub oficial de bolsas da UFRGS, de projeto de empresa júnior a adoção em toda a universidade.
-status: published
+status: planned
 topics: [Web, UFRGS, Node.js, Produto]
 order: 0
 ---

@@ -2,7 +2,7 @@
 lang: en
 title: UFRGS Scholarship Board
 description: Building the platform that became UFRGS's official hub for scholarship openings, from a junior enterprise project to university-wide adoption.
-status: published
+status: planned
 topics: [Web, UFRGS, Node.js, Product]
 order: 0
 ---
