@@ -14,7 +14,7 @@ const { lang, noindex = false } = Astro.props;
 const { title, description } = ui[lang].meta;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = new URL('/og-image.png', Astro.site).href;
+const ogImage = new URL(lang === 'pt' ? '/og-image.pt.png' : '/og-image.png', Astro.site).href;
 const alternates = [
   { hreflang: 'en', href: new URL('/', Astro.site).href },
   { hreflang: 'pt', href: new URL('/pt/', Astro.site).href },
