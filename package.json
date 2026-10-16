@@ -8,6 +8,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "validate:html": "html-validate \"dist/**/*.html\"",
+    "test": "playwright test",
+    "pretest": "npm run build",
     "og": "node scripts/generate-og.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",
     "@typescript-eslint/parser": "^8.58.0",
