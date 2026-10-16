@@ -25,7 +25,7 @@ from pathlib import Path
 try:
     from scholarly import scholarly, ProxyGenerator
 except ImportError:
-    print("ERROR: scholarly not installed — run: pip install scholarly", file=sys.stderr)
+    print("ERROR: scholarly not installed (run: pip install scholarly)", file=sys.stderr)
     sys.exit(1)
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -33,7 +33,7 @@ except ImportError:
 AUTHOR_ID   = "_RHtqxIAAAAJ"
 OUTPUT_PATH = Path(__file__).parent.parent / "src" / "data" / "publications.json"
 
-# Manual overrides live in publications-meta.json — scraper writes raw data only.
+# Manual overrides live in publications-meta.json; the scraper writes raw data only.
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -87,7 +87,7 @@ def setup_proxy() -> bool:
         print("Proxy: ScraperAPI configured")
         return True
     except Exception as exc:
-        print(f"Warning: could not configure proxy — {exc}", file=sys.stderr)
+        print(f"Warning: could not configure proxy: {exc}", file=sys.stderr)
         return False
 
 
@@ -104,7 +104,7 @@ def main() -> None:
             existing = {normalize(p["title"]): p for p in data if "title" in p}
             print(f"Existing publications loaded: {len(existing)}")
         except Exception as exc:
-            print(f"Warning: could not parse existing JSON — {exc}", file=sys.stderr)
+            print(f"Warning: could not parse existing JSON: {exc}", file=sys.stderr)
 
     # ── Fetch author ──────────────────────────────────────────────────────────
     print(f"Fetching author {AUTHOR_ID} …")
@@ -112,7 +112,7 @@ def main() -> None:
         author = scholarly.search_author_id(AUTHOR_ID)
         author = scholarly.fill(author, sections=["basics", "publications"])
     except Exception as exc:
-        print(f"ERROR: failed to fetch author — {exc}", file=sys.stderr)
+        print(f"ERROR: failed to fetch author: {exc}", file=sys.stderr)
         sys.exit(1)
 
     basics = {
@@ -133,7 +133,7 @@ def main() -> None:
             time.sleep(1.5)   # polite delay between requests
             pub = scholarly.fill(pub)
         except Exception as exc:
-            print(f"  [{idx}/{len(raw_pubs)}] Warning: fill failed — {exc}", file=sys.stderr)
+            print(f"  [{idx}/{len(raw_pubs)}] Warning: fill failed: {exc}", file=sys.stderr)
 
         bib   = pub.get("bib", {})
         title = bib.get("title", "").strip()
@@ -168,7 +168,7 @@ def main() -> None:
 
     # ── Safety check ──────────────────────────────────────────────────────────
     if not publications:
-        print("ERROR: no publications returned — aborting to preserve existing data", file=sys.stderr)
+        print("ERROR: no publications returned; aborting to preserve existing data", file=sys.stderr)
         sys.exit(1)
 
     # ── Sort newest first ─────────────────────────────────────────────────────
@@ -179,7 +179,7 @@ def main() -> None:
         json.dumps(publications, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    print(f"\nDone — wrote {len(publications)} publications to {OUTPUT_PATH}")
+    print(f"\nDone: wrote {len(publications)} publications to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

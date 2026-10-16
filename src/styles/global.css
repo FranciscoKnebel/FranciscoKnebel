@@ -64,7 +64,7 @@ html {
   transform: translateY(0);
 }
 
-/* Nav link hover — only real pointer devices */
+/* Nav link hover: only real pointer devices */
 @media (hover: hover) and (pointer: fine) {
   .nav-link {
     transition: color 150ms ease;
