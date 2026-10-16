@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('caseStudies', ({ data }) => data.lang === 'en');
+  return entries.map((entry) => ({
+    params: { slug: entry.id.split('/')[1] },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<Layout
+  lang="en"
+  title={`${entry.data.title} | Francisco Knebel`}
+  description={entry.data.description}
+>
+  <CaseStudyPage entry={entry} lang="en" />
+</Layout>

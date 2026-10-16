@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudiesPage from '../../components/CaseStudiesPage.astro';
+import ui from '../../data/ui.json';
+
+const page = ui.pt.caseStudiesPage;
+---
+
+<Layout lang="pt" title={`${page.title} | Francisco Knebel`} description={page.description}>
+  <CaseStudiesPage lang="pt" />
+</Layout>

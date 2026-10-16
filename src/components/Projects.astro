@@ -17,6 +17,7 @@ const projects = entries.map((entry) => ({
   ...entry.data,
 }));
 const projectHref = (slug: string) => `${lang === 'pt' ? '/pt' : ''}/projects/${slug}/`;
+const caseStudiesUrl = lang === 'pt' ? '/pt/case-studies/' : '/case-studies/';
 ---
 
 <section
@@ -123,5 +124,13 @@ const projectHref = (slug: string) => `${lang === 'pt' ? '/pt' : ''}/projects/${
         >GitHub</a
       >.
     </p>
+
+    <a
+      href={caseStudiesUrl}
+      class="reveal text-accent-600 hover:text-accent-500 dark:text-accent-400 dark:hover:text-accent-300 mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150"
+    >
+      {t.sections.caseStudies}
+      <span aria-hidden="true">→</span>
+    </a>
   </div>
 </section>
