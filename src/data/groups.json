@@ -34,5 +34,14 @@
       "en": "Technology consultancy focused on scalable distributed systems.",
       "pt": "Consultoria de tecnologia focada em sistemas distribuídos escaláveis."
     }
+  },
+  {
+    "name": "Catalyst Commerce",
+    "url": "https://appcatalyst.com.br",
+    "avatar": "/avatars/catalyst.png",
+    "description": {
+      "en": "Technology company building enterprise e-commerce and ERP systems for retail.",
+      "pt": "Empresa de tecnologia que desenvolve sistemas corporativos de e-commerce e ERP para o varejo."
+    }
   }
 ]
