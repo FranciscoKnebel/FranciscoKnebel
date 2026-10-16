@@ -117,6 +117,11 @@ html {
   @apply mb-8 text-xs font-semibold tracking-widest text-slate-500 uppercase dark:text-slate-400;
 }
 
+/* Inline links inside JSON content rendered with set:html */
+.bio-link {
+  @apply hover:decoration-accent-400 text-slate-700 underline decoration-slate-300 underline-offset-2 transition-colors duration-150 dark:text-slate-300 dark:decoration-slate-600;
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   html {

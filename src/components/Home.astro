@@ -1,0 +1,28 @@
+---
+import type { Lang } from '../types';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Experience from './Experience.astro';
+import Research from './Research.astro';
+import Projects from './Projects.astro';
+import Groups from './Groups.astro';
+import Stats from './Stats.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<Nav lang={lang} />
+<main>
+  <Hero lang={lang} />
+  <Experience lang={lang} />
+  <Research lang={lang} />
+  <Projects lang={lang} />
+  <Groups lang={lang} />
+  <Stats lang={lang} />
+</main>
+<Footer lang={lang} />
