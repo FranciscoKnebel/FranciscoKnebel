@@ -14,17 +14,18 @@ const links = [
   { label: t.nav.projects, href: '#projects' },
   { label: t.nav.community, href: '#community' },
   { label: t.nav.stats, href: '#stats' },
+  { label: t.nav.contact, href: '#contact' },
 ];
 ---
 
 <header class="fixed inset-x-0 top-0 z-50">
   <nav
     class="mx-auto flex h-14 max-w-4xl items-center justify-between border-b border-slate-200/80 bg-white/75 px-6 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/75"
-    aria-label="Main navigation"
+    aria-label={t.a11y.mainNavigation}
   >
     <!-- Name -->
     <a
-      href="/"
+      href={lang === 'pt' ? '/pt/' : '/'}
       class="nav-link focus-visible:ring-accent-500 rounded font-semibold text-slate-900 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-100"
     >
       Francisco Knebel
@@ -46,6 +47,7 @@ const links = [
       <div class="flex items-center gap-1 font-mono text-xs">
         <a
           href="/"
+          hreflang="en"
           class:list={[
             'rounded px-1.5 py-0.5 transition-colors duration-150',
             lang === 'en'
@@ -57,6 +59,7 @@ const links = [
         <span class="text-slate-300 dark:text-slate-700">/</span>
         <a
           href="/pt/"
+          hreflang="pt"
           class:list={[
             'rounded px-1.5 py-0.5 transition-colors duration-150',
             lang === 'pt'
@@ -73,6 +76,7 @@ const links = [
       <div class="flex items-center gap-1 font-mono text-xs text-slate-400 dark:text-slate-500">
         <a
           href="/"
+          hreflang="en"
           class:list={[
             'rounded px-1 py-0.5 transition-colors duration-150',
             lang === 'en'
@@ -83,6 +87,7 @@ const links = [
         <span class="text-slate-300 dark:text-slate-700">/</span>
         <a
           href="/pt/"
+          hreflang="pt"
           class:list={[
             'rounded px-1 py-0.5 transition-colors duration-150',
             lang === 'pt'
@@ -94,7 +99,7 @@ const links = [
 
       <button
         id="menu-toggle"
-        aria-label="Toggle menu"
+        aria-label={t.a11y.menuToggle}
         aria-expanded="false"
         aria-controls="mobile-menu"
         class="focus-visible:ring-accent-500 rounded-md p-1.5 text-slate-500 transition-colors duration-150 hover:bg-slate-100 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-400 dark:hover:bg-slate-800"

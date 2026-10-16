@@ -9,9 +9,13 @@ const { lang } = Astro.props;
 const t = ui[lang];
 ---
 
-<section id="stats" class="border-t border-slate-100 py-24 dark:border-slate-800/60">
+<section
+  id="stats"
+  class="border-t border-slate-100 py-24 dark:border-slate-800/60"
+  aria-labelledby="stats-heading"
+>
   <div class="mx-auto max-w-6xl px-6">
-    <p class="section-heading reveal">{t.sections.stats}</p>
+    <h2 id="stats-heading" class="section-heading reveal">{t.sections.stats}</h2>
 
     <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 md:grid-cols-5">
       <div class="col-span-5 overflow-hidden rounded-xl bg-slate-50 md:col-span-2">

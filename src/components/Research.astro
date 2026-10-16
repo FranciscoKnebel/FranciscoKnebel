@@ -26,15 +26,19 @@ const typeColors: Record<string, string> = {
 };
 ---
 
-<section id="research" class="border-t border-slate-100 py-24 dark:border-slate-800/60">
+<section
+  id="research"
+  class="border-t border-slate-100 py-24 dark:border-slate-800/60"
+  aria-labelledby="research-heading"
+>
   <div class="mx-auto max-w-6xl px-6">
-    <p class="section-heading reveal">{t.sections.research}</p>
+    <h2 id="research-heading" class="section-heading reveal">{t.sections.research}</h2>
 
     <!-- Interests -->
     <div class="reveal mb-14">
-      <h2 class="mb-4 text-sm font-medium text-slate-700 dark:text-slate-300">
+      <h3 class="mb-4 text-sm font-medium text-slate-700 dark:text-slate-300">
         {t.sections.interests}
-      </h2>
+      </h3>
       <div class="flex flex-wrap gap-2">
         {
           interestsData.map((interest) => (
@@ -48,9 +52,9 @@ const typeColors: Record<string, string> = {
 
     <!-- Publications -->
     <div>
-      <h2 class="reveal mb-6 text-sm font-medium text-slate-700 dark:text-slate-300">
+      <h3 class="reveal mb-6 text-sm font-medium text-slate-700 dark:text-slate-300">
         {t.sections.publications}
-      </h2>
+      </h3>
       <div class="reveal-stagger space-y-4">
         {
           publicationsData.map((pub) => (
@@ -64,11 +68,11 @@ const typeColors: Record<string, string> = {
                       {t.publications.types[pub.type as keyof typeof t.publications.types] ??
                         pub.type}
                     </span>
-                    <span class="inline-flex items-center rounded-md bg-slate-300 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-500">
+                    <span class="inline-flex items-center rounded-md bg-slate-300 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
                       {pub.year}
                     </span>
                     {pub.citations ? (
-                      <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-500">
+                      <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
                         {pub.citations} {t.publications.citations}
                       </span>
                     ) : null}
@@ -89,11 +93,11 @@ const typeColors: Record<string, string> = {
                     </p>
                   )}
 
-                  <p class="mt-1.5 text-xs text-slate-400 dark:text-slate-500">
+                  <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
                     {pub.authors.join(', ')}
                   </p>
 
-                  <p class="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
+                  <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                     {pub.venueUrl ? (
                       <a
                         href={pub.venueUrl}
@@ -107,7 +111,7 @@ const typeColors: Record<string, string> = {
                       pub.venue
                     )}
                     {pub.advisor && (
-                      <span class="text-slate-500 dark:text-slate-600">
+                      <span class="text-slate-500 dark:text-slate-400">
                         {' '}
                         · {t.publications.advisor}:{' '}
                         {pub.advisorUrl ? (
@@ -133,7 +137,7 @@ const typeColors: Record<string, string> = {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${pub.title}`}
-                    class="group-hover:text-accent-500 dark:group-hover:text-accent-400 mt-1 flex-shrink-0 text-slate-300 transition-colors duration-150 dark:text-slate-600"
+                    class="group-hover:text-accent-500 focus-visible:ring-accent-500 dark:group-hover:text-accent-400 mt-1 flex-shrink-0 rounded text-slate-300 transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-600"
                   >
                     <svg
                       class="h-4 w-4"
@@ -157,7 +161,7 @@ const typeColors: Record<string, string> = {
         }
       </div>
 
-      <p class="reveal mt-6 text-xs text-slate-400 dark:text-slate-500">
+      <p class="reveal mt-6 text-xs text-slate-500 dark:text-slate-400">
         {t.sections.fullPublicationsList}
         <a
           href="https://scholar.google.com/citations?user=_RHtqxIAAAAJ"
