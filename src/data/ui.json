@@ -52,6 +52,11 @@
       "decline": "Decline",
       "settings": "Analytics settings"
     },
+    "languageNotice": {
+      "message": "This site is also available in Portuguese.",
+      "action": "View in Portuguese",
+      "dismiss": "Dismiss"
+    },
     "sections": {
       "experience": "Experience",
       "research": "Research",
@@ -159,6 +164,11 @@
       "accept": "Aceitar analytics",
       "decline": "Recusar",
       "settings": "Preferências de analytics"
+    },
+    "languageNotice": {
+      "message": "Este site também está disponível em inglês.",
+      "action": "Ver em inglês",
+      "dismiss": "Fechar"
     },
     "sections": {
       "experience": "Experiência",
