@@ -42,6 +42,7 @@ const t = ui[lang];
 <script>
   const GA_ID = 'G-80D0XB0GGG';
   const STORAGE_KEY = 'analytics-consent';
+  const POSTPONE_KEY = 'analytics-consent-postponed';
   const banner = document.getElementById('analytics-consent');
 
   function loadAnalytics() {
@@ -65,10 +66,11 @@ const t = ui[lang];
     if (choice === 'granted') loadAnalytics();
   }
 
+  const postponed = sessionStorage.getItem(POSTPONE_KEY) === '1';
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === 'granted') {
     loadAnalytics();
-  } else if (stored !== 'denied') {
+  } else if (stored !== 'denied' && !postponed) {
     banner?.classList.remove('hidden');
   }
 
@@ -81,5 +83,12 @@ const t = ui[lang];
   document.getElementById('analytics-settings')?.addEventListener('click', () => {
     localStorage.removeItem(STORAGE_KEY);
     banner?.classList.remove('hidden');
+  });
+
+  // Escape postpones the decision for the current browser session
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !banner || banner.classList.contains('hidden')) return;
+    sessionStorage.setItem(POSTPONE_KEY, '1');
+    banner.classList.add('hidden');
   });
 </script>

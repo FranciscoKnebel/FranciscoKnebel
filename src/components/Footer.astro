@@ -9,6 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 
+const caseStudiesUrl = lang === 'pt' ? '/pt/case-studies/' : '/case-studies/';
 const year = new Date().getFullYear();
 ---
 
@@ -65,6 +66,13 @@ const year = new Date().getFullYear();
   >
     <span>© {year} Francisco Knebel</span>
     <span class="flex items-center gap-2">
+      <a
+        href={caseStudiesUrl}
+        class="hover:text-accent-500 dark:hover:text-accent-400 underline underline-offset-2 transition-colors duration-150"
+      >
+        {t.sections.caseStudies}
+      </a>
+      <span aria-hidden="true">·</span>
       <a
         href="https://github.com/FranciscoKnebel/FranciscoKnebel"
         target="_blank"
