@@ -4,6 +4,7 @@ import ui from '../data/ui.json';
 import rawPublications from '../data/publications.json';
 import publicationsMeta from '../data/publications-meta.json';
 import interestsData from '../data/interests.json';
+import { mergePublications, publicationTypeColors } from '../lib/publications';
 
 interface Props {
   lang: Lang;
@@ -11,19 +12,10 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 
-const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, ' ');
 const meta: Record<string, Partial<Publication>> = publicationsMeta;
-const publicationsData: Publication[] = rawPublications.map((pub) => ({
-  ...pub,
-  ...(meta[normalize(pub.title)] ?? {}),
-}));
-
-const typeColors: Record<string, string> = {
-  'M.Sc. Thesis': 'bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',
-  'B.Sc. Thesis': 'bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400',
-  'Journal Article': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400',
-  Conference: 'bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400',
-};
+const publicationsData = mergePublications(rawPublications, meta);
+const typeColors = publicationTypeColors;
+const publicationsUrl = lang === 'pt' ? '/pt/publications/' : '/publications/';
 ---
 
 <section
@@ -179,6 +171,14 @@ const typeColors: Record<string, string> = {
           >ResearchGate</a
         >.
       </p>
+
+      <a
+        href={publicationsUrl}
+        class="reveal text-accent-600 hover:text-accent-500 dark:text-accent-400 dark:hover:text-accent-300 mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150"
+      >
+        {t.sections.allPublications}
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>

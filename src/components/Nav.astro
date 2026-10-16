@@ -8,13 +8,20 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang];
 
+const home = lang === 'pt' ? '/pt/' : '/';
+const isHome = Astro.url.pathname === home;
+const anchor = (hash: string) => (isHome ? hash : `${home}${hash}`);
+const publicationsUrl = lang === 'pt' ? '/pt/publications/' : '/publications/';
+const isPublications = Astro.url.pathname === publicationsUrl;
+
 const links = [
-  { label: t.nav.experience, href: '#experience' },
-  { label: t.nav.research, href: '#research' },
-  { label: t.nav.projects, href: '#projects' },
-  { label: t.nav.community, href: '#community' },
-  { label: t.nav.stats, href: '#stats' },
-  { label: t.nav.contact, href: '#contact' },
+  { label: t.nav.experience, href: anchor('#experience'), current: false },
+  { label: t.nav.research, href: anchor('#research'), current: false },
+  { label: t.nav.publications, href: publicationsUrl, current: isPublications },
+  { label: t.nav.projects, href: anchor('#projects'), current: false },
+  { label: t.nav.community, href: anchor('#community'), current: false },
+  { label: t.nav.stats, href: anchor('#stats'), current: false },
+  { label: t.nav.contact, href: anchor('#contact'), current: false },
 ];
 ---
 
@@ -34,10 +41,14 @@ const links = [
     <!-- Desktop: section links + lang switcher -->
     <div class="hidden items-center gap-6 text-sm text-slate-500 sm:flex dark:text-slate-400">
       {
-        links.map(({ label, href }) => (
+        links.map(({ label, href, current }) => (
           <a
             href={href}
-            class="nav-link focus-visible:ring-accent-500 rounded focus-visible:ring-2 focus-visible:outline-none"
+            aria-current={current ? 'page' : undefined}
+            class:list={[
+              'nav-link focus-visible:ring-accent-500 rounded focus-visible:ring-2 focus-visible:outline-none',
+              current && 'text-accent-600 dark:text-accent-400 font-medium',
+            ]}
           >
             {label}
           </a>
@@ -143,10 +154,14 @@ const links = [
   >
     <div class="mx-auto flex max-w-4xl flex-col gap-0.5 px-6 py-3">
       {
-        links.map(({ label, href }) => (
+        links.map(({ label, href, current }) => (
           <a
             href={href}
-            class="mobile-menu-link hover:text-accent-600 dark:hover:text-accent-400 rounded-lg px-2 py-2.5 text-sm font-medium text-slate-600 transition-colors duration-150 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            aria-current={current ? 'page' : undefined}
+            class:list={[
+              'mobile-menu-link hover:text-accent-600 dark:hover:text-accent-400 rounded-lg px-2 py-2.5 text-sm font-medium text-slate-600 transition-colors duration-150 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800',
+              current && 'text-accent-600 dark:text-accent-400',
+            ]}
           >
             {label}
           </a>
