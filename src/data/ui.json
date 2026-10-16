@@ -15,7 +15,8 @@
     "a11y": {
       "skipToContent": "Skip to content",
       "mainNavigation": "Main navigation",
-      "menuToggle": "Toggle menu"
+      "menuToggle": "Toggle menu",
+      "introduction": "Introduction"
     },
     "hero": {
       "greeting": "Hello, I'm",
@@ -88,7 +89,8 @@
     "a11y": {
       "skipToContent": "Pular para o conteúdo",
       "mainNavigation": "Navegação principal",
-      "menuToggle": "Abrir e fechar o menu"
+      "menuToggle": "Abrir e fechar o menu",
+      "introduction": "Introdução"
     },
     "hero": {
       "greeting": "Olá, eu sou",
