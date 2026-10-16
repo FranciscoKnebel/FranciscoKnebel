@@ -79,12 +79,12 @@ const typeColors: Record<string, string> = {
                       href={pub.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-sm font-medium leading-snug text-slate-900 underline-offset-2 transition-colors duration-150 hover:underline group-hover:text-accent-600 dark:text-slate-100 dark:group-hover:text-accent-400"
+                      class="group-hover:text-accent-600 dark:group-hover:text-accent-400 text-sm leading-snug font-medium text-slate-900 underline-offset-2 transition-colors duration-150 hover:underline dark:text-slate-100"
                     >
                       {pub.title}
                     </a>
                   ) : (
-                    <p class="text-sm font-medium leading-snug text-slate-900 dark:text-slate-100">
+                    <p class="text-sm leading-snug font-medium text-slate-900 dark:text-slate-100">
                       {pub.title}
                     </p>
                   )}
@@ -99,7 +99,7 @@ const typeColors: Record<string, string> = {
                         href={pub.venueUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="underline decoration-slate-300 underline-offset-2 transition-colors duration-150 hover:text-accent-500 hover:decoration-accent-400 dark:decoration-slate-600 dark:hover:text-accent-400"
+                        class="hover:text-accent-500 hover:decoration-accent-400 dark:hover:text-accent-400 underline decoration-slate-300 underline-offset-2 transition-colors duration-150 dark:decoration-slate-600"
                       >
                         {pub.venue}
                       </a>
@@ -115,7 +115,7 @@ const typeColors: Record<string, string> = {
                             href={pub.advisorUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="underline decoration-slate-300 underline-offset-2 transition-colors duration-150 hover:text-accent-400 hover:decoration-accent-400 dark:decoration-slate-600 dark:hover:text-accent-400"
+                            class="hover:text-accent-400 hover:decoration-accent-400 dark:hover:text-accent-400 underline decoration-slate-300 underline-offset-2 transition-colors duration-150 dark:decoration-slate-600"
                           >
                             {pub.advisor}
                           </a>
@@ -133,7 +133,7 @@ const typeColors: Record<string, string> = {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${pub.title}`}
-                    class="mt-1 flex-shrink-0 text-slate-300 transition-colors duration-150 group-hover:text-accent-500 dark:text-slate-600 dark:group-hover:text-accent-400"
+                    class="group-hover:text-accent-500 dark:group-hover:text-accent-400 mt-1 flex-shrink-0 text-slate-300 transition-colors duration-150 dark:text-slate-600"
                   >
                     <svg
                       class="h-4 w-4"
@@ -163,7 +163,7 @@ const typeColors: Record<string, string> = {
           href="https://scholar.google.com/citations?user=_RHtqxIAAAAJ"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-2 transition-colors duration-150 hover:text-accent-500"
+          class="hover:text-accent-500 underline underline-offset-2 transition-colors duration-150"
           >Google Scholar</a
         >
         {lang === 'en' ? ' and ' : ' e '}
@@ -171,7 +171,7 @@ const typeColors: Record<string, string> = {
           href="https://www.researchgate.net/profile/Francisco-Knebel"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-2 transition-colors duration-150 hover:text-accent-500"
+          class="hover:text-accent-500 underline underline-offset-2 transition-colors duration-150"
           >ResearchGate</a
         >.
       </p>

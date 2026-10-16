@@ -14,6 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -23,10 +28,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements-scholar.txt
 
+      - name: Install Node dependencies
+        run: npm ci --ignore-scripts
+
       - name: Scrape Google Scholar
         env:
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
         run: python scripts/scrape-scholar.py
+
+      - name: Format scraped data
+        run: npx prettier --write src/data/publications.json
 
       - name: Check for changes
         id: diff
