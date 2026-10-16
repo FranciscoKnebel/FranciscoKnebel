@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '../types';
+import type { Lang, Experience } from '../types';
 import ui from '../data/ui.json';
 import experiencesData from '../data/experiences.json';
 
@@ -8,6 +8,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = ui[lang];
+const experiences: Experience[] = experiencesData;
 ---
 
 <section
@@ -20,7 +21,7 @@ const t = ui[lang];
 
     <div class="reveal-stagger mt-8 space-y-8">
       {
-        experiencesData.map((exp) => (
+        experiences.map((exp) => (
           <article
             class={`card-hover relative border-l-2 pl-6 ${
               exp.current
