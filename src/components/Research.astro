@@ -15,6 +15,9 @@ const t = ui[lang];
 
 const meta: Record<string, Partial<Publication>> = publicationsMeta;
 const publicationsData = mergePublications(rawPublications, meta);
+const featuredPublications = [...publicationsData]
+  .sort((a, b) => (b.citations ?? 0) - (a.citations ?? 0))
+  .slice(0, 3);
 const publicationsUrl = lang === 'pt' ? '/pt/publications/' : '/publications/';
 ---
 
@@ -43,12 +46,12 @@ const publicationsUrl = lang === 'pt' ? '/pt/publications/' : '/publications/';
     </div>
 
     <!-- Publications -->
-    <div>
+    <div id="publications" class="scroll-mt-20">
       <h3 class="reveal mb-6 text-sm font-medium text-slate-700 dark:text-slate-300">
         {t.sections.publications}
       </h3>
       <div class="reveal-stagger space-y-4">
-        {publicationsData.map((pub) => <PublicationCard publication={pub} lang={lang} />)}
+        {featuredPublications.map((pub) => <PublicationCard publication={pub} lang={lang} />)}
       </div>
 
       <p class="reveal mt-6 text-xs text-slate-500 dark:text-slate-400">
