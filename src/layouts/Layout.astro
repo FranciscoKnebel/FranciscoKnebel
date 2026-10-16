@@ -4,6 +4,7 @@ import ui from '../data/ui.json';
 import socials from '../data/social.json';
 import Consent from '../components/Consent.astro';
 import LanguageNotice from '../components/LanguageNotice.astro';
+import { localePaths } from '../lib/i18n';
 import '../styles/global.css';
 
 interface Props {
@@ -27,8 +28,7 @@ const pathname = Astro.url.pathname;
 const canonical = new URL(pathname, Astro.site).href;
 const ogImage = new URL(lang === 'pt' ? '/og-image.pt.png' : '/og-image.png', Astro.site).href;
 
-const enPath = lang === 'pt' ? pathname.replace(/^\/pt(?=\/|$)/, '') || '/' : pathname;
-const ptPath = enPath === '/' ? '/pt/' : `/pt${enPath}`;
+const { en: enPath, pt: ptPath } = localePaths(pathname, lang);
 const alternates = [
   { hreflang: 'en', href: new URL(enPath, Astro.site).href },
   { hreflang: 'pt', href: new URL(ptPath, Astro.site).href },
