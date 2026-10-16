@@ -110,6 +110,7 @@ const links = [
 
       <button
         id="menu-toggle"
+        type="button"
         aria-label={t.a11y.menuToggle}
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -150,7 +151,6 @@ const links = [
   <div
     id="mobile-menu"
     class="hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md sm:hidden dark:border-slate-800/80 dark:bg-slate-950/95"
-    aria-hidden="true"
   >
     <div class="mx-auto flex max-w-4xl flex-col gap-0.5 px-6 py-3">
       {
@@ -179,7 +179,6 @@ const links = [
 
   function openMenu() {
     menu?.classList.remove('hidden');
-    menu?.setAttribute('aria-hidden', 'false');
     toggle?.setAttribute('aria-expanded', 'true');
     iconOpen?.classList.add('hidden');
     iconClose?.classList.remove('hidden');
@@ -189,7 +188,6 @@ const links = [
 
   function closeMenu(refocus = false) {
     menu?.classList.add('hidden');
-    menu?.setAttribute('aria-hidden', 'true');
     toggle?.setAttribute('aria-expanded', 'false');
     iconOpen?.classList.remove('hidden');
     iconClose?.classList.add('hidden');

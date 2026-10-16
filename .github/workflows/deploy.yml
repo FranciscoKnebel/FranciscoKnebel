@@ -3,6 +3,10 @@ name: Deploy Portfolio
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'github-metrics.svg'
+      - 'metrics.plugin.calendar.svg'
+      - 'profile-3d-contrib/**'
   workflow_dispatch:
   schedule: [{ cron: '0 6 * * 0' }]
 

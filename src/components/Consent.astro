@@ -9,9 +9,8 @@ const { lang } = Astro.props;
 const t = ui[lang];
 ---
 
-<div
+<section
   id="analytics-consent"
-  role="region"
   aria-label={t.consent.title}
   class="fixed inset-x-0 bottom-0 z-50 hidden px-4 pb-4"
 >
@@ -38,7 +37,7 @@ const t = ui[lang];
       </button>
     </div>
   </div>
-</div>
+</section>
 
 <script>
   const GA_ID = 'G-80D0XB0GGG';

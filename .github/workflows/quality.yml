@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
     branches: [main]
+    paths-ignore:
+      - 'github-metrics.svg'
+      - 'metrics.plugin.calendar.svg'
+      - 'profile-3d-contrib/**'
   workflow_dispatch:
 
 permissions:
@@ -34,6 +38,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Validate HTML
+        run: npm run validate:html
 
       - name: Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
