@@ -91,6 +91,11 @@
       "bibtex": "BibTeX",
       "download": "Download .bib"
     },
+    "projectsPage": {
+      "back": "Back to projects",
+      "repo": "Repository",
+      "live": "Live site"
+    },
     "footer": {
       "source": "Source"
     }
@@ -186,6 +191,11 @@
       "empty": "Nenhuma publicação corresponde aos filtros atuais.",
       "bibtex": "BibTeX",
       "download": "Baixar .bib"
+    },
+    "projectsPage": {
+      "back": "Voltar para projetos",
+      "repo": "Repositório",
+      "live": "Site"
     },
     "footer": {
       "source": "Código-fonte"

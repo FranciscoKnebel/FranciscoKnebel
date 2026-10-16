@@ -1,8 +1,8 @@
 ---
 import type { Lang } from '../types';
+import { getCollection } from 'astro:content';
 import ui from '../data/ui.json';
 import publications from '../data/publications.json';
-import projects from '../data/projects.json';
 import socials from '../data/social.json';
 
 interface Props {
@@ -20,7 +20,7 @@ const totalCitations = publications.reduce(
   (sum, p) => sum + ((p as { citations?: number }).citations ?? 0),
   0,
 );
-const projectCount = projects.length;
+const projectCount = (await getCollection('projects', ({ data }) => data.lang === lang)).length;
 
 const stats = [
   { value: `${yearsOfCoding}+`, label: t.hero.stats[0].label },

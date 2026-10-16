@@ -2,7 +2,12 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "url": ["http://localhost/", "http://localhost/pt/", "http://localhost/publications/"],
+      "url": [
+        "http://localhost/",
+        "http://localhost/pt/",
+        "http://localhost/publications/",
+        "http://localhost/projects/gnome-provider-limits/"
+      ],
       "numberOfRuns": 1,
       "settings": {
         "preset": "desktop"
