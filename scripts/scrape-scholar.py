@@ -24,8 +24,8 @@ from pathlib import Path
 
 try:
     from scholarly import scholarly, ProxyGenerator
-except ImportError:
-    print("ERROR: scholarly not installed (run: pip install scholarly)", file=sys.stderr)
+except ImportError as exc:
+    print(f"ERROR: could not import scholarly: {exc}", file=sys.stderr)
     sys.exit(1)
 
 # ── Config ────────────────────────────────────────────────────────────────────
