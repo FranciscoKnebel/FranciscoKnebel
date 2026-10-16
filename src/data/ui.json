@@ -44,6 +44,13 @@
       "elsewhere": "Elsewhere",
       "blurb": "If you have an interesting project, idea, or proposal, let's talk."
     },
+    "consent": {
+      "title": "Analytics",
+      "message": "I use Google Analytics to understand how the site is used. You can accept or decline; declining keeps the site fully functional.",
+      "accept": "Accept analytics",
+      "decline": "Decline",
+      "settings": "Analytics settings"
+    },
     "sections": {
       "experience": "Experience",
       "research": "Research",
@@ -117,6 +124,13 @@
       "label": "Contato",
       "elsewhere": "Em outros lugares",
       "blurb": "Se você tem um projeto, ideia ou proposta interessante, vamos conversar."
+    },
+    "consent": {
+      "title": "Analytics",
+      "message": "Uso o Google Analytics para entender como o site é utilizado. Você pode aceitar ou recusar; recusar mantém o site totalmente funcional.",
+      "accept": "Aceitar analytics",
+      "decline": "Recusar",
+      "settings": "Preferências de analytics"
     },
     "sections": {
       "experience": "Experiência",

@@ -64,7 +64,7 @@ const year = new Date().getFullYear();
     class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 px-6 text-xs text-slate-500 sm:flex-row dark:text-slate-400"
   >
     <span>© {year} Francisco Knebel</span>
-    <span class="flex items-center gap-1.5">
+    <span class="flex items-center gap-2">
       <a
         href="https://github.com/FranciscoKnebel/FranciscoKnebel"
         target="_blank"
@@ -73,6 +73,14 @@ const year = new Date().getFullYear();
       >
         {t.footer.source}
       </a>
+      <span aria-hidden="true">·</span>
+      <button
+        id="analytics-settings"
+        type="button"
+        class="hover:text-accent-500 dark:hover:text-accent-400 underline underline-offset-2 transition-colors duration-150"
+      >
+        {t.consent.settings}
+      </button>
     </span>
   </div>
 </footer>

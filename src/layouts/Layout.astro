@@ -2,6 +2,7 @@
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
 import socials from '../data/social.json';
+import Consent from '../components/Consent.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -73,17 +74,6 @@ const person = {
 
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-80D0XB0GGG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function (...args: unknown[]) {
-        window.dataLayer.push(args);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-80D0XB0GGG');
-    </script>
-
     <!-- Keep content visible when JavaScript is unavailable -->
     <noscript>
       <style>
@@ -102,6 +92,7 @@ const person = {
       >{ui[lang].a11y.skipToContent}</a
     >
     <slot />
+    <Consent lang={lang} />
 
     <script>
       // Intersection Observer for scroll-triggered reveals
