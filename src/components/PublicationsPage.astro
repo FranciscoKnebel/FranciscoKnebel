@@ -23,6 +23,12 @@ const years = [...new Set(publications.map((publication) => publication.year))].
 
 const inputClass =
   'rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:placeholder:text-slate-500';
+
+const normalizeSearch = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
 ---
 
 <Nav lang={lang} />
@@ -68,6 +74,7 @@ const inputClass =
         <p
           id="pub-count"
           data-label={t.publicationsPage.results}
+          aria-live="polite"
           class="text-xs text-slate-500 dark:text-slate-400"
         >
           {publications.length}
@@ -87,7 +94,9 @@ const inputClass =
           publications.map((publication, index) => (
             <article
               data-publication
-              data-search={`${publication.title} ${publication.authors.join(' ')} ${publication.venue}`.toLowerCase()}
+              data-search={normalizeSearch(
+                `${publication.title} ${publication.authors.join(' ')} ${publication.venue}`,
+              )}
               data-type={publication.type}
               data-year={String(publication.year)}
               class="card-hover group rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50"
@@ -181,7 +190,7 @@ const inputClass =
                     href={publication.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Open ${publication.title}`}
+                    aria-label={`${t.publicationsPage.open} ${publication.title}`}
                     class="group-hover:text-accent-500 focus-visible:ring-accent-500 dark:group-hover:text-accent-400 mt-1 flex-shrink-0 rounded text-slate-300 transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-600"
                   >
                     <svg
@@ -206,7 +215,11 @@ const inputClass =
         }
       </div>
 
-      <p id="pub-empty" class="mt-6 hidden text-sm text-slate-500 dark:text-slate-400">
+      <p
+        id="pub-empty"
+        role="status"
+        class="mt-6 hidden text-sm text-slate-500 dark:text-slate-400"
+      >
         {t.publicationsPage.empty}
       </p>
     </div>
@@ -222,10 +235,16 @@ const inputClass =
   const count = document.getElementById('pub-count');
   const empty = document.getElementById('pub-empty');
 
-  function applyFilters() {
-    const query = (searchInput instanceof HTMLInputElement ? searchInput.value : '')
-      .trim()
+  const normalize = (value: string) =>
+    value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase();
+
+  function applyFilters() {
+    const query = normalize(
+      (searchInput instanceof HTMLInputElement ? searchInput.value : '').trim(),
+    );
     const type = typeSelect instanceof HTMLSelectElement ? typeSelect.value : '';
     const year = yearSelect instanceof HTMLSelectElement ? yearSelect.value : '';
     let visible = 0;

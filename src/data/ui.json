@@ -95,7 +95,8 @@
       "results": "publications",
       "empty": "No publications match the current filters.",
       "bibtex": "BibTeX",
-      "download": "Download .bib"
+      "download": "Download .bib",
+      "open": "Open"
     },
     "projectsPage": {
       "back": "Back to projects",
@@ -208,7 +209,8 @@
       "results": "publicações",
       "empty": "Nenhuma publicação corresponde aos filtros atuais.",
       "bibtex": "BibTeX",
-      "download": "Baixar .bib"
+      "download": "Baixar .bib",
+      "open": "Abrir"
     },
     "projectsPage": {
       "back": "Voltar para projetos",

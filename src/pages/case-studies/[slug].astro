@@ -18,6 +18,7 @@ const { entry } = Astro.props;
   lang="en"
   title={`${entry.data.title} | Francisco Knebel`}
   description={entry.data.description}
+  noindex={entry.data.status === 'planned'}
 >
   <CaseStudyPage entry={entry} lang="en" />
 </Layout>
