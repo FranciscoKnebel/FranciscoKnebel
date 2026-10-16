@@ -4,6 +4,7 @@ import type { Lang } from '../types';
 import ui from '../data/ui.json';
 import Nav from './Nav.astro';
 import Footer from './Footer.astro';
+import { slugFromId } from '../lib/content';
 
 interface Props {
   lang: Lang;
@@ -31,7 +32,7 @@ const caseStudyHref = (slug: string) => `${lang === 'pt' ? '/pt' : ''}/case-stud
       <div class="mt-8 grid gap-4 sm:grid-cols-2">
         {
           entries.map((entry) => {
-            const slug = entry.id.split('/')[1];
+            const slug = slugFromId(entry.id);
             return (
               <a
                 href={caseStudyHref(slug)}

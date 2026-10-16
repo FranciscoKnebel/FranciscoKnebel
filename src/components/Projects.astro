@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
+import { slugFromId } from '../lib/content';
 
 interface Props {
   lang: Lang;
@@ -13,7 +14,7 @@ const entries = (await getCollection('projects', ({ data }) => data.lang === lan
   (a, b) => a.data.order - b.data.order,
 );
 const projects = entries.map((entry) => ({
-  slug: entry.id.split('/')[1],
+  slug: slugFromId(entry.id),
   ...entry.data,
 }));
 const projectHref = (slug: string) => `${lang === 'pt' ? '/pt' : ''}/projects/${slug}/`;
