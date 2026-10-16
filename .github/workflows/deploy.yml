@@ -42,7 +42,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ''
           plugin_calendar: yes
-          plugin_calendar_limit: 0
+          plugin_calendar_limit: 1
 
   metrics-3d:
     runs-on: ubuntu-latest

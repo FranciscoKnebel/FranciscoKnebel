@@ -1,14 +1,15 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-import { copyFileSync, existsSync, readFileSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'fs';
+import { dirname } from 'path';
 
 // Root-level metric SVGs served in dev and copied to dist in build
 const metricsSvgs = [
   'github-metrics.svg',
   'metrics.plugin.calendar.svg',
-  'metrics.plugin.isocalendar.fullyear.svg',
-  'metrics.plugin.languages.indepth.svg',
+  'profile-3d-contrib/profile-gitblock.svg',
+  'profile-3d-contrib/profile-night-view.svg',
 ];
 
 const metricsPlugin = {
@@ -26,7 +27,10 @@ const metricsPlugin = {
   },
   writeBundle() {
     metricsSvgs.forEach((f) => {
-      if (existsSync(f)) copyFileSync(f, `dist/${f}`);
+      if (existsSync(f)) {
+        mkdirSync(dirname(`dist/${f}`), { recursive: true });
+        copyFileSync(f, `dist/${f}`);
+      }
     });
   },
 };
