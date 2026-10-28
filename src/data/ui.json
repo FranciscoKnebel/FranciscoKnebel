@@ -83,7 +83,9 @@
         "Conference": "Conference Paper"
       },
       "advisor": "Advisor",
-      "citations": "citations"
+      "citations": "citations",
+      "lastSync": "Citation data last synchronized on",
+      "citationSource": "Source:"
     },
     "publicationsPage": {
       "title": "Publications",
@@ -198,7 +200,9 @@
         "Conference": "Artigo em Conferência"
       },
       "advisor": "Orientador",
-      "citations": "citações"
+      "citations": "citações",
+      "lastSync": "Citações sincronizadas pela última vez em",
+      "citationSource": "Fonte:"
     },
     "publicationsPage": {
       "title": "Publicações",

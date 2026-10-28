@@ -7,3 +7,7 @@ dist/
 .lighthouseci/
 playwright-report/
 test-results/
+
+# Python sync tests
+__pycache__/
+*.pyc

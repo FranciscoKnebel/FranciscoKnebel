@@ -1,0 +1,40 @@
+---
+import type { Lang } from '../types';
+import publications from '../data/publications.json';
+import ui from '../data/ui.json';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang].publications;
+// Use the oldest successful timestamp, so partially edited data cannot imply a full refresh.
+const timestamps = publications.map((publication) => Date.parse(publication.last_sync));
+const lastSync =
+  timestamps.length > 0 && timestamps.every(Number.isFinite)
+    ? new Date(Math.min(...timestamps))
+    : null;
+const formattedDate =
+  lastSync &&
+  new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en', {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  }).format(lastSync);
+---
+
+{
+  lastSync && (
+    <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">
+      {t.lastSync} <time datetime={lastSync.toISOString()}>{formattedDate}</time>.{' '}
+      {t.citationSource}{' '}
+      <a
+        class="underline underline-offset-2"
+        href="https://scholar.google.com/citations?user=_RHtqxIAAAAJ"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Google Scholar
+      </a>
+      .
+    </p>
+  )
+}

@@ -6,6 +6,7 @@ import publicationsMeta from '../data/publications-meta.json';
 import interestsData from '../data/interests.json';
 import { mergePublications } from '../lib/publications';
 import PublicationCard from './PublicationCard.astro';
+import PublicationsSync from './PublicationsSync.astro';
 
 interface Props {
   lang: Lang;
@@ -47,6 +48,7 @@ const publicationsUrl = lang === 'pt' ? '/pt/publications/' : '/publications/';
 
     <!-- Publications -->
     <div id="publications" class="scroll-mt-20">
+      <PublicationsSync lang={lang} />
       <h3 class="reveal mb-6 text-sm font-medium text-slate-700 dark:text-slate-300">
         {t.sections.publications}
       </h3>
