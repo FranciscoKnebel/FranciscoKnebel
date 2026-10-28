@@ -25,7 +25,8 @@ Personal website built with [Astro](https://astro.build) and [Tailwind CSS](http
 
 ### Workflows
 
-- `deploy.yml`: regenerates the GitHub metrics and deploys to Pages on push to `main`.
+- `deploy.yml`: deploys committed content to Pages on push to `main`, manual dispatch, or successful main-branch metric/publication refreshes. Metric generation is not a build dependency.
+- `metrics.yml`: updates metric snapshots weekly or manually, independently of deployment.
 - `quality.yml`: format, lint, type check, build and Lighthouse CI on pull requests and `main`.
 - `links.yml`: weekly link check with lychee over the built site.
 - `publications.yml`: weekly Google Scholar sync.
@@ -42,3 +43,11 @@ Install with `python -m pip install -r scripts/requirements-scholar.txt`, then c
 The scraper updates the file atomically after all records have been fetched and validated. Empty responses, duplicates, missing existing titles, invalid records and individual fetch failures leave the previous snapshot untouched. If Scholar renames or removes a publication, review and reconcile the local data manually before retrying. Display overrides remain in `src/data/publications-meta.json`.
 
 The site displays the oldest successful `last_sync` timestamp alongside citation data. A failed fetch does not advance this date. Live synchronization is verified by running **Update Publications** after merge; offline tests do not contact Scholar or use the proxy secret.
+
+### Deploy and refresh behavior
+
+Normal content pushes build directly from `main`, using the last committed metric SVGs. A failure in a metric provider cannot block this path. Successful automated refreshes trigger deployment with `workflow_run`, because pushes authenticated with `GITHUB_TOKEN` do not trigger another push workflow. Only successful refreshes from the same repository on `main` are accepted; deployment always checks out trusted `main` content.
+
+Metric and publication workflows share a concurrency group to avoid concurrent automated writes. Metrics retain their own failure status for diagnosis. The 3D refresh can run after a failed base-metrics job, and commits only `profile-3d-contrib/`. Metric actions use immutable commit references. No new secrets are required.
+
+After merging the PR stack, run **Update Publications** and **Update Profile Metrics** manually and confirm that each successful refresh is followed by **Deploy Portfolio**. These workflows and their secrets cannot be fully exercised before the new workflow files reach the default branch.
