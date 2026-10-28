@@ -32,15 +32,6 @@ jobs:
           repositories: 400
           repositories_affiliations: owner, collaborator, organization_member
 
-      - name: Calendar
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
-        with:
-          filename: metrics.plugin.calendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ''
-          plugin_calendar: yes
-          plugin_calendar_limit: 1
-
   metrics-3d:
     runs-on: ubuntu-latest
     timeout-minutes: 20

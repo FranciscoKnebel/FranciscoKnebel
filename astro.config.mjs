@@ -7,7 +7,6 @@ import { dirname } from 'path';
 // Root-level metric SVGs served in dev and copied to dist in build
 const metricsSvgs = [
   'github-metrics.svg',
-  'metrics.plugin.calendar.svg',
   'profile-3d-contrib/profile-gitblock.svg',
   'profile-3d-contrib/profile-night-view.svg',
 ];

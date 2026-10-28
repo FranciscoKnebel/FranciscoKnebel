@@ -116,6 +116,14 @@
     },
     "footer": {
       "source": "Source"
+    },
+    "stats": {
+      "context": "A snapshot of GitHub contribution activity. It complements selected work; professional experience also includes private projects, research and technical leadership.",
+      "calendar": "3D GitHub contribution calendar",
+      "summary": "GitHub metrics overview",
+      "more": "More GitHub statistics",
+      "profile": "View GitHub profile",
+      "unavailable": "The contribution calendar is currently unavailable. You can view activity on GitHub."
     }
   },
   "pt": {
@@ -235,6 +243,14 @@
     },
     "footer": {
       "source": "Código-fonte"
+    },
+    "stats": {
+      "context": "Um retrato da atividade de contribuições no GitHub. Ele complementa os trabalhos selecionados; a experiência profissional também inclui projetos privados, pesquisa e liderança técnica.",
+      "calendar": "Calendário 3D de contribuições no GitHub",
+      "summary": "Resumo de métricas do GitHub",
+      "more": "Mais estatísticas do GitHub",
+      "profile": "Ver perfil no GitHub",
+      "unavailable": "O calendário de contribuições está indisponível no momento. Você pode consultar a atividade no GitHub."
     }
   }
 }

@@ -51,3 +51,9 @@ Normal content pushes build directly from `main`, using the last committed metri
 Metric and publication workflows share a concurrency group to avoid concurrent automated writes. Metrics retain their own failure status for diagnosis. The 3D refresh can run after a failed base-metrics job, and commits only `profile-3d-contrib/`. Metric actions use immutable commit references. No new secrets are required.
 
 After merging the PR stack, run **Update Publications** and **Update Profile Metrics** manually and confirm that each successful refresh is followed by **Deploy Portfolio**. These workflows and their secrets cannot be fully exercised before the new workflow files reach the default branch.
+
+### Statistics assets
+
+The site shows one contribution calendar with light/dark variants. The general GitHub summary is optional in a native details disclosure. Dimensions are read from the committed SVGs at build time, so regenerated assets reserve their actual aspect ratio. Missing assets produce a profile link rather than a broken image. All displayed metric assets are served locally.
+
+The redundant full-history calendar and unused language SVG have been retired. The refresh workflow no longer regenerates the removed calendar; avoid reintroducing it into the build. The remaining generated files are snapshots, not real-time indicators of all professional work.
