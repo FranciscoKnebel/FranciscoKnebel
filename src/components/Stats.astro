@@ -1,12 +1,15 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
-
+import { metricAsset } from '../lib/metric-assets';
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = ui[lang];
+const night = metricAsset('profile-3d-contrib/profile-night-view.svg');
+const calendar = metricAsset('profile-3d-contrib/profile-gitblock.svg') ?? night;
+const summary = metricAsset('github-metrics.svg');
 ---
 
 <section
@@ -14,49 +17,52 @@ const t = ui[lang];
   class="border-t border-slate-100 py-24 dark:border-slate-800/60"
   aria-labelledby="stats-heading"
 >
-  <div class="mx-auto max-w-6xl px-6">
-    <h2 id="stats-heading" class="section-heading reveal">{t.sections.stats}</h2>
-
-    <div class="reveal-stagger mt-8 grid grid-cols-1 gap-4 md:grid-cols-5">
-      <div class="overflow-hidden rounded-xl bg-slate-50 md:col-span-2">
-        <img
-          src="/github-metrics.svg"
-          alt="GitHub metrics overview"
-          width="480"
-          height="367"
-          class="block h-auto w-full"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div class="overflow-hidden rounded-xl bg-slate-50 md:col-span-3 dark:bg-slate-900/50">
-        <picture>
-          <source
-            media="(prefers-color-scheme: dark)"
-            srcset="/profile-3d-contrib/profile-night-view.svg"
-          />
-          <img
-            src="/profile-3d-contrib/profile-gitblock.svg"
-            alt="3D GitHub contribution calendar"
-            width="1280"
-            height="850"
-            class="block h-auto w-full"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-      </div>
-      <div class="overflow-hidden rounded-xl bg-slate-50 md:col-span-3 md:col-start-2">
-        <img
-          src="/metrics.plugin.calendar.svg"
-          alt="GitHub contribution calendar"
-          width="480"
-          height="129"
-          class="block h-auto w-full"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+  <div class="mx-auto max-w-3xl px-6">
+    <h2 id="stats-heading" class="section-heading">{t.sections.stats}</h2>
+    <p class="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t.stats.context}</p>
+    <div class="grid grid-cols-1 gap-4">
+      {
+        calendar ? (
+          <picture class="overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
+            {night && <source media="(prefers-color-scheme: dark)" srcset={night.src} />}
+            <img
+              src={calendar.src}
+              alt={t.stats.calendar}
+              width={calendar.width}
+              height={calendar.height}
+              class="block h-auto w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        ) : (
+          <p class="text-sm text-slate-600 dark:text-slate-300">{t.stats.unavailable}</p>
+        )
+      }
+      {
+        summary && (
+          <details class="rounded-xl border border-slate-200 p-4 dark:border-slate-700">
+            <summary class="focus-visible:ring-accent-500 cursor-pointer rounded text-sm font-medium text-slate-700 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-200">
+              {t.stats.more}
+            </summary>
+            <img
+              src={summary.src}
+              alt={t.stats.summary}
+              width={summary.width}
+              height={summary.height}
+              class="mx-auto mt-4 block h-auto max-w-full rounded-lg bg-slate-50"
+              loading="lazy"
+              decoding="async"
+            />
+          </details>
+        )
+      }
     </div>
+    <a
+      href="https://github.com/FranciscoKnebel"
+      class="bio-link mt-5 inline-flex min-h-11 items-center text-sm"
+      target="_blank"
+      rel="noopener noreferrer">{t.stats.profile}</a
+    >
   </div>
 </section>
