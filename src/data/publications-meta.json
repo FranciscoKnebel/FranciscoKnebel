@@ -23,5 +23,11 @@
     "type": "Conference",
     "venue": "ERRC · Escola Regional de Redes de Computadores",
     "venueUrl": "https://sol.sbc.org.br/index.php/errc"
+  },
+  "a cloud-fog computing architecture for real-time digital twins": {
+    "type": "Preprint",
+    "venue": "arXiv:2012.06118",
+    "venueUrl": "https://arxiv.org/abs/2012.06118",
+    "url": "https://arxiv.org/abs/2012.06118"
   }
 }

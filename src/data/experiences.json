@@ -67,8 +67,8 @@
   },
   {
     "role": {
-      "en": "Researcher & M.Sc. Student",
-      "pt": "Pesquisador & Aluno de Mestrado"
+      "en": "Research & Software Development",
+      "pt": "Pesquisa e Desenvolvimento de Software"
     },
     "company": "UFRGS",
     "companyUrl": "https://ufrgs.br",
@@ -81,8 +81,8 @@
       "pt": "Porto Alegre, RS"
     },
     "description": {
-      "en": "Research on Digital Twins, Cloud and Edge Computing, and Computer Networks. Most of my engineering time went into <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">JEMS 3 (Journal and Event Management System)</a>, a platform used to manage submissions, peer reviews, and notifications for academic conferences. The work was part of the project 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'.",
-      "pt": "Pesquisa em Gêmeos Digitais, Computação em Nuvem e Borda, e Redes de Computadores. A maior parte do tempo de engenharia foi no <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">JEMS 3 (Journal and Event Management System)</a>, plataforma para gerenciar submissões, revisões por pares e notificações de conferências acadêmicas. O trabalho fez parte do projeto 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'."
+      "en": "Research on Digital Twins, Cloud and Edge Computing, and Computer Networks. Most of my engineering time went into <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">JEMS 3 (Journal and Event Management System)</a>, a platform used to manage submissions, peer reviews, and notifications for academic conferences. The work was part of the project 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'. My M.Sc. dissertation was completed in 2024; the period above describes the research and development work listed here.",
+      "pt": "Pesquisa em Gêmeos Digitais, Computação em Nuvem e Borda, e Redes de Computadores. A maior parte do tempo de engenharia foi no <a href=\"https://jems3.sbc.org.br/\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">JEMS 3 (Journal and Event Management System)</a>, plataforma para gerenciar submissões, revisões por pares e notificações de conferências acadêmicas. O trabalho fez parte do projeto 'Novo Método para Avaliação de Contestações de Projetos da Lei de Informática'. A dissertação de mestrado foi concluída em 2024; o período acima descreve o trabalho de pesquisa e desenvolvimento listado aqui."
     },
     "tags": ["Digital Twins", "Cloud Computing", "Computer Networks", "Research"],
     "current": false
