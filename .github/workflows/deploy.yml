@@ -26,6 +26,8 @@ jobs:
        github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      revision: ${{ steps.revision.outputs.value }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -37,11 +39,16 @@ jobs:
           node-version: 24
           cache: npm
 
+      - name: Identify build revision
+        id: revision
+        run: echo "value=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build with public GitHub data and snapshot fallback
         env:
+          BUILD_REVISION: ${{ steps.revision.outputs.value }}
           REFRESH_GITHUB_METRICS: '1'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
@@ -66,3 +73,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  verify:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.build.outputs.revision }}
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Verify published revision and public routes
+        env:
+          PUBLIC_SITE_URL: https://franciscoknebel.com
+          EXPECTED_REVISION: ${{ needs.build.outputs.revision }}
+        run: node scripts/verify-production.mjs

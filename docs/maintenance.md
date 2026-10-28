@@ -38,8 +38,8 @@ Python 3.12 is only needed for publication synchronization; it is not required t
 
 ## Workflows
 
-- `deploy.yml`: deploys committed content to Pages on push to `main`, manual dispatch, or successful main-branch metric/publication refreshes. Metric generation is not a build dependency.
-- `metrics.yml`: updates metric snapshots weekly or manually, independently of deployment.
+- `deploy.yml`: deploys committed content to Pages on push to `main`, manual dispatch, or successful main-branch publication refreshes. Metric generation is not a build dependency.
+- The old metric-image workflow has been retired; `deploy.yml` refreshes native public metrics with a snapshot fallback.
 - `quality.yml`: format, lint, type check, build and Lighthouse CI on pull requests and `main`.
 - `links.yml`: weekly link check with lychee over the built site.
 - `publications.yml`: weekly Google Scholar sync.
@@ -59,17 +59,17 @@ The site displays the oldest successful `last_sync` timestamp alongside citation
 
 ## Deploy and refresh behavior
 
-Normal content pushes build directly from `main`, using the last committed metric SVGs. A failure in a metric provider cannot block this path. Successful automated refreshes trigger deployment with `workflow_run`, because pushes authenticated with `GITHUB_TOKEN` do not trigger another push workflow. Only successful refreshes from the same repository on `main` are accepted; deployment always checks out trusted `main` content.
+Normal content pushes build directly from `main`, using a public JSON snapshot if the metrics API fails. A failure in a metric provider cannot block this path. Successful automated refreshes trigger deployment with `workflow_run`, because pushes authenticated with `GITHUB_TOKEN` do not trigger another push workflow. Only successful refreshes from the same repository on `main` are accepted; deployment always checks out trusted `main` content.
 
-Metric and publication workflows share a concurrency group to avoid concurrent automated writes. Metrics retain their own failure status for diagnosis. The 3D refresh can run after a failed base-metrics job, and commits only `profile-3d-contrib/`. Metric actions use immutable commit references. No new secrets are required.
+Publication writes use their own concurrency group. Public profile data refreshes during the build and never creates a Git commit. No new secrets are required.
 
-After merging the PR stack, run **Update Publications** and **Update Profile Metrics** manually and confirm that each successful refresh is followed by **Deploy Portfolio**. These workflows and their secrets cannot be fully exercised before the new workflow files reach the default branch.
+After merging the PR stack, run **Update Publications** and **Deploy Portfolio** manually and confirm that each successful refresh is followed by **Deploy Portfolio**. These workflows and their secrets cannot be fully exercised before the new workflow files reach the default branch.
 
-## Statistics assets
+## Native GitHub metrics
 
-The site shows one contribution calendar with light/dark variants. The general GitHub summary is optional in a native details disclosure. Dimensions are read from the committed SVGs at build time, so regenerated assets reserve their actual aspect ratio. Missing assets produce a profile link rather than a broken image. All displayed metric assets are served locally.
+The site renders semantic HTML from `src/data/github-snapshot.json`, not generated SVGs. Normal local/CI builds use the committed public snapshot. Set `REFRESH_GITHUB_METRICS=1` to fetch public profile counts, non-fork repository languages and a small sample of public events. An optional `GITHUB_TOKEN` avoids anonymous API limits. Refresh failures preserve the snapshot and do not block deployment. No account credential or private activity is included in the frontend.
 
-The redundant full-history calendar and unused language SVG have been retired. The refresh workflow no longer regenerates the removed calendar; avoid reintroducing it into the build. The remaining generated files are snapshots, not real-time indicators of all professional work.
+Deployment refreshes the snapshot at build time and weekly. These build changes are not pushed back to Git. The old metric-image workflow has been retired. Publication refreshes remain separate and still trigger deployment after success.
 
 ## Validation before opening a PR
 
@@ -101,11 +101,11 @@ CI also runs Lighthouse against representative routes. Automated accessibility c
 
 ## Credentials and permissions
 
-| Name              | Used by                | Purpose                                                                                                         |
-| ----------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `GITHUB_TOKEN`    | Actions jobs           | Repository-scoped authentication supplied by GitHub, with permissions declared per job                          |
-| `METRICS_TOKEN`   | Update Profile Metrics | Existing credential used by metric providers; preserve only the access required for the configured data sources |
-| `SCRAPER_API_KEY` | Update Publications    | Optional ScraperAPI account for Scholar requests that need a proxy                                              |
+| Name              | Used by                | Purpose                                                                                |
+| ----------------- | ---------------------- | -------------------------------------------------------------------------------------- |
+| `GITHUB_TOKEN`    | Actions jobs           | Repository-scoped authentication supplied by GitHub, with permissions declared per job |
+| `METRICS_TOKEN`   | Retired image workflow | No longer read by the native metrics build; no secret was removed during this change   |
+| `SCRAPER_API_KEY` | Update Publications    | Optional ScraperAPI account for Scholar requests that need a proxy                     |
 
 The static site needs none of these secrets at runtime. The analytics measurement ID in the frontend is a public identifier, not an API secret. Never copy token values into this guide, workflow logs or PR descriptions.
 
@@ -122,6 +122,22 @@ The build job reads repository content; only the deployment job receives Pages/O
 
 ## After merge and rollback
 
-New or changed scheduled workflows become effective on the default branch. After the PR stack is merged in dependency order, run the two refresh workflows manually, verify their logs, then verify the follow-up Pages deployment and the published EN/PT pages. A successful build alone does not prove Scholar access or publication with production credentials.
+New or changed scheduled workflows become effective on the default branch. After the PR stack is merged in dependency order, run Update Publications and Deploy Portfolio manually, verify their logs, then verify the follow-up Pages deployment and the published EN/PT pages. A successful build alone does not prove Scholar access or publication with production credentials.
 
 To undo a deployed change, open a revert PR for the relevant commit or merge and let the normal deploy workflow publish the reviewed revert. Preserve the last valid publication and metric snapshots while investigating provider failures. Avoid modifying generated snapshots just to make a failing refresh appear successful.
+
+## Optional roadmap pages
+
+- **Privacy:** `/privacy/` and `/pt/privacidade/`, linked from the notice and footer. Update the wording when storage, analytics or hosting behavior changes.
+- **CV:** `npm run cv` generates two-page EN/PT PDFs in `public/cv/`; `prebuild` regenerates them from the same source data used by HTML. CI uploads them as `curriculum-previews` for review. Generated files are not committed.
+- **Talks & Teaching:** edit `src/data/talks.json`. Required fields: id, type (talk/teaching/mentoring), ISO date, title and description in both languages, and event. Optional links: url, slides, video. Empty lists remain noindex and out of the sitemap; do not substitute invented events.
+- **Now/Uses:** edit `src/data/personal-pages.json` and its explicit updated date. The initial selection uses documented projects and technologies, not an assumed hardware setup.
+- **Search:** Pagefind creates separate EN/PT indexes after the Astro build. It runs locally without a hosted search provider. noindex and redirect pages are excluded. To try search, build and use `npm run preview`; development mode may not have an index yet.
+- **Case studies:** two additional technical accounts cite immutable source READMEs. Recheck upstream behavior before updating claims about APIs, compatibility or credentials.
+- **Structured data:** publication type follows reviewed overrides; source-code metadata is emitted only when a repository is supplied. Contributors are not represented as sole authors.
+
+## Production smoke checks
+
+After Pages deploys, `verify` checks the exact published revision, localized routes, PDFs, search bundles, sharing-image signatures/dimensions and the privacy sitemap mapping. It polls for the deployed revision to allow for propagation. It makes read-only requests and receives no write credential. Run manually with `PUBLIC_SITE_URL=https://franciscoknebel.com node scripts/verify-production.mjs` once the PR stack is deployed.
+
+The local acceptance suite runs the same smoke checker against the static preview. That is evidence about built artifacts, not a claim that unpublished features are already live. The validation performed for this roadmap did not merge PRs or trigger a production workflow.
