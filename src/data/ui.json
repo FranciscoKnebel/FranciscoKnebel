@@ -2,7 +2,7 @@
   "en": {
     "meta": {
       "title": "Francisco Knebel | Lead Software Engineer & Researcher",
-      "description": "Lead Software Engineer & M.Sc. Computer Science. Building enterprise software at Dawntech. Researching Digital Twins and Computer Networks at UFRGS."
+      "description": "Software engineer and technology leader at Dawntech. M.Sc. in Computer Science from UFRGS, with research on Digital Twins, cloud and edge computing."
     },
     "nav": {
       "experience": "Experience",
@@ -24,7 +24,7 @@
       "role": "Lead Software Engineer",
       "degree": "M.Sc. Computer Science",
       "cta": "Get in touch",
-      "bio": "Computer Engineer from <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">UFRGS</a> and software professional since 2014. Currently working at <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">Dawntech</a>. Researcher in Digital Twins and Computer Networks in Brazil.",
+      "bio": "Computer Engineer from <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">UFRGS</a> and software professional since 2014. CIO and software engineer at <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">Dawntech</a>. Researcher in Digital Twins and Computer Networks in Brazil.",
       "stats": [
         {
           "label": "Years coding"
@@ -73,14 +73,16 @@
     },
     "experience": {
       "current": "current",
-      "placeholder": "Placeholder, please review and fill in."
+      "placeholder": "Placeholder, please review and fill in.",
+      "concurrent": "Current responsibilities in technology leadership and software engineering."
     },
     "publications": {
       "types": {
         "M.Sc. Thesis": "M.Sc. Thesis",
         "B.Sc. Thesis": "B.Sc. Thesis",
         "Journal Article": "Journal Article",
-        "Conference": "Conference Paper"
+        "Conference": "Conference Paper",
+        "Preprint": "Preprint"
       },
       "advisor": "Advisor",
       "citations": "citations",
@@ -119,7 +121,7 @@
   "pt": {
     "meta": {
       "title": "Francisco Knebel | Engenheiro de Software Líder & Pesquisador",
-      "description": "Engenheiro de Software Líder & M.Sc. em Ciência da Computação. Desenvolvendo software na Dawntech. Pesquisando Gêmeos Digitais e Redes de Computadores na UFRGS."
+      "description": "Engenheiro de software e líder de tecnologia na Dawntech. Mestre em Ciência da Computação pela UFRGS, com pesquisa em Gêmeos Digitais, nuvem e borda."
     },
     "nav": {
       "experience": "Experiência",
@@ -141,7 +143,7 @@
       "role": "Engenheiro de Software Líder",
       "degree": "M.Sc. em Ciência da Computação",
       "cta": "Fale comigo",
-      "bio": "Engenheiro de Computação pela <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">UFRGS</a> e profissional de software desde 2014. Atualmente trabalhando na <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">Dawntech</a>. Pesquisador em Gêmeos Digitais e Redes de Computadores no Brasil.",
+      "bio": "Engenheiro de Computação pela <a href=\"https://ufrgs.br\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">UFRGS</a> e profissional de software desde 2014. CIO e engenheiro de software na <a href=\"https://dawntech.dev\" target=\"_blank\" rel=\"noopener\" class=\"bio-link\">Dawntech</a>. Pesquisador em Gêmeos Digitais e Redes de Computadores no Brasil.",
       "stats": [
         {
           "label": "Anos de código"
@@ -190,14 +192,16 @@
     },
     "experience": {
       "current": "atual",
-      "placeholder": "Placeholder, revise e preencha."
+      "placeholder": "Placeholder, revise e preencha.",
+      "concurrent": "Responsabilidades atuais em liderança de tecnologia e engenharia de software."
     },
     "publications": {
       "types": {
         "M.Sc. Thesis": "Dissertação de Mestrado",
         "B.Sc. Thesis": "Trabalho de Conclusão de Curso",
         "Journal Article": "Artigo de Periódico",
-        "Conference": "Artigo em Conferência"
+        "Conference": "Artigo em Conferência",
+        "Preprint": "Preprint"
       },
       "advisor": "Orientador",
       "citations": "citações",

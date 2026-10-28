@@ -2,13 +2,15 @@
 import type { Lang, Experience } from '../types';
 import ui from '../data/ui.json';
 import experiencesData from '../data/experiences.json';
-
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = ui[lang];
-const experiences: Experience[] = experiencesData;
+const groups = new Map<string, Experience[]>();
+for (const experience of experiencesData) {
+  groups.set(experience.company, [...(groups.get(experience.company) ?? []), experience]);
+}
 ---
 
 <section
@@ -18,63 +20,59 @@ const experiences: Experience[] = experiencesData;
 >
   <div class="mx-auto max-w-6xl px-6">
     <h2 id="experience-heading" class="section-heading reveal">{t.sections.experience}</h2>
-
-    <div class="reveal-stagger mt-8 space-y-8">
+    <div class="reveal-stagger mt-8 space-y-10">
       {
-        experiences.map((exp) => (
-          <article
-            class={`card-hover relative border-l-2 pl-6 ${
-              exp.current
-                ? 'border-accent-500 dark:border-accent-400'
-                : exp.placeholder
-                  ? 'border-slate-200 opacity-60 dark:border-slate-700'
-                  : 'border-slate-200 dark:border-slate-700'
-            }`}
-          >
-            <div class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100">
-                  {exp.role[lang]}
-                </h3>
-                <div class="mt-0.5 flex flex-wrap items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
-                  {exp.companyUrl ? (
-                    <a
-                      href={exp.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-accent-600 dark:text-accent-400 underline-offset-2 transition-colors duration-150 hover:underline"
-                    >
-                      {exp.company}
-                    </a>
-                  ) : (
-                    <span>{exp.company}</span>
-                  )}
-                  <span class="text-slate-300 dark:text-slate-600">-</span>
-                  <span>{exp.location[lang]}</span>
-                </div>
-              </div>
-              <span class="mt-0.5 font-mono text-xs whitespace-nowrap text-slate-500 sm:mt-1 dark:text-slate-400">
-                {exp.period[lang]}
-                {exp.current && (
-                  <span class="bg-accent-500 dark:bg-accent-400 ml-2 inline-block h-1.5 w-1.5 rounded-full align-middle" />
-                )}
-              </span>
-            </div>
-
-            <p
-              class="text-sm leading-relaxed text-slate-500 dark:text-slate-400"
-              set:html={exp.description[lang] || (exp.placeholder ? t.experience.placeholder : '')}
-            />
-
-            {exp.tags.length > 0 && (
-              <div class="mt-3 flex flex-wrap gap-1.5">
-                {exp.tags.map((tag) => (
-                  <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+        Array.from(groups, ([company, roles]) => (
+          <article class="border-l-2 border-slate-200 pl-5 dark:border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
+              {roles[0].companyUrl ? (
+                <a
+                  class="bio-link"
+                  href={roles[0].companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {company}
+                </a>
+              ) : (
+                company
+              )}
+            </h3>
+            {roles.length > 1 && roles.every((role) => role.current) && (
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                {t.experience.concurrent}
+              </p>
             )}
+            <div class="mt-5 space-y-7">
+              {roles.map((exp) => (
+                <div>
+                  <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <h4 class="text-base font-semibold text-slate-900 dark:text-slate-100">
+                      {exp.role[lang]}
+                    </h4>
+                    <span class="font-mono text-xs text-slate-600 dark:text-slate-300">
+                      {exp.period[lang]}
+                    </span>
+                  </div>
+                  <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                    {exp.location[lang]}
+                  </p>
+                  <p
+                    class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300"
+                    set:html={exp.description[lang]}
+                  />
+                  {exp.tags.length > 0 && (
+                    <div class="mt-3 flex flex-wrap gap-1.5">
+                      {exp.tags.map((tag) => (
+                        <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </article>
         ))
       }

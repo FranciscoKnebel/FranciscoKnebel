@@ -13,8 +13,8 @@
     "url": "http://networks.inf.ufrgs.br",
     "avatar": "https://avatars.githubusercontent.com/u/3741590?s=80&v=4",
     "description": {
-      "en": "Research group on computer networks and distributed systems at UFRGS.",
-      "pt": "Grupo de pesquisa em redes de computadores e sistemas distribuídos da UFRGS."
+      "en": "Academic research: Research group on computer networks and distributed systems at UFRGS.",
+      "pt": "Pesquisa acadêmica: Grupo de pesquisa em redes de computadores e sistemas distribuídos da UFRGS."
     }
   },
   {
@@ -22,8 +22,8 @@
     "url": "https://www.idejr.com.br",
     "avatar": "https://avatars.githubusercontent.com/u/17241356?s=80&v=4",
     "description": {
-      "en": "Junior enterprise in computer science at UFRGS.",
-      "pt": "Empresa júnior de ciência da computação da UFRGS."
+      "en": "Previous work: Junior enterprise in computer science at UFRGS.",
+      "pt": "Atuação anterior: Empresa júnior de ciência da computação da UFRGS."
     }
   },
   {
@@ -31,8 +31,8 @@
     "url": "https://dawntech.dev",
     "avatar": "https://avatars.githubusercontent.com/u/23394280?s=80&v=4",
     "description": {
-      "en": "Technology consultancy focused on scalable distributed systems.",
-      "pt": "Consultoria de tecnologia focada em sistemas distribuídos escaláveis."
+      "en": "Current work: Technology consultancy focused on scalable distributed systems.",
+      "pt": "Trabalho atual: Consultoria de tecnologia focada em sistemas distribuídos escaláveis."
     }
   },
   {
@@ -40,8 +40,8 @@
     "url": "https://appcatalyst.com.br",
     "avatar": "/avatars/catalyst.png",
     "description": {
-      "en": "Technology company building enterprise e-commerce and ERP systems for retail.",
-      "pt": "Empresa de tecnologia que desenvolve sistemas corporativos de e-commerce e ERP para o varejo."
+      "en": "Current work: Technology company building enterprise e-commerce and ERP systems for retail.",
+      "pt": "Trabalho atual: Empresa de tecnologia que desenvolve sistemas corporativos de e-commerce e ERP para o varejo."
     }
   }
 ]

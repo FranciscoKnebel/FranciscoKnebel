@@ -6,6 +6,7 @@ export const publicationTypeColors: Record<string, string> = {
   'M.Sc. Thesis': 'bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',
   'B.Sc. Thesis': 'bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400',
   'Journal Article': 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400',
+  Preprint: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200',
   Conference: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400',
 };
 
@@ -79,11 +80,15 @@ export function buildBibliography(publications: Publication[]): BibEntry[] {
       fields.push(`  journal = {${publication.venue}}`);
     } else if (type === 'inproceedings') {
       fields.push(`  booktitle = {${publication.venue}}`);
-    } else {
+    } else if (publication.type === 'M.Sc. Thesis' || publication.type === 'B.Sc. Thesis') {
       fields.push(
         `  school = {Universidade Federal do Rio Grande do Sul (UFRGS)}`,
         `  type = {${publication.type}}`,
       );
+    }
+
+    if (publication.type === 'Preprint') {
+      fields.push(`  howpublished = {${publication.venue}}`);
     }
 
     fields.push(`  year = {${publication.year}}`);
