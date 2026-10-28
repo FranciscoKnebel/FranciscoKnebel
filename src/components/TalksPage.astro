@@ -1,0 +1,59 @@
+---
+import type { Lang } from '../types';
+import ContentPage from './ContentPage.astro';
+import data from '../data/talks.json';
+import { sortedTalks } from '../lib/talks';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const pt = lang === 'pt';
+const entries = sortedTalks(data);
+const labels = pt
+  ? { talk: 'Palestra', teaching: 'Aula', mentoring: 'Orientação' }
+  : { talk: 'Talk', teaching: 'Teaching', mentoring: 'Mentoring' };
+---
+
+<ContentPage
+  lang={lang}
+  title={pt ? 'Palestras e ensino' : 'Talks & Teaching'}
+  description={pt
+    ? 'Palestras, aulas e orientações selecionadas.'
+    : 'Selected talks, teaching and mentoring.'}
+  backHref={pt ? '/pt/' : '/'}
+  backLabel={pt ? 'Página inicial' : 'Home'}
+>
+  {
+    entries.length === 0 ? (
+      <p>
+        {pt
+          ? 'Ainda não há materiais selecionados nesta página. Enquanto isso, você pode conhecer a pesquisa pelas publicações e pelos estudos de caso.'
+          : 'There are no selected materials on this page yet. Explore the publications and case studies for the research behind the work.'}
+      </p>
+    ) : (
+      entries.map((entry) => (
+        <section>
+          <>
+            <h2>{entry.title[lang]}</h2>
+            <p>
+              <time datetime={entry.date}>{entry.date}</time> · {labels[entry.type]} · {entry.event}
+            </p>
+            <p>{entry.description[lang]}</p>
+            <div class="flex flex-wrap gap-4">
+              {entry.url && <a href={entry.url}>{pt ? 'Evento' : 'Event'}</a>}
+              {entry.slides && <a href={entry.slides}>Slides</a>}
+              {entry.video && <a href={entry.video}>{pt ? 'Vídeo' : 'Video'}</a>}
+            </div>
+          </>
+        </section>
+      ))
+    )
+  }
+  <p>
+    <a href={pt ? '/pt/publications/' : '/publications/'}
+      >{pt ? 'Ver publicações' : 'View publications'}</a
+    > · <a href={pt ? '/pt/case-studies/' : '/case-studies/'}
+      >{pt ? 'Estudos de caso' : 'Case studies'}</a
+    >
+  </p>
+</ContentPage>
