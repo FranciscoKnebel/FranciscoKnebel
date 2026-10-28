@@ -40,13 +40,28 @@ const t = ui[lang];
 </section>
 
 <script>
+  import { readPreference, savePreference } from '../lib/browser-preferences';
   const GA_ID = 'G-80D0XB0GGG';
   const STORAGE_KEY = 'analytics-consent';
   const POSTPONE_KEY = 'analytics-consent-postponed';
   const banner = document.getElementById('analytics-consent');
 
+  const analyticsWindow = window;
+  const disableKey = `ga-disable-${GA_ID}`;
+  analyticsWindow[disableKey] = true;
+
+  function disableAnalytics() {
+    // Removing a script element cannot undo a tag that has already executed.
+    analyticsWindow[disableKey] = true;
+    window.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+  }
+
   function loadAnalytics() {
-    if (document.getElementById('ga-script')) return;
+    analyticsWindow[disableKey] = false;
+    if (document.getElementById('ga-script')) {
+      window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
+      return;
+    }
     const script = document.createElement('script');
     script.id = 'ga-script';
     script.async = true;
@@ -61,13 +76,14 @@ const t = ui[lang];
   }
 
   function setChoice(choice: 'granted' | 'denied') {
-    localStorage.setItem(STORAGE_KEY, choice);
+    savePreference(STORAGE_KEY, choice);
     banner?.classList.add('hidden');
     if (choice === 'granted') loadAnalytics();
+    else disableAnalytics();
   }
 
-  const postponed = sessionStorage.getItem(POSTPONE_KEY) === '1';
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const postponed = readPreference(POSTPONE_KEY, true) === '1';
+  const stored = readPreference(STORAGE_KEY);
   if (stored === 'granted') {
     loadAnalytics();
   } else if (stored !== 'denied' && !postponed) {
@@ -81,14 +97,20 @@ const t = ui[lang];
     .getElementById('analytics-decline')
     ?.addEventListener('click', () => setChoice('denied'));
   document.getElementById('analytics-settings')?.addEventListener('click', () => {
-    localStorage.removeItem(STORAGE_KEY);
     banner?.classList.remove('hidden');
+  });
+
+  window.addEventListener('storage', (event) => {
+    if (event.key === STORAGE_KEY && event.newValue === 'denied') {
+      disableAnalytics();
+      banner?.classList.add('hidden');
+    }
   });
 
   // Escape postpones the decision for the current browser session
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || !banner || banner.classList.contains('hidden')) return;
-    sessionStorage.setItem(POSTPONE_KEY, '1');
+    savePreference(POSTPONE_KEY, '1', true);
     banner.classList.add('hidden');
   });
 </script>
