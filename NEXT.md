@@ -18,8 +18,8 @@ Itens combinados para depois do merge da stack atual. Fora de escopo por decisã
 
 ## Conteúdo
 
-- [ ] **JEMS 3**: escrever o case study e trocar `status: planned` por `published`.
-- [ ] **Digital Twins**: escrever o case study e publicar.
-- [ ] **Mural de Bolsas**: publicar quando o texto estiver revisado.
+- [x] **JEMS 3**: relato curto EN/PT com participação e escopo documentados.
+- [x] **Digital Twins**: caso EN/PT com referência ao preprint e à dissertação.
+- [x] **Mural de Bolsas**: texto EN/PT revisado, sem métricas ou causalidades não comprovadas.
 
-Para publicar um case study, basta trocar `status: planned` por `status: published` no frontmatter e escrever o corpo do markdown (detalhes no README, seção Development).
+Para publicar um case study, basta trocar `status: planned` por `status: published` no frontmatter e escrever o corpo do markdown (detalhes em `docs/maintenance.md`).

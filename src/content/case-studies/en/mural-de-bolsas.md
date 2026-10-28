@@ -1,27 +1,32 @@
 ---
 lang: en
 title: UFRGS Scholarship Board
-description: Building the platform that became UFRGS's official hub for scholarship openings, from a junior enterprise project to university-wide adoption.
-status: planned
+description: A web project developed at IDE Junior Enterprise and adopted as UFRGS's official scholarship board.
+status: published
 topics: [Web, UFRGS, Node.js, Product]
 order: 0
 ---
 
-## Context
+## Problem
 
-Scholarship openings at UFRGS were scattered across department pages, PDFs and mailing lists. Students had to check several sources to find opportunities, and many openings went unnoticed simply because the information was hard to find.
+Students need a clear place to find scholarship opportunities across the university. The Mural de Bolsas brings those opportunities into a dedicated web platform.
 
-## Approach
+## My contribution
 
-- Built a web platform that centralizes scholarship openings across all areas of study.
-- Search and filtering let students browse by area, modality and requirements.
-- The project was developed at IDE Junior Enterprise together with the university, designed from the start to be maintained by the institution.
+I worked on the project at IDE Junior Enterprise, during a period when my responsibilities included software development, project management and quality management. The portfolio records the platform as a Node.js web project.
 
-## Result
+## Engineering perspective
 
-UFRGS adopted the platform as its official scholarship hub. It is used university-wide and remains one of the projects I am most proud of, because the impact on students is direct.
+The useful outcome of a university service is that people can find and use the information it provides. For a scholarship board, that puts clarity of listings and navigation ahead of decorative interface features.
 
-## Lessons
+Institutional adoption also makes continuity important: content, operation and future changes need to remain understandable beyond the original team. That is the maintenance concern I would prioritize when reviewing this kind of system today.
 
-- Designing for handover matters: the platform only became an official hub because it was simple for the university to keep running.
-- Search and filtering were part of what made it practical for daily use, instead of yet another static list.
+## Result and scope
+
+The university adopted the platform as its official scholarship board. This account describes my contribution to the original project; it does not claim responsibility for the current service's operation or later changes.
+
+## Explore
+
+- [UFRGS Scholarship Board](https://www.ufrgs.br/bolsas/)
+- [IDE Junior Enterprise](https://www.idejr.com.br)
+- [Project overview](/projects/ufrgs-bolsas/)

@@ -1,27 +1,32 @@
 ---
 lang: pt
 title: Mural de Bolsas UFRGS
-description: Construindo a plataforma que se tornou o hub oficial de bolsas da UFRGS, de projeto de empresa júnior a adoção em toda a universidade.
-status: planned
+description: Projeto web desenvolvido na IDE Empresa Júnior e adotado como mural oficial de bolsas da UFRGS.
+status: published
 topics: [Web, UFRGS, Node.js, Produto]
 order: 0
 ---
 
-## Contexto
+## Problema
 
-As vagas de bolsa da UFRGS estavam espalhadas em páginas de departamentos, PDFs e listas de e-mail. Os estudantes precisavam consultar várias fontes para encontrar oportunidades, e muitas vagas passavam batido simplesmente porque a informação era difícil de achar.
+Estudantes precisam de um lugar claro para encontrar oportunidades de bolsa em diferentes áreas da universidade. O Mural de Bolsas reúne essas oportunidades em uma plataforma web dedicada.
 
-## Abordagem
+## Minha contribuição
 
-- Plataforma web que centraliza as vagas de bolsa de todas as áreas.
-- Busca e filtros permitem navegar por área, modalidade e requisitos.
-- O projeto foi desenvolvido na IDE Empresa Júnior em conjunto com a universidade, pensado desde o início para ser mantido pela instituição.
+Trabalhei no projeto na IDE Empresa Júnior, em um período no qual minhas responsabilidades incluíam desenvolvimento, gestão de projetos e gestão da qualidade. O portfólio registra a plataforma como um projeto web em Node.js.
 
-## Resultado
+## Perspectiva de engenharia
 
-A UFRGS adotou a plataforma como hub oficial de bolsas. Ela é usada em toda a universidade e segue como um dos projetos de que mais me orgulho, pelo impacto direto na vida dos estudantes.
+O resultado útil de um serviço universitário é que as pessoas encontrem e usem as informações disponíveis. Em um mural de bolsas, isso coloca a clareza dos anúncios e da navegação à frente de recursos decorativos da interface.
 
-## Lições
+A adoção institucional também torna a continuidade importante: conteúdo, operação e mudanças futuras precisam continuar compreensíveis para além da equipe original. Essa é a preocupação de manutenção que eu priorizaria ao revisar esse tipo de sistema hoje.
 
-- Projetar pensando na entrega importa: a plataforma só se tornou um hub oficial porque era simples para a universidade manter.
-- Busca e filtros foram parte do que a tornou prática no dia a dia, em vez de mais uma lista estática.
+## Resultado e escopo
+
+A universidade adotou a plataforma como seu mural oficial de bolsas. Este relato descreve minha contribuição ao projeto original, sem atribuir a mim a operação atual do serviço ou suas mudanças posteriores.
+
+## Conheça
+
+- [Mural de Bolsas UFRGS](https://www.ufrgs.br/bolsas/)
+- [IDE Empresa Júnior](https://www.idejr.com.br)
+- [Visão geral do projeto](/pt/projects/ufrgs-bolsas/)

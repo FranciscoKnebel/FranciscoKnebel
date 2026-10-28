@@ -94,12 +94,17 @@ test.describe('artefatos do build', () => {
     expect(sitemap).not.toContain('<loc>https://franciscoknebel.com/projects/</loc>');
   });
 
-  test('case studies planejados têm noindex e selo', () => {
-    expect(dist('case-studies/mural-de-bolsas/index.html')).toContain(
-      '<meta name="robots" content="noindex">',
-    );
-    const listing = dist('case-studies/index.html');
-    expect(listing.match(/Coming soon/g)).toHaveLength(3);
+  test('published case studies are indexed and contain reviewed content', () => {
+    for (const language of ['', 'pt/']) {
+      for (const slug of ['mural-de-bolsas', 'jems3', 'digital-twins']) {
+        const html = dist(`${language}case-studies/${slug}/index.html`);
+        expect(html).not.toContain('<meta name="robots" content="noindex">');
+        expect(html).not.toContain('This case study is being written');
+        expect(html).not.toContain('Este caso de estudo está em preparação');
+      }
+      expect(dist(`${language}case-studies/index.html`)).not.toContain('Coming soon');
+      expect(dist(`${language}case-studies/index.html`)).not.toContain('Em breve');
+    }
   });
 
   test('badges de publicação usam os tons com contraste aprovado', () => {
