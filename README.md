@@ -1,111 +1,48 @@
 # Francisco Paiva Knebel
 
-Computer Engineer and M.Sc. in Computer Science from the [Federal University of Rio Grande do Sul](https://ufrgs.br) (UFRGS), Brazil.
-Coding professionally since 2014 in enterprise-grade software development.
+Software engineer building enterprise applications and distributed systems at [Dawntech](https://dawntech.dev). Coding professionally since 2014, with hands-on work in backend engineering, cloud architecture and technical leadership.
 
-Currently working at [Dawntech Inc.](https://dawntech.dev/).
+Computer Engineer and M.Sc. in Computer Science from [UFRGS](https://ufrgs.br), Brazil. My research focuses on Digital Twins, Computer Networks, and Cloud and Edge Computing.
 
-For personal contact, see 🌐 [franciscoknebel.com](https://franciscoknebel.com).
-For business, see 💼 [knebel.inf.br](https://knebel.inf.br)
+[Portfolio](https://franciscoknebel.com) · [Portfólio em português](https://franciscoknebel.com/pt/) · [LinkedIn](https://www.linkedin.com/in/francisco-knebel-295493111/) · [Professional contact](https://knebel.inf.br)
 
----
+## Selected projects
 
-## Groups I support
+| Project                     | What it does                                                                                     | Explore                                                                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| **gnome-provider-limits**   | GNOME Shell extension showing session and weekly rate limits for AI coding CLIs in the top bar.  | [Code](https://github.com/FranciscoKnebel/gnome-provider-limits) · [Website](https://gnome-provider-limits.franciscoknebel.com/) |
+| **ngx-translate-check**     | CLI that detects missing and unused translation strings in Angular projects using ngx-translate. | [Code](https://github.com/FranciscoKnebel/ngx-translate-check)                                                                   |
+| **UFRGS Scholarship Board** | Platform built at IDE Junior Enterprise and adopted as UFRGS's official scholarship board.       | [Website](https://www.ufrgs.br/bolsas/) · [Project context](https://franciscoknebel.com/projects/ufrgs-bolsas/)                  |
+| **nginx-reverseproxy**      | Multidomain reverse proxy configuration for isolated Node.js applications with HTTPS.            | [Code](https://github.com/FranciscoKnebel/nginx-reverseproxy)                                                                    |
 
-<table>
-  <tr>
-    <td align="center" width="120">
-      <a href="https://github.com/Open-Digital-Twin">
-        <img src="https://avatars.githubusercontent.com/u/64329177?s=64&v=4" width="48" height="48" style="border-radius:50%"><br>
-        <sub>Open Digital Twin</sub>
-      </a>
-    </td>
-    <td align="center" width="120">
-      <a href="http://networks.inf.ufrgs.br">
-        <img src="https://avatars.githubusercontent.com/u/3741590?s=64&v=4" width="48" height="48" style="border-radius:50%"><br>
-        <sub>Networks UFRGS</sub>
-      </a>
-    </td>
-    <td align="center" width="120">
-      <a href="https://www.idejr.com.br">
-        <img src="https://avatars.githubusercontent.com/u/17241356?s=64&v=4" width="48" height="48" style="border-radius:50%"><br>
-        <sub>IDE</sub>
-      </a>
-    </td>
-    <td align="center" width="120">
-      <a href="https://dawntech.dev">
-        <img src="https://avatars.githubusercontent.com/u/23394280?s=64&v=4" width="48" height="48" style="border-radius:50%"><br>
-        <sub>Dawntech</sub>
-      </a>
-    </td>
-  </tr>
-</table>
+## Research
 
----
+Selected work on deploying Digital Twins across cloud and edge environments:
 
-## GitHub Stats
+- [A study on cloud and edge computing for the implementation of digital twins in the oil & gas industries](https://www.researchgate.net/publication/371336015), Computers & Industrial Engineering, 2023.
+- [Designing and implementing digital twins with cloud and edge computing: challenges and opportunities](https://lume.ufrgs.br/handle/10183/276593), M.Sc. dissertation, UFRGS, 2024.
 
-<img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=FranciscoKnebel&theme=github" style="max-width:100%" alt="GitHub profile summary"/>
+[All publications](https://franciscoknebel.com/publications/) · [Google Scholar](https://scholar.google.com/citations?user=_RHtqxIAAAAJ) · [ORCID](https://orcid.org/0000-0003-3895-2755) · [Lattes](http://lattes.cnpq.br/5190590589102587) · [ResearchGate](https://www.researchgate.net/profile/Francisco-Knebel)
 
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=FranciscoKnebel&layout=compact&langs_count=8&hide=html,css,tex,less,dockerfile,makefile,qmake,lex,cmake,shell,gnuplot&theme=transparent" style="max-width:100%" alt="Most used languages"/>
+## Community and organizations
 
-<img align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=FranciscoKnebel&theme=github&exclude=html,css,tex,less,dockerfile,makefile,qmake,lex,cmake,shell,gnuplot" style="max-width:100%" alt="Repositories per language"/>
+- [Dawntech](https://dawntech.dev): current engineering work and technical leadership.
+- [Open Digital Twin](https://github.com/Open-Digital-Twin): Digital Twin research and open-source projects.
+- [Networks UFRGS](http://networks.inf.ufrgs.br): computer networking research.
+- [IDE Junior Enterprise](https://www.idejr.com.br): previous work in development, project management and quality.
 
-## Contributions
+<details>
+<summary>GitHub contribution calendar</summary>
 
-<img align="center" src="https://streak-stats.demolab.com/?user=FranciscoKnebel&theme=default&disable_animations=true" style="max-width:100%" alt="GitHub contribution streak"/>
+Activity in public repositories is one part of my work; it does not describe all professional projects or experience.
 
-<img align="center" src="./profile-3d-contrib/profile-gitblock.svg" style="max-width:100%" alt="GitHub contribution calendar"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-view.svg">
+  <img src="profile-3d-contrib/profile-gitblock.svg" alt="Calendar of GitHub contributions" width="1280" height="850">
+</picture>
 
-<img align="center" src="metrics.plugin.calendar.svg" style="max-width:100%"/>
+</details>
 
----
+## Website source
 
-## Links
-
-[![Website](static/website.png)](https://franciscoknebel.com)
-[![Company Website](static/website.png)](https://knebel.inf.br)
-[![LinkedIn](static/linkedin.png)](https://www.linkedin.com/in/francisco-knebel-295493111/)
-[![GitHub](static/github.png)](https://github.com/FranciscoKnebel)
-[![Lattes](static/lattes.png)](http://lattes.cnpq.br/5190590589102587)
-[![Google Scholar](static/scholar.png)](https://scholar.google.com/citations?user=_RHtqxIAAAAJ)
-[![ResearchGate](static/researchgate.png)](https://www.researchgate.net/profile/Francisco-Knebel)
-
----
-
-## Development
-
-Personal website built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), bilingual (EN/PT) and deployed to GitHub Pages.
-
-### Commands
-
-| Command                | Description                                               |
-| ---------------------- | --------------------------------------------------------- |
-| `npm run dev`          | Local dev server                                          |
-| `npm run build`        | Static build to `dist/`                                   |
-| `npm run preview`      | Preview the build                                         |
-| `npm run check`        | Type check with `astro check`                             |
-| `npm run lint`         | ESLint                                                    |
-| `npm run format`       | Prettier write                                            |
-| `npm run format:check` | Prettier check                                            |
-| `npm run og`           | Regenerate `public/og-image*.png` from `src/data/ui.json` |
-
-### Structure
-
-- `src/pages/`: home, `publications/`, `projects/<slug>/`, `case-studies/` and 404.
-- `src/content/`: `projects` and `case-studies` collections. Each entry has a markdown file per language with the same slug in `en/` and `pt/`.
-- `src/data/`: `ui.json` with every UI string, plus publications, experiences, social links, groups and interests.
-- `src/lib/`: publication helpers (merge and BibTeX) and content helpers.
-- `scripts/`: Google Scholar sync (`scrape-scholar.py`) and og:image generation.
-
-### Workflows
-
-- `deploy.yml`: regenerates the GitHub metrics and deploys to Pages on push to `main`.
-- `quality.yml`: format, lint, type check, build and Lighthouse CI on pull requests and `main`.
-- `links.yml`: weekly link check with lychee over the built site.
-- `publications.yml`: weekly Google Scholar sync.
-
-### Adding content
-
-- **Project**: create `src/content/projects/en/<slug>.md` and `pt/<slug>.md` with the same slug. Required frontmatter: `lang`, `title`, `description`, `tags`, `order`. Optional: `repo`, `url`.
-- **Case study**: create `src/content/case-studies/en/<slug>.md` and `pt/<slug>.md`. Use `status: planned` for placeholders (adds the "coming soon" badge and `noindex`) and `status: published` when the content is ready.
+This repository also contains my bilingual Astro portfolio. See the [maintenance guide](docs/maintenance.md) for setup, validation, content editing and deployment.
