@@ -19,11 +19,11 @@ const year = new Date().getFullYear();
   aria-labelledby="contact-heading"
 >
   <div class="mx-auto grid max-w-6xl gap-12 px-6 sm:grid-cols-2">
-    <div class="reveal">
+    <div class="reveal min-w-0">
       <h2 id="contact-heading" class="section-heading">{t.contact.label}</h2>
       <a
         href="mailto:contato@franciscoknebel.com"
-        class="hover:text-accent-600 dark:hover:text-accent-400 text-2xl font-bold tracking-tight text-slate-900 underline-offset-4 transition-colors duration-150 hover:underline sm:text-3xl dark:text-slate-100"
+        class="hover:text-accent-600 dark:hover:text-accent-400 text-xl font-bold tracking-tight break-all text-slate-900 underline-offset-4 transition-colors duration-150 hover:underline sm:text-3xl dark:text-slate-100"
       >
         contato@franciscoknebel.com
       </a>
@@ -32,7 +32,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
 
-    <div class="reveal">
+    <div class="reveal min-w-0">
       <h3 class="section-heading">{t.contact.elsewhere}</h3>
       <div class="flex flex-col">
         {
