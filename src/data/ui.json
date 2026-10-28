@@ -36,9 +36,10 @@
           "label": "Citations"
         },
         {
-          "label": "Projects"
+          "label": "Selected projects"
         }
-      ]
+      ],
+      "projects": "View projects"
     },
     "contact": {
       "label": "Contact",
@@ -150,9 +151,10 @@
           "label": "Citações"
         },
         {
-          "label": "Projetos"
+          "label": "Projetos selecionados"
         }
-      ]
+      ],
+      "projects": "Ver projetos"
     },
     "contact": {
       "label": "Contato",
