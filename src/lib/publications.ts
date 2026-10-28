@@ -27,6 +27,7 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, '');
 
 function lastName(author: string): string {
+  if (author.includes(',')) return slugify(author.split(',')[0]);
   const parts = author.trim().split(/\s+/);
   return slugify(parts[parts.length - 1] ?? 'anon');
 }
@@ -39,7 +40,7 @@ function titleWord(title: string): string {
   const word = cleaned
     .replace(/[^a-z0-9\s]/g, '')
     .split(/\s+/)
-    .filter(Boolean)[0];
+    .filter((word) => word && !['a', 'an', 'the'].includes(word))[0];
   return slugify(word ?? 'work');
 }
 
@@ -56,43 +57,70 @@ function bibType(type: string): string {
   }
 }
 
+export function escapeBibTex(value: string): string {
+  const replacements: Record<string, string> = {
+    '\\': '\\textbackslash{}',
+    '{': '\\{',
+    '}': '\\}',
+    '%': '\\%',
+    '&': '\\&',
+    '#': '\\#',
+    _: '\\_',
+    $: '\\$',
+    '~': '\\textasciitilde{}',
+    '^': '\\textasciicircum{}',
+  };
+  return value.replace(/[\\{}%&#_$~^]/g, (character) => replacements[character]);
+}
+
+function suffix(index: number): string {
+  let result = '';
+  while (index > 0) {
+    index -= 1;
+    result = String.fromCharCode(97 + (index % 26)) + result;
+    index = Math.floor(index / 26);
+  }
+  return result;
+}
+
 export interface BibEntry {
   key: string;
   entry: string;
 }
 
 export function buildBibliography(publications: Publication[]): BibEntry[] {
-  const used = new Map<string, number>();
+  const used = new Set<string>();
 
   return publications.map((publication) => {
     const base = `${lastName(publication.authors[0] ?? 'anon')}${publication.year}${titleWord(publication.title)}`;
-    const count = used.get(base) ?? 0;
-    used.set(base, count + 1);
-    const key = count === 0 ? base : `${base}${String.fromCharCode(97 + count)}`;
+    let index = 0;
+    while (used.has(`${base}${suffix(index)}`)) index += 1;
+    const key = `${base}${suffix(index)}`;
+    used.add(key);
 
     const type = bibType(publication.type);
     const fields = [
-      `  author = {${publication.authors.join(' and ')}}`,
-      `  title = {${publication.title}}`,
+      `  author = {${publication.authors.map(escapeBibTex).join(' and ')}}`,
+      `  title = {${escapeBibTex(publication.title)}}`,
     ];
 
     if (type === 'article') {
-      fields.push(`  journal = {${publication.venue}}`);
+      fields.push(`  journal = {${escapeBibTex(publication.venue)}}`);
     } else if (type === 'inproceedings') {
-      fields.push(`  booktitle = {${publication.venue}}`);
+      fields.push(`  booktitle = {${escapeBibTex(publication.venue)}}`);
     } else if (publication.type === 'M.Sc. Thesis' || publication.type === 'B.Sc. Thesis') {
       fields.push(
         `  school = {Universidade Federal do Rio Grande do Sul (UFRGS)}`,
-        `  type = {${publication.type}}`,
+        `  type = {${escapeBibTex(publication.type)}}`,
       );
     }
 
     if (publication.type === 'Preprint') {
-      fields.push(`  howpublished = {${publication.venue}}`);
+      fields.push(`  howpublished = {${escapeBibTex(publication.venue)}}`);
     }
 
     fields.push(`  year = {${publication.year}}`);
-    if (publication.url) fields.push(`  url = {${publication.url}}`);
+    if (publication.url) fields.push(`  url = {${escapeBibTex(publication.url)}}`);
 
     return { key, entry: `@${type}{${key},\n${fields.join(',\n')}\n}` };
   });
