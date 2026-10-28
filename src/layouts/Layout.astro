@@ -58,6 +58,7 @@ const person = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="build-revision" content={process.env.BUILD_REVISION || 'local'} />
     <meta name="author" content="Francisco Knebel" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
