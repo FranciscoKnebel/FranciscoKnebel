@@ -1,15 +1,13 @@
 ---
 import type { Lang } from '../types';
 import ui from '../data/ui.json';
-import { metricAsset } from '../lib/metric-assets';
+import snapshot from '../data/github-snapshot.json';
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
+const pt = lang === 'pt';
 const t = ui[lang];
-const night = metricAsset('profile-3d-contrib/profile-night-view.svg');
-const calendar = metricAsset('profile-3d-contrib/profile-gitblock.svg') ?? night;
-const summary = metricAsset('github-metrics.svg');
 ---
 
 <section
@@ -17,47 +15,95 @@ const summary = metricAsset('github-metrics.svg');
   class="border-t border-slate-100 py-24 dark:border-slate-800/60"
   aria-labelledby="stats-heading"
 >
-  <div class="mx-auto max-w-3xl px-6">
+  <div class="mx-auto max-w-4xl px-6">
     <h2 id="stats-heading" class="section-heading">{t.sections.stats}</h2>
-    <p class="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t.stats.context}</p>
-    <div class="grid grid-cols-1 gap-4">
-      {
-        calendar ? (
-          <picture class="overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-900">
-            {night && <source media="(prefers-color-scheme: dark)" srcset={night.src} />}
-            <img
-              src={calendar.src}
-              alt={t.stats.calendar}
-              width={calendar.width}
-              height={calendar.height}
-              class="block h-auto w-full"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        ) : (
-          <p class="text-sm text-slate-600 dark:text-slate-300">{t.stats.unavailable}</p>
-        )
-      }
-      {
-        summary && (
-          <details class="rounded-xl border border-slate-200 p-4 dark:border-slate-700">
-            <summary class="focus-visible:ring-accent-500 cursor-pointer rounded text-sm font-medium text-slate-700 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-200">
-              {t.stats.more}
+    <p class="mb-6 text-sm text-slate-600 dark:text-slate-300">{t.stats.context}</p>
+    {
+      snapshot.profile ? (
+        <>
+          <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <>
+              <div class="rounded-xl border border-slate-200 p-5 dark:border-slate-700">
+                <>
+                  <dt class="text-sm text-slate-600 dark:text-slate-300">
+                    {pt ? 'Repositórios públicos' : 'Public repositories'}
+                  </dt>
+                  <dd class="mt-2 text-3xl font-bold">{snapshot.profile.repositories}</dd>
+                </>
+              </div>
+              <div class="rounded-xl border border-slate-200 p-5 dark:border-slate-700">
+                <>
+                  <dt class="text-sm text-slate-600 dark:text-slate-300">
+                    {pt ? 'Seguidores' : 'Followers'}
+                  </dt>
+                  <dd class="mt-2 text-3xl font-bold">{snapshot.profile.followers}</dd>
+                </>
+              </div>
+            </>
+          </dl>
+          {snapshot.updatedAt && (
+            <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">
+              {pt ? 'Dados consultados em' : 'Data retrieved'}{' '}
+              <time datetime={snapshot.updatedAt}>
+                {new Intl.DateTimeFormat(pt ? 'pt-BR' : 'en', {
+                  dateStyle: 'long',
+                  timeZone: 'UTC',
+                }).format(new Date(snapshot.updatedAt))}
+              </time>
+              .
+            </p>
+          )}
+          <details class="mt-6 rounded-xl border border-slate-200 p-4 dark:border-slate-700">
+            <summary class="cursor-pointer text-sm font-medium">
+              {pt
+                ? 'Linguagens e atividade pública recente'
+                : 'Languages and recent public activity'}
             </summary>
-            <img
-              src={summary.src}
-              alt={t.stats.summary}
-              width={summary.width}
-              height={summary.height}
-              class="mx-auto mt-4 block h-auto max-w-full rounded-lg bg-slate-50"
-              loading="lazy"
-              decoding="async"
-            />
+            <>
+              <h3 class="mt-5 font-semibold">
+                {pt
+                  ? 'Repositórios próprios por linguagem principal'
+                  : 'Non-fork repositories by primary language'}
+              </h3>
+              <ul class="mt-3 space-y-2 text-sm">
+                {snapshot.languages.map((language) => (
+                  <li class="flex justify-between gap-4">
+                    <span>{language.name}</span>
+                    <span>{language.count}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+            <>
+              <h3 class="mt-6 font-semibold">
+                {pt ? 'Últimos eventos públicos disponíveis' : 'Latest available public events'}
+              </h3>
+              <ul class="mt-3 space-y-3 text-sm">
+                {snapshot.events.map((event) => (
+                  <li>
+                    <a class="bio-link break-words" href={`https://github.com/${event.repository}`}>
+                      {event.repository}
+                    </a>{' '}
+                    · {event.type} · <time datetime={event.date}>{event.date.slice(0, 10)}</time>
+                  </li>
+                ))}
+              </ul>
+            </>
+            <p class="mt-5 text-sm text-slate-600 dark:text-slate-300">
+              {pt
+                ? 'Eventos são uma amostra recente da API pública, não um calendário completo de contribuições. Contagens por linguagem excluem forks e repositórios sem linguagem principal.'
+                : 'Events are a recent sample from the public API, not a complete contribution calendar. Language counts exclude forks and repositories without a primary language.'}
+            </p>
           </details>
-        )
-      }
-    </div>
+        </>
+      ) : (
+        <p class="text-sm text-slate-600 dark:text-slate-300">
+          {pt
+            ? 'Estatísticas indisponíveis no momento. Consulte a atividade no GitHub.'
+            : 'Statistics are currently unavailable. View activity on GitHub.'}
+        </p>
+      )
+    }
     <a
       href="https://github.com/FranciscoKnebel"
       class="bio-link mt-5 inline-flex min-h-11 items-center text-sm"

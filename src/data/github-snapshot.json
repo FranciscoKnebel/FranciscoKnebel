@@ -1,0 +1,74 @@
+{
+  "updatedAt": "2026-10-28T22:45:59.149Z",
+  "profile": {
+    "login": "FranciscoKnebel",
+    "repositories": 90,
+    "followers": 44
+  },
+  "languages": [
+    {
+      "name": "JavaScript",
+      "count": 29
+    },
+    {
+      "name": "HTML",
+      "count": 19
+    },
+    {
+      "name": "C",
+      "count": 11
+    },
+    {
+      "name": "TypeScript",
+      "count": 4
+    },
+    {
+      "name": "C++",
+      "count": 2
+    },
+    {
+      "name": "GDScript",
+      "count": 2
+    },
+    {
+      "name": "SystemVerilog",
+      "count": 1
+    },
+    {
+      "name": "Python",
+      "count": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "18496963178",
+      "type": "PullRequest",
+      "repository": "FranciscoKnebel/FranciscoKnebel",
+      "date": "2026-10-28T21:54:43Z"
+    },
+    {
+      "id": "18496266692",
+      "type": "PullRequest",
+      "repository": "FranciscoKnebel/FranciscoKnebel",
+      "date": "2026-10-28T21:46:08Z"
+    },
+    {
+      "id": "18496261751",
+      "type": "PullRequest",
+      "repository": "FranciscoKnebel/FranciscoKnebel",
+      "date": "2026-10-28T21:46:05Z"
+    },
+    {
+      "id": "18496256877",
+      "type": "PullRequest",
+      "repository": "FranciscoKnebel/FranciscoKnebel",
+      "date": "2026-10-28T21:46:01Z"
+    },
+    {
+      "id": "18496251653",
+      "type": "PullRequest",
+      "repository": "FranciscoKnebel/FranciscoKnebel",
+      "date": "2026-10-28T21:45:57Z"
+    }
+  ]
+}

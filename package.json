@@ -17,7 +17,7 @@
     "format:check": "prettier --check .",
     "prepare": "husky",
     "cv": "node scripts/generate-cv.mjs",
-    "prebuild": "npm run cv",
+    "prebuild": "node scripts/refresh-github-snapshot.mjs && npm run cv",
     "postbuild": "node scripts/build-search.mjs"
   },
   "lint-staged": {

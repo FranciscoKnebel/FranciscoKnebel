@@ -4,9 +4,6 @@ on:
   pull_request:
   push:
     branches: [main]
-    paths-ignore:
-      - 'github-metrics.svg'
-      - 'profile-3d-contrib/**'
   workflow_dispatch:
 
 permissions:
