@@ -65,7 +65,12 @@ const year = new Date().getFullYear();
     class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 px-6 text-xs text-slate-500 sm:flex-row dark:text-slate-400"
   >
     <span>© {year} Francisco Knebel</span>
-    <span class="flex items-center gap-2">
+    <span class="flex flex-wrap items-center justify-center gap-2">
+      <a
+        href={lang === 'pt' ? '/pt/privacidade/' : '/privacy/'}
+        class="underline underline-offset-2">{lang === 'pt' ? 'Privacidade' : 'Privacy'}</a
+      >
+      <span aria-hidden="true">·</span>
       <a
         href={caseStudiesUrl}
         class="hover:text-accent-500 dark:hover:text-accent-400 underline underline-offset-2 transition-colors duration-150"
@@ -84,6 +89,7 @@ const year = new Date().getFullYear();
       <span aria-hidden="true">·</span>
       <button
         id="analytics-settings"
+        data-analytics-settings
         type="button"
         class="hover:text-accent-500 dark:hover:text-accent-400 underline underline-offset-2 transition-colors duration-150"
       >

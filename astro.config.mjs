@@ -39,6 +39,15 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !page.endsWith('/projects/'),
+      serialize(item) {
+        if (item.url.endsWith('/privacy/') || item.url.endsWith('/pt/privacidade/')) {
+          item.links = [
+            { lang: 'en', url: 'https://franciscoknebel.com/privacy/' },
+            { lang: 'pt', url: 'https://franciscoknebel.com/pt/privacidade/' },
+          ];
+        }
+        return item;
+      },
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', pt: 'pt' },
