@@ -1,0 +1,9 @@
+---
+import { jsonLd } from '../lib/structured-data';
+interface Props {
+  value: unknown;
+}
+const { value } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={jsonLd(value)} />
