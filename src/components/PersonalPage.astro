@@ -1,0 +1,46 @@
+---
+import type { Lang } from '../types';
+import ContentPage from './ContentPage.astro';
+import data from '../data/personal-pages.json';
+interface Props {
+  lang: Lang;
+  kind: 'now' | 'uses';
+}
+const { lang, kind } = Astro.props;
+const page = data[kind][lang];
+const pt = lang === 'pt';
+---
+
+<ContentPage
+  lang={lang}
+  title={page.title}
+  description={page.description}
+  backHref={pt ? '/pt/' : '/'}
+  backLabel={pt ? 'Página inicial' : 'Home'}
+>
+  <p>
+    {pt ? 'Seleção atualizada em' : 'Selection updated'}
+    <time datetime={data.updated}
+      >{
+        new Intl.DateTimeFormat(pt ? 'pt-BR' : 'en', { dateStyle: 'long', timeZone: 'UTC' }).format(
+          new Date(`${data.updated}T12:00:00Z`),
+        )
+      }</time
+    >.
+  </p>
+  {
+    page.sections.map((section) => (
+      <section>
+        <>
+          <h2>{section.title}</h2>
+          <p>{section.body}</p>
+        </>
+      </section>
+    ))
+  }
+  <p>
+    <a href={pt ? '/pt/#projects' : '/#projects'}
+      >{pt ? 'Projetos selecionados' : 'Selected projects'}</a
+    > · <a href={pt ? '/pt/cv/' : '/cv/'}>{pt ? 'Currículo' : 'CV'}</a>
+  </p>
+</ContentPage>

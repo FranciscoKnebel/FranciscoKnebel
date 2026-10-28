@@ -1,0 +1,79 @@
+{
+  "updated": "2026-10-28",
+  "now": {
+    "en": {
+      "title": "Now",
+      "description": "Current areas of work represented in this portfolio.",
+      "sections": [
+        {
+          "title": "Engineering and leadership",
+          "body": "Software engineering and technology leadership at Dawntech, with enterprise applications, backend systems and cloud architecture."
+        },
+        {
+          "title": "Developer tooling",
+          "body": "Open-source tools including gnome-provider-limits and ngx-translate-check. Their repositories document current features and project status."
+        },
+        {
+          "title": "Research",
+          "body": "Digital Twins, computer networks, and cloud and edge computing. Publications and case studies connect the research to engineering decisions."
+        }
+      ]
+    },
+    "pt": {
+      "title": "Agora",
+      "description": "Áreas atuais de atuação representadas neste portfólio.",
+      "sections": [
+        {
+          "title": "Engenharia e liderança",
+          "body": "Engenharia de software e liderança de tecnologia na Dawntech, com aplicações corporativas, backend e arquitetura em nuvem."
+        },
+        {
+          "title": "Ferramentas para desenvolvedores",
+          "body": "Ferramentas de código aberto como gnome-provider-limits e ngx-translate-check. Seus repositórios documentam funcionalidades e estado atual dos projetos."
+        },
+        {
+          "title": "Pesquisa",
+          "body": "Gêmeos Digitais, redes de computadores e computação em nuvem e borda. As publicações e os estudos de caso conectam pesquisa e decisões de engenharia."
+        }
+      ]
+    }
+  },
+  "uses": {
+    "en": {
+      "title": "Uses",
+      "description": "Technologies documented in my projects, rather than an inventory of personal hardware.",
+      "sections": [
+        {
+          "title": "Application development",
+          "body": "Node.js, TypeScript and Python appear in the professional experience and selected projects. Angular and ngx-translate are the context for ngx-translate-check."
+        },
+        {
+          "title": "This website",
+          "body": "Astro and Tailwind CSS produce a static bilingual website deployed on GitHub Pages. Content lives in JSON and Markdown, with checks in GitHub Actions."
+        },
+        {
+          "title": "Desktop integration",
+          "body": "GNOME Shell is the platform for gnome-provider-limits. The project combines TypeScript, provider-specific readers and local state."
+        }
+      ]
+    },
+    "pt": {
+      "title": "Ferramentas",
+      "description": "Tecnologias documentadas nos meus projetos, sem inventário de hardware pessoal.",
+      "sections": [
+        {
+          "title": "Desenvolvimento de aplicações",
+          "body": "Node.js, TypeScript e Python aparecem na experiência profissional e nos projetos selecionados. Angular e ngx-translate são o contexto do ngx-translate-check."
+        },
+        {
+          "title": "Este site",
+          "body": "Astro e Tailwind CSS geram um site estático bilíngue publicado no GitHub Pages. O conteúdo fica em JSON e Markdown, com verificações no GitHub Actions."
+        },
+        {
+          "title": "Integração com o desktop",
+          "body": "GNOME Shell é a plataforma do gnome-provider-limits. O projeto combina TypeScript, leitores por provedor e estado local."
+        }
+      ]
+    }
+  }
+}
