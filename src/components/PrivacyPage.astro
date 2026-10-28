@@ -1,0 +1,97 @@
+---
+import type { Lang } from '../types';
+import ContentPage from './ContentPage.astro';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const pt = lang === 'pt';
+---
+
+<ContentPage
+  lang={lang}
+  title={pt ? 'Privacidade' : 'Privacy'}
+  description={pt
+    ? 'Como este site usa preferências locais e analytics opcional.'
+    : 'How this site uses local preferences and optional analytics.'}
+  backHref={pt ? '/pt/' : '/'}
+  backLabel={pt ? 'Página inicial' : 'Home'}
+>
+  <p>{pt ? 'Atualizado em 28 de outubro de 2026.' : 'Updated October 28, 2026.'}</p>
+  <h2>{pt ? 'Analytics opcional' : 'Optional analytics'}</h2>
+  <p>
+    {
+      pt
+        ? 'O Google Analytics só é carregado depois que você aceita analytics. Recusar impede esse carregamento. Se você aceitou e depois recusar, a página aplica a desativação da coleta futura; isso não apaga dados anteriormente enviados.'
+        : 'Google Analytics loads only after you accept analytics. Declining prevents it from loading. If you accept and later decline, the page disables future collection; this does not delete data already sent.'
+    }
+  </p>
+  <p>
+    {
+      pt
+        ? 'Quando habilitado, o serviço pode processar informações sobre a navegação e dados técnicos do navegador. Cookies de analytics podem ser usados pelo Google. Para remover cookies já gravados, use as configurações do navegador.'
+        : 'When enabled, the service may process navigation information and technical browser data. Google may use analytics cookies. Use your browser settings to remove cookies already stored.'
+    }
+  </p>
+  <button
+    type="button"
+    data-analytics-settings
+    class="not-prose bg-accent-600 min-h-11 rounded-lg px-4 text-sm font-medium text-white"
+    >{pt ? 'Alterar preferência de analytics' : 'Change analytics preference'}</button
+  >
+  <h2>{pt ? 'Preferências no navegador' : 'Browser preferences'}</h2>
+  <ul>
+    <li>
+      <code>analytics-consent</code>: {
+        pt
+          ? 'guarda seu aceite ou recusa no armazenamento local, até você mudar a escolha ou limpar os dados do site.'
+          : 'stores acceptance or refusal in local storage until you change the choice or clear site data.'
+      }
+    </li>
+    <li>
+      <code>language-choice</code>: {
+        pt
+          ? 'lembra sua escolha de idioma no armazenamento local.'
+          : 'remembers your language choice in local storage.'
+      }
+    </li>
+    <li>
+      <code>analytics-consent-postponed</code>: {
+        pt
+          ? 'adia o aviso durante a sessão da aba, sem aceitar analytics.'
+          : 'postpones the notice for the tab session without accepting analytics.'
+      }
+    </li>
+  </ul>
+  <p>
+    {
+      pt
+        ? 'Se o navegador bloquear o armazenamento, os controles continuam funcionando na página atual, mas a preferência pode não ser lembrada na próxima visita.'
+        : 'If your browser blocks storage, controls still work on the current page, but the choice may not be remembered on the next visit.'
+    }
+  </p>
+  <h2>{pt ? 'Hospedagem e serviços externos' : 'Hosting and external services'}</h2>
+  <p>
+    {
+      pt
+        ? 'O site é estático e hospedado no GitHub Pages. Alguns avatares são carregados de servidores do GitHub. Essas solicitações envolvem dados técnicos de conexão. Links externos levam a serviços com suas próprias práticas de privacidade.'
+        : 'This is a static site hosted on GitHub Pages. Some avatars load from GitHub servers. These requests involve technical connection data. External links lead to services with their own privacy practices.'
+    }
+  </p>
+  <p>
+    <a href="https://policies.google.com/privacy"
+      >{pt ? 'Privacidade do Google' : 'Google privacy'}</a
+    > · <a
+      href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+      >{pt ? 'Privacidade do GitHub' : 'GitHub privacy'}</a
+    >
+  </p>
+  <h2>{pt ? 'Contato' : 'Contact'}</h2>
+  <p>
+    {
+      pt
+        ? 'Não há formulário de contato neste site. O link de email abre seu aplicativo de email. Para dúvidas sobre estas preferências, escreva para '
+        : 'This site has no contact form. The email link opens your email app. For questions about these preferences, write to '
+    }<a href="mailto:contato@franciscoknebel.com">contato@franciscoknebel.com</a>.
+  </p>
+</ContentPage>
