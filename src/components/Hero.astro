@@ -51,6 +51,11 @@ const stats = [
         set:html={t.hero.bio}
       />
 
+      <a
+        href={lang === 'pt' ? '/pt/cv/' : '/cv/'}
+        class="bio-link mb-4 inline-flex min-h-11 items-center text-sm"
+        >{lang === 'pt' ? 'Ver currículo' : 'View CV'}</a
+      >
       <div class="mb-5 flex flex-wrap items-center gap-3">
         <a
           href="#projects"
