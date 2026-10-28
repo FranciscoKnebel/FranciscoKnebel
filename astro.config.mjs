@@ -40,6 +40,7 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !page.endsWith('/projects/') &&
+        !page.endsWith('/search/') &&
         !(
           page.endsWith('/talks/') &&
           JSON.parse(readFileSync('src/data/talks.json', 'utf8')).length === 0
