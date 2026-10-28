@@ -2,20 +2,33 @@
 
 Personal website built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), bilingual (EN/PT) and deployed to GitHub Pages.
 
-### Commands
+## Local setup
 
-| Command                | Description                                               |
-| ---------------------- | --------------------------------------------------------- |
-| `npm run dev`          | Local dev server                                          |
-| `npm run build`        | Static build to `dist/`                                   |
-| `npm run preview`      | Preview the build                                         |
-| `npm run check`        | Type check with `astro check`                             |
-| `npm run lint`         | ESLint                                                    |
-| `npm run format`       | Prettier write                                            |
-| `npm run format:check` | Prettier check                                            |
-| `npm run og`           | Regenerate `public/og-image*.png` from `src/data/ui.json` |
+Use Node.js 24 (the same version as CI) and npm. From a fresh checkout:
 
-### Structure
+```sh
+npm ci
+npm run dev
+```
+
+Python 3.12 is only needed for publication synchronization; it is not required to build the site. For a live sync, create a virtual environment and install `scripts/requirements-scholar.txt`. Keep local credentials in the shell or an untracked environment file; never put them in content or commits.
+
+## Commands
+
+| Command                 | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| `npm run dev`           | Local dev server                                          |
+| `npm run build`         | Static build to `dist/`                                   |
+| `npm run preview`       | Preview the build                                         |
+| `npm test`              | Build and run browser/artefact acceptance tests           |
+| `npm run validate:html` | Validate the generated HTML                               |
+| `npm run check`         | Type check with `astro check`                             |
+| `npm run lint`          | ESLint                                                    |
+| `npm run format`        | Prettier write                                            |
+| `npm run format:check`  | Prettier check                                            |
+| `npm run og`            | Regenerate `public/og-image*.png` from `src/data/ui.json` |
+
+## Structure
 
 - `src/pages/`: home, `publications/`, `projects/<slug>/`, `case-studies/` and 404.
 - `src/content/`: `projects` and `case-studies` collections. Each entry has a markdown file per language with the same slug in `en/` and `pt/`.
@@ -23,7 +36,7 @@ Personal website built with [Astro](https://astro.build) and [Tailwind CSS](http
 - `src/lib/`: publication helpers (merge and BibTeX) and content helpers.
 - `scripts/`: Google Scholar sync (`scrape-scholar.py`) and og:image generation.
 
-### Workflows
+## Workflows
 
 - `deploy.yml`: deploys committed content to Pages on push to `main`, manual dispatch, or successful main-branch metric/publication refreshes. Metric generation is not a build dependency.
 - `metrics.yml`: updates metric snapshots weekly or manually, independently of deployment.
@@ -31,12 +44,12 @@ Personal website built with [Astro](https://astro.build) and [Tailwind CSS](http
 - `links.yml`: weekly link check with lychee over the built site.
 - `publications.yml`: weekly Google Scholar sync.
 
-### Adding content
+## Adding content
 
 - **Project**: create `src/content/projects/en/<slug>.md` and `pt/<slug>.md` with the same slug. Required frontmatter: `lang`, `title`, `description`, `tags`, `order`. Optional: `repo`, `url`.
 - **Case study**: create `src/content/case-studies/en/<slug>.md` and `pt/<slug>.md`. Use `status: planned` for placeholders (adds the "coming soon" badge and `noindex`) and `status: published` when the content is ready.
 
-### Publication sync safety
+## Publication sync safety
 
 Install with `python -m pip install -r scripts/requirements-scholar.txt`, then check imports with `python -c "from scholarly import scholarly, ProxyGenerator"`. Run offline regression tests with `python -m unittest discover -s scripts -p 'test_*.py'`.
 
@@ -44,7 +57,7 @@ The scraper updates the file atomically after all records have been fetched and 
 
 The site displays the oldest successful `last_sync` timestamp alongside citation data. A failed fetch does not advance this date. Live synchronization is verified by running **Update Publications** after merge; offline tests do not contact Scholar or use the proxy secret.
 
-### Deploy and refresh behavior
+## Deploy and refresh behavior
 
 Normal content pushes build directly from `main`, using the last committed metric SVGs. A failure in a metric provider cannot block this path. Successful automated refreshes trigger deployment with `workflow_run`, because pushes authenticated with `GITHUB_TOKEN` do not trigger another push workflow. Only successful refreshes from the same repository on `main` are accepted; deployment always checks out trusted `main` content.
 
@@ -52,8 +65,63 @@ Metric and publication workflows share a concurrency group to avoid concurrent a
 
 After merging the PR stack, run **Update Publications** and **Update Profile Metrics** manually and confirm that each successful refresh is followed by **Deploy Portfolio**. These workflows and their secrets cannot be fully exercised before the new workflow files reach the default branch.
 
-### Statistics assets
+## Statistics assets
 
 The site shows one contribution calendar with light/dark variants. The general GitHub summary is optional in a native details disclosure. Dimensions are read from the committed SVGs at build time, so regenerated assets reserve their actual aspect ratio. Missing assets produce a profile link rather than a broken image. All displayed metric assets are served locally.
 
 The redundant full-history calendar and unused language SVG have been retired. The refresh workflow no longer regenerates the removed calendar; avoid reintroducing it into the build. The remaining generated files are snapshots, not real-time indicators of all professional work.
+
+## Validation before opening a PR
+
+```sh
+npm run format:check
+npm run lint
+npm run check
+npm run build
+npm run validate:html
+npx playwright install chromium
+npm test
+python -m unittest discover -s scripts -p 'test_*.py'
+```
+
+The Python tests are offline and use only the standard library. They do not require Scholar dependencies, a proxy account or a secret. `npm test` runs a new build before starting a static preview on port 4322; stop any unrelated local server using that port first.
+
+CI also runs Lighthouse against representative routes. Automated accessibility checks cover only part of usability: check the following manually when changing layout or navigation.
+
+| Scenario                       | Check                                                                            |
+| ------------------------------ | -------------------------------------------------------------------------------- |
+| Narrow phone, tablet, desktop  | No horizontal scrolling, available navigation and readable contact details       |
+| EN and PT                      | Equivalent destinations, translated actions and correct page language            |
+| Keyboard                       | Skip link, visible focus, disclosure controls, menu Escape and natural Tab order |
+| Dark and light themes          | Text contrast, project actions and contribution calendar variants                |
+| Reduced motion                 | No entry movement or smooth scrolling                                            |
+| JavaScript disabled or blocked | Core content and contact links remain readable                                   |
+| Zoom at 200%                   | Navigation and content remain usable without clipping                            |
+| External links                 | Check the destination, not only the HTTP status; some services block bots        |
+
+## Credentials and permissions
+
+| Name              | Used by                | Purpose                                                                                                         |
+| ----------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `GITHUB_TOKEN`    | Actions jobs           | Repository-scoped authentication supplied by GitHub, with permissions declared per job                          |
+| `METRICS_TOKEN`   | Update Profile Metrics | Existing credential used by metric providers; preserve only the access required for the configured data sources |
+| `SCRAPER_API_KEY` | Update Publications    | Optional ScraperAPI account for Scholar requests that need a proxy                                              |
+
+The static site needs none of these secrets at runtime. The analytics measurement ID in the frontend is a public identifier, not an API secret. Never copy token values into this guide, workflow logs or PR descriptions.
+
+The build job reads repository content; only the deployment job receives Pages/OIDC write permissions. Automated content writers are serialized by `profile-content-refresh`.
+
+## Editing content
+
+- Keep the same slug in EN and PT content files. Add or change both translations together, including linked destinations inside Markdown.
+- Update `src/data/ui.json` for interface copy. Shared layout and navigation belong in components, rather than duplicated page markup.
+- Edit roles in `experiences.json`. Entries for the same employer are grouped automatically; keep dates and current responsibilities explicit.
+- Use `publications-meta.json` for reviewed display corrections such as publication type, venue or stable URLs. The scraper owns raw citation data; do not advance `last_sync` after a failed fetch.
+- Separate a documented project result from an engineering interpretation. Add numbers only when a source supports them, and distinguish original contributions from current operation by another maintainer.
+- Run `npm run og` when changing the social card's title or visual copy. The generator writes the EN/PT images in `public/`.
+
+## After merge and rollback
+
+New or changed scheduled workflows become effective on the default branch. After the PR stack is merged in dependency order, run the two refresh workflows manually, verify their logs, then verify the follow-up Pages deployment and the published EN/PT pages. A successful build alone does not prove Scholar access or publication with production credentials.
+
+To undo a deployed change, open a revert PR for the relevant commit or merge and let the normal deploy workflow publish the reviewed revert. Preserve the last valid publication and metric snapshots while investigating provider failures. Avoid modifying generated snapshots just to make a failing refresh appear successful.
