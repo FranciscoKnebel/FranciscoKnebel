@@ -68,6 +68,7 @@ const year = new Date().getFullYear();
       aria-label={lang === 'pt' ? 'Mais páginas' : 'More pages'}
       class="flex flex-wrap justify-center gap-x-4 gap-y-2"
     >
+      <a href={lang === 'pt' ? '/pt/search/' : '/search/'}>{lang === 'pt' ? 'Buscar' : 'Search'}</a>
       <a href={lang === 'pt' ? '/pt/cv/' : '/cv/'}>CV</a>
       <a href={lang === 'pt' ? '/pt/now/' : '/now/'}>{lang === 'pt' ? 'Agora' : 'Now'}</a>
       <a href={lang === 'pt' ? '/pt/uses/' : '/uses/'}>{lang === 'pt' ? 'Ferramentas' : 'Uses'}</a>

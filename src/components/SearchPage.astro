@@ -1,0 +1,76 @@
+---
+import type { Lang } from '../types';
+import ContentPage from './ContentPage.astro';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const pt = lang === 'pt';
+const labels = pt
+  ? {
+      empty: 'Digite um termo para buscar no conteúdo em português.',
+      loading: 'Buscando…',
+      none: 'Nenhum resultado encontrado.',
+      error: 'Busca indisponível no momento. Use os links abaixo.',
+      count: 'resultados',
+      submit: 'Buscar',
+      clear: 'Limpar',
+    }
+  : {
+      empty: 'Enter a term to search the English content.',
+      loading: 'Searching…',
+      none: 'No results found.',
+      error: 'Search is unavailable. Use the links below.',
+      count: 'results',
+      submit: 'Search',
+      clear: 'Clear',
+    };
+---
+
+<ContentPage
+  lang={lang}
+  title={pt ? 'Buscar no site' : 'Search this site'}
+  description={pt
+    ? 'Encontre projetos, publicações e estudos de caso.'
+    : 'Find projects, publications and case studies.'}
+  backHref={pt ? '/pt/' : '/'}
+  backLabel={pt ? 'Página inicial' : 'Home'}
+>
+  <div id="site-search" class="not-prose" data-language={lang} data-labels={JSON.stringify(labels)}>
+    <form id="search-form" class="flex flex-wrap gap-3" role="search">
+      <label for="site-query" class="sr-only">{pt ? 'Termo de busca' : 'Search term'}</label><input
+        id="site-query"
+        name="q"
+        type="search"
+        maxlength="200"
+        class="min-h-11 min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+      /><button type="submit" class="bg-accent-600 min-h-11 rounded-lg px-4 text-sm text-white"
+        >{labels.submit}</button
+      ><button
+        type="reset"
+        class="min-h-11 rounded-lg border border-slate-300 px-3 text-sm dark:text-slate-200"
+        >{labels.clear}</button
+      >
+    </form>
+    <p id="search-status" role="status" class="mt-5 text-sm text-slate-600 dark:text-slate-300">
+      {labels.empty}
+    </p><ol id="search-results" class="mt-6 space-y-5"></ol>
+    <noscript
+      ><p class="mt-4">
+        {
+          pt
+            ? 'Ative JavaScript para buscar ou navegue pelos links abaixo.'
+            : 'Enable JavaScript to search or browse the links below.'
+        }
+      </p></noscript
+    >
+  </div>
+  <p>
+    <a href={pt ? '/pt/#projects' : '/#projects'}>{pt ? 'Projetos' : 'Projects'}</a> · <a
+      href={pt ? '/pt/publications/' : '/publications/'}>{pt ? 'Publicações' : 'Publications'}</a
+    > · <a href={pt ? '/pt/case-studies/' : '/case-studies/'}
+      >{pt ? 'Estudos de caso' : 'Case studies'}</a
+    >
+  </p>
+</ContentPage>
+<script is:inline type="module" src="/site-search.js"></script>
