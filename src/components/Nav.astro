@@ -27,7 +27,7 @@ const links = [
 
 <header class="fixed inset-x-0 top-0 z-50">
   <nav
-    class="mx-auto flex h-14 max-w-4xl items-center justify-between border-b border-slate-200/80 bg-white/75 px-6 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/75"
+    class="mx-auto flex h-14 max-w-6xl items-center justify-between border-b border-slate-200/80 bg-white/75 px-6 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/75"
     aria-label={t.a11y.mainNavigation}
   >
     <!-- Name -->
@@ -39,7 +39,7 @@ const links = [
     </a>
 
     <!-- Desktop: section links + lang switcher -->
-    <div class="hidden items-center gap-3 text-sm text-slate-500 md:flex dark:text-slate-400">
+    <div class="hidden items-center gap-3 text-sm text-slate-500 lg:flex dark:text-slate-400">
       {
         links.map(({ label, href }) => (
           <a
@@ -79,7 +79,7 @@ const links = [
     </div>
 
     <!-- Mobile: lang switcher + hamburger -->
-    <div class="flex items-center gap-3 sm:hidden">
+    <div class="flex items-center gap-3 lg:hidden">
       <div class="flex items-center gap-1 font-mono text-xs text-slate-500 dark:text-slate-400">
         <a
           href={enHref}
@@ -112,7 +112,7 @@ const links = [
         aria-label={t.a11y.menuToggle}
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="focus-visible:ring-accent-500 rounded-md p-1.5 text-slate-500 transition-colors duration-150 hover:bg-slate-100 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-400 dark:hover:bg-slate-800"
+        class="focus-visible:ring-accent-500 inline-flex min-h-11 min-w-11 items-center justify-center rounded-md p-1.5 text-slate-500 transition-colors duration-150 hover:bg-slate-100 focus-visible:ring-2 focus-visible:outline-none dark:text-slate-400 dark:hover:bg-slate-800"
       >
         <!-- Hamburger icon (shown when menu closed) -->
         <svg
@@ -148,9 +148,9 @@ const links = [
   <!-- Mobile dropdown menu -->
   <div
     id="mobile-menu"
-    class="hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md sm:hidden dark:border-slate-800/80 dark:bg-slate-950/95"
+    class="hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md lg:hidden dark:border-slate-800/80 dark:bg-slate-950/95"
   >
-    <div class="mx-auto flex max-w-4xl flex-col gap-0.5 px-6 py-3">
+    <div class="mx-auto flex max-w-6xl flex-col gap-0.5 px-6 py-3">
       {
         links.map(({ label, href }) => (
           <a
@@ -203,25 +203,14 @@ const links = [
     if (header && !header.contains(e.target as Node)) closeMenu();
   });
 
-  // Close on Escape and keep focus inside the menu while it is open
+  // This is an expandable navigation, not a modal: keep normal Tab order.
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menu && !menu.classList.contains('hidden')) {
       closeMenu(true);
     }
   });
 
-  menu?.addEventListener('keydown', (e) => {
-    if (e.key !== 'Tab' || menu.classList.contains('hidden')) return;
-    const links = Array.from(menu.querySelectorAll('a')) as HTMLElement[];
-    if (links.length === 0) return;
-    const first = links[0];
-    const last = links[links.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+    if (e.matches) closeMenu();
   });
 </script>
