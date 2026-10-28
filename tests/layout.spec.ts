@@ -61,7 +61,7 @@ for (const width of [320, 390, 640, 768, 1024]) {
       const columns = await page
         .locator('#stats .grid')
         .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
-      expect(columns).toBe(1);
+      expect(columns).toBe(width < 640 ? 1 : 2);
     }
   });
 }

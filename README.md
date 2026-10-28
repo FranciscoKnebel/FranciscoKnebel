@@ -31,17 +31,11 @@ Selected work on deploying Digital Twins across cloud and edge environments:
 - [Networks UFRGS](http://networks.inf.ufrgs.br): computer networking research.
 - [IDE Junior Enterprise](https://www.idejr.com.br): previous work in development, project management and quality.
 
-<details>
-<summary>GitHub contribution calendar</summary>
+## Public activity
 
-Activity in public repositories is one part of my work; it does not describe all professional projects or experience.
+[GitHub profile](https://github.com/FranciscoKnebel) · [Public activity snapshot](https://franciscoknebel.com/#stats)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-view.svg">
-  <img src="profile-3d-contrib/profile-gitblock.svg" alt="Calendar of GitHub contributions" width="1280" height="850">
-</picture>
-
-</details>
+Public activity complements selected work; it does not describe private projects or all professional experience.
 
 ## Website source
 

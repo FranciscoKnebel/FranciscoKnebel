@@ -69,14 +69,14 @@ test.describe('aceitação', () => {
       .toBe(false);
   });
 
-  test('dark mode usa a variante noturna do calendário 3D', async ({ page }) => {
+  test('native statistics stay readable in dark mode', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.goto('/');
-    const image = page.locator('img[alt="3D GitHub contribution calendar"]');
-    await image.scrollIntoViewIfNeeded();
-    await expect
-      .poll(() => image.evaluate((element) => (element as HTMLImageElement).currentSrc))
-      .toContain('profile-night-view.svg');
+    await expect(page.locator('#stats')).toBeVisible();
+    await expect(page.locator('#stats img')).toHaveCount(0);
+    await expect(
+      page.getByRole('link', { name: 'View GitHub profile', exact: true }),
+    ).toContainText('View GitHub profile');
   });
 });
 

@@ -3,13 +3,11 @@ name: Deploy Portfolio
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'github-metrics.svg'
-      - 'profile-3d-contrib/**'
   workflow_dispatch:
+  schedule: [{ cron: '0 6 * * 0' }]
   # GITHUB_TOKEN pushes from refresh workflows do not trigger push workflows.
   workflow_run:
-    workflows: [Update Publications, Update Profile Metrics]
+    workflows: [Update Publications]
     types: [completed]
     branches: [main]
 
@@ -42,7 +40,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build using the last committed metric snapshots
+      - name: Build with public GitHub data and snapshot fallback
+        env:
+          REFRESH_GITHUB_METRICS: '1'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
 
       - uses: actions/configure-pages@v6
