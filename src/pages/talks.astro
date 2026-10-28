@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TalksPage from '../components/TalksPage.astro';
+import data from '../data/talks.json';
+---
+
+<Layout lang="en" title="Talks & Teaching | Francisco Knebel" noindex={data.length === 0}
+  ><TalksPage lang="en" /></Layout
+>

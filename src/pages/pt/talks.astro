@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TalksPage from '../../components/TalksPage.astro';
+import data from '../../data/talks.json';
+---
+
+<Layout lang="pt" title="Palestras e ensino | Francisco Knebel" noindex={data.length === 0}
+  ><TalksPage lang="pt" /></Layout
+>

@@ -38,7 +38,12 @@ export default defineConfig({
   site: 'https://franciscoknebel.com',
   integrations: [
     sitemap({
-      filter: (page) => !page.endsWith('/projects/'),
+      filter: (page) =>
+        !page.endsWith('/projects/') &&
+        !(
+          page.endsWith('/talks/') &&
+          JSON.parse(readFileSync('src/data/talks.json', 'utf8')).length === 0
+        ),
       serialize(item) {
         if (item.url.endsWith('/privacy/') || item.url.endsWith('/pt/privacidade/')) {
           item.links = [
