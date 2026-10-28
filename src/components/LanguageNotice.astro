@@ -51,26 +51,27 @@ const otherPath = lang === 'en' ? paths.pt : paths.en;
 </div>
 
 <script>
+  import { readPreference, savePreference } from '../lib/browser-preferences';
   const STORAGE_KEY = 'language-choice';
   const notice = document.getElementById('language-notice');
   const dismiss = document.getElementById('language-notice-dismiss');
   const current = document.documentElement.lang === 'pt' ? 'pt' : 'en';
   const browser = (navigator.language || '').toLowerCase();
   const prefers = browser.startsWith('pt') ? 'pt' : browser.startsWith('en') ? 'en' : null;
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = readPreference(STORAGE_KEY);
 
   if (!stored && prefers && prefers !== current) {
     notice?.classList.remove('hidden');
   }
 
   dismiss?.addEventListener('click', () => {
-    localStorage.setItem(STORAGE_KEY, current);
+    savePreference(STORAGE_KEY, current);
     notice?.classList.add('hidden');
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && notice && !notice.classList.contains('hidden')) {
-      localStorage.setItem(STORAGE_KEY, current);
+      savePreference(STORAGE_KEY, current);
       notice.classList.add('hidden');
     }
   });
@@ -79,7 +80,7 @@ const otherPath = lang === 'en' ? paths.pt : paths.en;
   document.querySelectorAll('a[hreflang]').forEach((link) => {
     link.addEventListener('click', () => {
       const chosen = link.getAttribute('hreflang');
-      if (chosen) localStorage.setItem(STORAGE_KEY, chosen);
+      if (chosen) savePreference(STORAGE_KEY, chosen);
     });
   });
 </script>

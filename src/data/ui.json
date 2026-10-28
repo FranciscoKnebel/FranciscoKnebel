@@ -44,7 +44,8 @@
     "contact": {
       "label": "Contact",
       "elsewhere": "Elsewhere",
-      "blurb": "If you have an interesting project, idea, or proposal, let's talk."
+      "blurb": "If you have an interesting project, idea, or proposal, let's talk.",
+      "business": "Business"
     },
     "consent": {
       "title": "Analytics",
@@ -171,7 +172,8 @@
     "contact": {
       "label": "Contato",
       "elsewhere": "Em outros lugares",
-      "blurb": "Se você tem um projeto, ideia ou proposta interessante, vamos conversar."
+      "blurb": "Se você tem um projeto, ideia ou proposta interessante, vamos conversar.",
+      "business": "Profissional"
     },
     "consent": {
       "title": "Analytics",
