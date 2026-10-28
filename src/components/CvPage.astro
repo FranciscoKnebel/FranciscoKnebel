@@ -1,0 +1,103 @@
+---
+import type { Lang, Publication } from '../types';
+import ContentPage from './ContentPage.astro';
+import { cvData } from '../lib/cv-data.mjs';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const pt = lang === 'pt';
+const d = cvData(lang);
+---
+
+<ContentPage
+  lang={lang}
+  title={d.name}
+  description={d.role}
+  backHref={pt ? '/pt/' : '/'}
+  backLabel={pt ? 'Página inicial' : 'Home'}
+>
+  <div class="cv-actions not-prose mb-8 flex flex-wrap gap-3">
+    <a
+      href={`/cv/francisco-knebel-${lang}.pdf`}
+      download
+      class="bg-accent-600 inline-flex min-h-11 items-center rounded-lg px-4 text-sm text-white"
+      >{pt ? 'Baixar PDF' : 'Download PDF'}</a
+    ><button
+      type="button"
+      id="print-cv"
+      class="min-h-11 rounded-lg border border-slate-300 px-4 text-sm dark:text-slate-200"
+      >{pt ? 'Imprimir' : 'Print'}</button
+    >
+  </div>
+  <p>{d.email} · <a href={d.website}>franciscoknebel.com</a></p><p>{d.summary}</p>
+  <h2>{pt ? 'Formação' : 'Education'}</h2><ul>{d.education.map((item) => <li>{item}</li>)}</ul>
+  <h2>{pt ? 'Experiência' : 'Experience'}</h2>{
+    d.experiences.map(
+      (entry: { role: string; company: string; period: string; description: string }) => (
+        <section class="cv-entry">
+          <>
+            <h3>
+              {entry.role} · {entry.company}
+            </h3>
+            <p>{entry.period}</p>
+            <p>{entry.description}</p>
+          </>
+        </section>
+      ),
+    )
+  }
+  <h2>{pt ? 'Projetos selecionados' : 'Selected projects'}</h2>{
+    d.projects.map((project) => (
+      <section class="cv-entry">
+        <>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <a href={project.repo || project.url}>{pt ? 'Conhecer projeto' : 'Explore project'}</a>
+        </>
+      </section>
+    ))
+  }
+  <h2>{pt ? 'Publicações' : 'Publications'}</h2><ul>
+    {
+      d.publications.map((publication: Publication) => (
+        <li>
+          <a href={publication.url}>{publication.title}</a> · {publication.year}
+        </li>
+      ))
+    }
+  </ul>
+</ContentPage>
+<script>
+  document.getElementById('print-cv')?.addEventListener('click', () => window.print());
+</script>
+<style is:global>
+  @media print {
+    header,
+    footer,
+    #contact,
+    #analytics-consent,
+    #language-notice,
+    .cv-actions,
+    body > a[href='#main'] {
+      display: none !important;
+    }
+    html,
+    body {
+      background: white !important;
+      color: black !important;
+    }
+    main {
+      padding-top: 0 !important;
+    }
+    main > article {
+      padding: 0 !important;
+    }
+    .cv-entry {
+      break-inside: avoid;
+    }
+    a {
+      color: inherit !important;
+    }
+  }
+</style>

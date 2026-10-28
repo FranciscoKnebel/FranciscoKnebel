@@ -11,3 +11,6 @@ test-results/
 # Python sync tests
 __pycache__/
 *.pyc
+
+# Generated curriculum PDFs
+public/cv/
